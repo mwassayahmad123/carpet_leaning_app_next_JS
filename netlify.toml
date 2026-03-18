@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  # Next.js 15 requires Node 18.18+ (or newer). Pin a safe LTS.
+  NODE_VERSION = "18.20.4"

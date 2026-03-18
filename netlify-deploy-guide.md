@@ -2,35 +2,14 @@
 
 ## 🚀 Deploying on Netlify
 
-### Method 1: Drag & Drop (Easiest)
-
-1. **Build your React app:**
-   ```bash
-   npm run build
-   ```
-   This creates a `build` folder with optimized production files.
-
-2. **Deploy to Netlify:**
-   - Go to [netlify.com](https://www.netlify.com) and sign up/login
-   - Click "Add new site" → "Deploy manually"
-   - Drag and drop the entire `build` folder onto the deployment area
-   - Wait for deployment to complete (usually 1-2 minutes)
-   - Your site will be live at a URL like: `https://random-name-123.netlify.app`
-
-3. **Custom Domain (Optional):**
-   - Go to Site settings → Domain management
-   - Click "Add custom domain"
-   - Enter your domain name
-   - Follow DNS configuration instructions
-
-### Method 2: Git Integration (Recommended for Updates)
+### Method: Git Integration (Recommended)
 
 1. **Push your code to GitHub:**
    ```bash
    git init
    git add .
    git commit -m "Initial commit"
-   git remote add origin https://github.com/yourusername/laundary_service.git
+   git remote add origin https://github.com/yourusername/your-repo.git
    git push -u origin main
    ```
 
@@ -38,15 +17,16 @@
    - Go to Netlify → "Add new site" → "Import an existing project"
    - Connect your GitHub account
    - Select your repository
-   - Configure build settings:
+   - Configure build settings (Next.js):
      - **Build command:** `npm run build`
-     - **Publish directory:** `build`
+     - **Publish directory:** `.next`
+     - Enable the **Next.js Netlify plugin** (`@netlify/plugin-nextjs`)
    - Click "Deploy site"
 
 3. **Auto-deploy:**
    - Every time you push to GitHub, Netlify will automatically rebuild and deploy
 
-### Method 3: Netlify CLI
+### Netlify CLI (optional)
 
 1. **Install Netlify CLI:**
    ```bash
@@ -61,121 +41,45 @@
 3. **Deploy:**
    ```bash
    npm run build
-   netlify deploy --prod --dir=build
+   # For Next.js, prefer Git integration + plugin.
+   # If you still use CLI, Netlify will deploy with the plugin config in netlify.toml.
+   netlify deploy --prod
    ```
 
 ---
 
 ## 🌐 Deploying on GoDaddy
 
-### Prerequisites:
-- GoDaddy hosting account (cPanel or File Manager access)
-- Your domain name
+### Important note
 
-### Step 1: Build Your React App
+GoDaddy shared hosting is for **static** sites. A typical Next.js app (SSR/ISR) should be deployed on **Netlify** or **Vercel**.
 
-```bash
-npm run build
-```
-
-This creates a `build` folder with all production files.
-
-### Step 2: Upload Files to GoDaddy
-
-#### Option A: Using cPanel File Manager
-
-1. **Login to GoDaddy:**
-   - Go to your GoDaddy account
-   - Navigate to "My Products" → "Web Hosting" → "Manage"
-
-2. **Access File Manager:**
-   - Click "cPanel" or "File Manager"
-   - Navigate to `public_html` folder (or your domain's root folder)
-
-3. **Upload Files:**
-   - Delete any existing files in `public_html` (backup first!)
-   - Upload ALL contents from your `build` folder to `public_html`
-   - Make sure `index.html` is in the root of `public_html`
-
-#### Option B: Using FTP
-
-1. **Get FTP Credentials:**
-   - In cPanel, go to "FTP Accounts"
-   - Note your FTP host, username, and password
-
-2. **Connect via FTP Client:**
-   - Use FileZilla, WinSCP, or any FTP client
-   - Connect to your GoDaddy server
-   - Navigate to `public_html`
-   - Upload all files from `build` folder
-
-### Step 3: Configure .htaccess (Important for React Router)
-
-Create a `.htaccess` file in `public_html` with:
-
-```apache
-<IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /index.html [L]
-</IfModule>
-```
-
-This ensures React Router works correctly on GoDaddy.
-
-### Step 4: Verify Deployment
-
-1. Visit your domain: `https://yourdomain.com`
-2. Check that all pages load correctly
-3. Test navigation and functionality
+If you only need a static site on GoDaddy, you must convert this project to a static export first (requires project changes).
 
 ---
 
 ## 🔧 Important Configuration Files
 
-### Create `_redirects` file (for Netlify)
+### `netlify.toml` (recommended)
 
-Create `public/_redirects` file:
-```
-/*    /index.html   200
-```
-
-### Update `package.json` (if needed)
-
-Ensure build script exists:
-```json
-"scripts": {
-  "build": "react-scripts build"
-}
-```
+This repo includes a `netlify.toml` to ensure Netlify builds as Next.js and uses the official plugin.
 
 ---
 
 ## 📝 Quick Checklist
 
 ### Before Deploying:
-- [ ] Test your app locally: `npm start`
+- [ ] Test your app locally: `npm run dev`
 - [ ] Build successfully: `npm run build`
-- [ ] Check `build` folder exists with `index.html`
+- [ ] Check build finishes without errors
 - [ ] Verify all images/assets are included
 - [ ] Test all functionality
 
 ### Netlify:
 - [ ] Build command: `npm run build`
-- [ ] Publish directory: `build`
+- [ ] Next.js plugin enabled (`@netlify/plugin-nextjs`)
 - [ ] Environment variables (if any) configured
 - [ ] Custom domain connected (optional)
-
-### GoDaddy:
-- [ ] All files uploaded to `public_html`
-- [ ] `.htaccess` file created
-- [ ] `index.html` in root directory
-- [ ] DNS settings correct
-- [ ] SSL certificate enabled (HTTPS)
 
 ---
 
@@ -183,8 +87,8 @@ Ensure build script exists:
 
 ### Netlify Issues:
 - **Build fails:** Check build logs, ensure all dependencies are in `package.json`
-- **404 errors:** Add `_redirects` file in `public` folder
-- **Images not loading:** Check image paths are relative, not absolute
+- **Blank page / scripts blocked:** Remove any strict **Content-Security-Policy** header set in Netlify, or configure CSP properly for Next.js (nonces/hashes)
+- **Images not loading:** Check image paths are correct and assets exist under `public/`
 
 ### GoDaddy Issues:
 - **404 errors:** Ensure `.htaccess` file is uploaded
@@ -224,5 +128,5 @@ git push
 
 - Netlify Docs: https://docs.netlify.com
 - GoDaddy Help: https://www.godaddy.com/help
-- React Deployment: https://create-react-app.dev/docs/deployment/
+- Next.js Deployment: https://nextjs.org/docs/app/building-your-application/deploying
 

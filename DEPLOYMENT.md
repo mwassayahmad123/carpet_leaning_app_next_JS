@@ -2,17 +2,7 @@
 
 ## 🚀 Netlify Deployment (5 minutes)
 
-### Option 1: Quick Deploy (No Git needed)
-```bash
-# 1. Build your app
-npm run build
-
-# 2. Go to netlify.com → Add new site → Deploy manually
-# 3. Drag and drop the 'build' folder
-# Done! Your site is live
-```
-
-### Option 2: Git Integration (Auto-deploy)
+### Recommended: Git Integration (Auto-deploy)
 ```bash
 # 1. Push to GitHub
 git init
@@ -23,44 +13,29 @@ git push -u origin main
 
 # 2. Go to netlify.com → Import from Git
 # 3. Connect GitHub → Select repository
-# 4. Build settings:
+# 4. Deploy (Netlify will detect Next.js)
 #    - Build command: npm run build
-#    - Publish directory: build
-# 5. Deploy!
+#    - Add plugin: @netlify/plugin-nextjs (Site configuration → Plugins)
+# 5. Deploy
 ```
 
 ---
 
 ## 🌐 GoDaddy Deployment
 
-### Step-by-Step:
+### Important note
 
-1. **Build your app:**
-   ```bash
-   npm run build
-   ```
+GoDaddy shared hosting is for **static** sites. A typical Next.js app (with SSR/ISR) should be deployed on **Netlify** (recommended here) or **Vercel**.
 
-2. **Login to GoDaddy:**
-   - Go to godaddy.com → My Products → Web Hosting → Manage
-
-3. **Upload files:**
-   - Open File Manager (cPanel)
-   - Go to `public_html` folder
-   - Delete old files (backup first!)
-   - Upload ALL files from `build` folder
-   - Make sure `index.html` is in root
-
-4. **Done!** Visit your domain
-
-**Note:** The `.htaccess` file is already created in `public` folder and will be included in your build.
+If you only need a static site on GoDaddy, you must convert this project to a static export first (requires project changes).
 
 ---
 
 ## ✅ Pre-Deployment Checklist
 
-- [ ] Test locally: `npm start`
+- [ ] Test locally: `npm run dev`
 - [ ] Build successfully: `npm run build`
-- [ ] Check `build` folder has `index.html`
+- [ ] Check build finishes without errors
 - [ ] All images load correctly
 - [ ] All links work
 - [ ] Contact form works
@@ -75,35 +50,20 @@ Always use this to build:
 npm run build
 ```
 
-This creates an optimized `build` folder ready for deployment.
-
----
-
-## 📦 What Gets Deployed
-
-The `build` folder contains:
-- `index.html` - Main HTML file
-- `static/` - All CSS, JS, and assets
-- All images and resources
-
-**Important:** Only deploy the contents of the `build` folder, not the folder itself!
+This creates an optimized Next.js build (output in `.next/`) for Netlify.
 
 ---
 
 ## 🆘 Common Issues
 
 **Netlify:**
-- If 404 errors occur, the `_redirects` file should fix it (already created)
-
-**GoDaddy:**
-- If pages don't load, ensure `.htaccess` is uploaded
-- If images don't show, check file paths are correct
+- Make sure the **Next.js Netlify plugin** is enabled
+- If you added a strict **Content-Security-Policy** header in Netlify, it can block Next.js scripts (remove it or configure it with nonces/hashes)
 
 ---
 
 ## 📞 Quick Reference
 
 - **Netlify:** https://app.netlify.com
-- **GoDaddy:** https://www.godaddy.com
-- **Build folder:** Created after running `npm run build`
+- **Build output:** created after running `npm run build`
 
