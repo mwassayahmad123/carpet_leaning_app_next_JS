@@ -1,138 +1,125 @@
-# Carpet Service Website
+# Carpet Service Website (Next.js)
 
-A modern, sleek, and premium Carpet Service website built with React JS and Tailwind CSS. The website is fully mobile responsive, fast, and visually appealing with smooth animations and hover effects.
+A modern, sleek, premium Carpet Service website built with **Next.js** and **Tailwind CSS**. Fully responsive, fast, and visually polished with smooth animations and hover effects.
 
 ## Features
 
-- **Modern Design**: Clean, minimal, and elegant UI with soft shadows, rounded corners, subtle gradients, and modern typography
-- **Fully Responsive**: Mobile-first design that works perfectly on all devices
-- **Smooth Animations**: Premium animations and hover effects throughout
-- **Sticky Navbar**: Smooth scroll navigation with all menu items
-- **Hero Section**: Full-width background with compelling CTAs
-- **About Section**: Quality assurance, hygiene standards, and customer satisfaction highlights
-- **Services Section**: Full-width video introduction and service cards
-- **Team Section**: Highlighted team member card plus 6 smaller team cards
-- **3D Reviews Carousel**: Cool 3D rotating reviews section with 4-second auto-rotate
-- **Image Gallery**: Modern responsive grid with hover zoom effects
-- **Contact Form**: WhatsApp integration for direct booking
-- **Google Maps**: Embedded map showing business location
+- **Modern design**: Clean, minimal UI with soft shadows, rounded corners, subtle gradients, and modern typography
+- **Fully responsive**: Mobile-first design that works on all devices
+- **Smooth animations**: Premium hover and transition effects throughout
+- **Sticky navbar**: Smooth scroll navigation with menu items
+- **Hero section**: Full-width background with clear CTAs
+- **About section**: Quality assurance, hygiene standards, and customer satisfaction highlights
+- **Services section**: Video intro + service cards
+- **Team section**: Highlighted team member + additional team cards
+- **Reviews carousel**: Auto-rotating 3D-style reviews section
+- **Gallery**: Responsive grid with hover zoom effects
+- **Contact**: WhatsApp integration for booking + embedded Google Map
+
+## Tech Stack
+
+- **Next.js** (App Router)
+- **React 18**
+- **Tailwind CSS**
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js (v14 or higher)
-- npm or yarn
+- Node.js **18.18+** (recommended for modern Next.js)
+- npm (or yarn/pnpm)
 
-### Installation
+### Install
 
-1. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Start the development server:
+### Run locally (development)
+
 ```bash
-npm start
+npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open `http://localhost:3000`.
 
-### Build for Production
+### Build for production
 
 ```bash
 npm run build
 ```
 
-This creates an optimized production build in the `build` folder.
+This creates an optimized Next.js build (output in the `.next/` directory).
 
-## Configuration
+### Run production build locally
+
+```bash
+npm run start
+```
+
+## Deploy to Netlify (Next.js)
+
+### Recommended: Git integration (auto-deploy)
+
+- **Base directory**: (leave empty)
+- **Build command**: `npm run build`
+- **Publish directory**: `.next`
+- **Required**: enable the Netlify Next.js build plugin
+  - In Netlify: Site configuration → Build & deploy → Plugins → add **Next.js** plugin
+  - Or add this to `netlify.toml` (if you choose to create one):
+
+```toml
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+```
+
+After that, every push to your connected branch will auto-build and deploy.
+
+## Configuration / Customization
 
 ### WhatsApp Integration
 
-To set up WhatsApp integration, edit `src/components/Contact.js` and update the `whatsappNumber` variable:
+Edit `src/components/Contact.js` and update the `whatsappNumber` variable:
 
-```javascript
-const whatsappNumber = '1234567890'; // Replace with your WhatsApp number (country code + number, no + or spaces)
+```js
+const whatsappNumber = '1234567890'; // country code + number, no + or spaces
 ```
 
 ### Google Maps
 
-To update the Google Maps embed, edit `src/components/Contact.js` and replace the `src` URL in the iframe with your business location coordinates.
+In `src/components/Contact.js`, replace the Google Maps iframe `src` with your business location embed link.
 
-### Contact Information
+### Contact information
 
-Update contact details in:
-- `src/components/Contact.js` - Contact section
-- `src/components/Footer.js` - Footer section
+- `src/components/Contact.js`
+- `src/components/Footer.js`
 
-### Video Embed
+### Services video
 
-To add your service introduction video, edit `src/components/Services.js` and replace the placeholder div with your actual video embed code.
+Update the video/embed section in `src/components/Services.js`.
 
-## Project Structure
+## Project Structure (high level)
 
 ```
-laundary_service/
-├── public/
-│   ├── index.html
-│   └── manifest.json
-├── src/
-│   ├── components/
-│   │   ├── Navbar.js
-│   │   ├── Home.js
-│   │   ├── About.js
-│   │   ├── Services.js
-│   │   ├── Team.js
-│   │   ├── Reviews.js
-│   │   ├── Gallery.js
-│   │   ├── Contact.js
-│   │   └── Footer.js
-│   ├── App.js
-│   ├── index.js
-│   └── index.css
-├── package.json
-├── tailwind.config.js
-├── postcss.config.js
-└── README.md
+carpet_leaning_app_next_JS/
+├─ public/
+├─ src/
+│  ├─ app/
+│  │  ├─ layout.js        # App Router root layout
+│  │  ├─ page.js          # Home page composition
+│  │  └─ globals.css
+│  └─ components/         # UI sections (Navbar, Home, About, ...)
+├─ next.config.js         # Includes custom webpack rule for .mp4 assets
+├─ tailwind.config.js
+├─ postcss.config.js
+└─ package.json
 ```
 
-## Technologies Used
+## Notes
 
-- **React 18**: Modern React with functional components
-- **Tailwind CSS 3**: Utility-first CSS framework
-- **React Scripts**: Build tooling for React applications
-
-## Customization
-
-### Colors
-
-The website uses a blue-to-purple gradient theme. To customize colors, update the Tailwind classes in components or modify `tailwind.config.js`.
-
-### Animations
-
-Animations are defined in `tailwind.config.js` and can be customized there.
-
-### Images
-
-Replace placeholder images with your own:
-- Team member photos in `src/components/Team.js`
-- Gallery images in `src/components/Gallery.js`
-- Review customer photos in `src/components/Reviews.js`
-- Hero background image in `src/components/Home.js`
-
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- This repo uses Next.js App Router (`src/app/*`). If you see older React entry files like `src/index.js`, they are not used by Next.js runtime.
 
 ## License
 
-This project is open source and available for use.
-
-## Support
-
-For issues or questions, please contact the development team.
+Open source — use as needed.
 
