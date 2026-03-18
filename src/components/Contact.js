@@ -74,7 +74,7 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-xl p-8 sm:p-10">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Book Appointment</h3>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                   Name *
@@ -88,6 +88,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
                   placeholder="Your full name"
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -104,6 +105,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
                   placeholder="Your phone number"
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -117,6 +119,7 @@ const Contact = () => {
                   value={formData.serviceType}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
+                  suppressHydrationWarning
                 >
                   <option value="">Select a service</option>
                   {serviceTypes.map((service) => (
@@ -139,6 +142,7 @@ const Contact = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none resize-none"
                   placeholder="Tell us about your requirements..."
+                  suppressHydrationWarning
                 ></textarea>
               </div>
 
