@@ -4,8 +4,17 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Five Star Carpet Cleaning Service',
-  description: 'Five Star Carpet Cleaning Service - Professional, Fast, and Reliable',
+  title: 'Premium Carpet Service',
+  description: 'Premium Carpet Service - Professional, Fast, and Reliable',
+  manifest: '/manifest.json',
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
+};
+
+export const viewport = {
+  themeColor: '#2563eb',
 };
 
 export default function RootLayout({ children }) {
