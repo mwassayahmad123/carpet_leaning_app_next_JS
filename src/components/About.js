@@ -48,7 +48,7 @@ const About = () => {
             About Us
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
-            We are a premium Carpet service dedicated to providing exceptional care for your carpets.
+            We are a Five Star Carpet Cleaning Service dedicated to providing exceptional care for your carpets.
             With years of experience and state-of-the-art facilities, we ensure your carpets receive
             the best treatment possible.
           </p>

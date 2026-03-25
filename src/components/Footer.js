@@ -68,7 +68,7 @@ const Footer = () => {
               FiveStarCarpetCleaning
             </h3>
             <p className="text-gray-400 mb-4">
-              Premium Carpet service dedicated to providing exceptional care for your home.
+              Five Star Carpet Cleaning Service dedicated to providing exceptional care for your home.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (

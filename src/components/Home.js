@@ -34,7 +34,7 @@ const Home = () => {
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 animate-slide-up">
-            Premium Carpet Service
+            Five Star Carpet Cleaning Service
             <span className="block text-4xl sm:text-5xl lg:text-6xl mt-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
               You Can Trust
             </span>

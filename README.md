@@ -1,6 +1,6 @@
 # Carpet Service Website (Next.js)
 
-A modern, sleek, premium Carpet Service website built with **Next.js** and **Tailwind CSS**. Fully responsive, fast, and visually polished with smooth animations and hover effects.
+A modern, sleek, Five Star Carpet Cleaning Service website built with **Next.js** and **Tailwind CSS**. Fully responsive, fast, and visually polished with smooth animations and hover effects.
 
 ## Features
 

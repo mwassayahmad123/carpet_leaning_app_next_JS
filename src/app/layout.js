@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Premium Carpet Service',
-  description: 'Premium Carpet Service - Professional, Fast, and Reliable',
+  title: 'Five Star Carpet Cleaning Service',
+  description: 'Five Star Carpet Cleaning Service - Professional, Fast, and Reliable',
 };
 
 export default function RootLayout({ children }) {
