@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import heroBg from './img/2.jpeg';
 
 const Home = () => {
   const scrollToSection = (sectionId) => {
@@ -24,7 +25,7 @@ const Home = () => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundImage: `url('${heroBg?.src ?? heroBg}')`,
           }}
         ></div>
       </div>
