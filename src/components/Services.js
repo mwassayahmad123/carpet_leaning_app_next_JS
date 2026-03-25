@@ -1,5 +1,6 @@
 import React from 'react';
-import serviceVideo from './img/vid.mp4';
+
+const SERVICE_VIDEO_SRC = '/videos/vid.mp4';
 
 const Services = () => {
   const services = [
@@ -58,9 +59,8 @@ const Services = () => {
                 muted
                 loop
                 playsInline
-                poster=""
               >
-                <source src={serviceVideo?.src ?? serviceVideo} type="video/mp4" />
+                <source src={SERVICE_VIDEO_SRC} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
