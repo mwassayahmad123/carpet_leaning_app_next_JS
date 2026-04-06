@@ -148,9 +148,10 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                className="group relative w-full px-8 py-4 rounded-xl font-semibold text-lg text-white bg-gradient-to-r from-blue-600/85 to-purple-600/85 border border-white/25 backdrop-blur-md shadow-[0_4px_20px_rgba(99,102,241,0.4)] hover:shadow-[0_6px_30px_rgba(99,102,241,0.65)] hover:scale-105 active:scale-95 transition-all duration-200 will-change-transform"
               >
-                Book Appointment via WhatsApp
+                <span className="relative z-10">Book Appointment via WhatsApp</span>
+                <span className="absolute inset-0 rounded-xl bg-white/0 group-hover:bg-white/10 transition-colors duration-200" />
               </button>
             </form>
           </div>
@@ -184,7 +185,14 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold mb-1">Address</p>
-                    <p className="opacity-90">6 frith road, London</p>
+                    <a 
+                      href="https://www.google.com/maps/search/?api=1&query=6+Frith+Rd,+London+E11+4EY,+UK" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="opacity-90 hover:opacity-100 transition-opacity block"
+                    >
+                      6 Frith Rd, London E11 4EY, UK
+                    </a>
                   </div>
                 </div>
 

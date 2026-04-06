@@ -1,0 +1,11 @@
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Disallow sensitive and internal directories
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+
+# XML Sitemap
+Sitemap: https://www.yourwebsite.com/sitemap.xml
