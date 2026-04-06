@@ -4,26 +4,27 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Premium Carpet Service',
-  description: 'Premium Carpet Service - Professional, Fast, and Reliable',
-  manifest: '/manifest.json',
-  icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+  title: 'Five-Star Carpet & Upholstery Cleaning London | Deep Clean',
+  description: 'Looking for professional carpet cleaning in London? We offer five-star eco-friendly deep steam cleaning for carpets, rugs & upholstery. Book your clean today!',
+  alternates: {
+    canonical: 'https://fivestarcarpetcleaning.co.uk',
   },
-};
-
-export const viewport = {
-  themeColor: '#2563eb',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      </head>
       <body className={inter.className} suppressHydrationWarning>
         {children}
       </body>

@@ -4,6 +4,7 @@ import About from '../components/About';
 import Services from '../components/Services';
 import Reviews from '../components/Reviews';
 import Gallery from '../components/Gallery';
+import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
@@ -16,6 +17,7 @@ export default function Page() {
       <Services />
       <Reviews />
       <Gallery />
+      <FAQ />
       <Contact />
       <Footer />
     </div>

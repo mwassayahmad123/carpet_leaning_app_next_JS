@@ -8,8 +8,7 @@ const About = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
-      title: 'Quality Assurance',
-      description: 'Every garment is carefully inspected and treated with premium care.',
+      description: 'Every carpet is carefully inspected and treated with premium care.',
     },
     {
       icon: (
@@ -47,10 +46,8 @@ const About = () => {
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 animate-fade-in">
             About Us
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up">
-            We are a Five Star Carpet Cleaning Service dedicated to providing exceptional care for your carpets.
-            With years of experience and state-of-the-art facilities, we ensure your carpets receive
-            the best treatment possible.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up leading-relaxed">
+            If you are searching for the best carpet cleaning London has right now, or simply looking for reliable London carpet cleaning near me, you have found the right team. Renowned as the best steam carpet cleaning service in the area, we provide exceptional, eco-friendly deep cleaning for homes and businesses. With over a decade of expertise, we don't just stop at standard carpets. Need experts to safely clean oriental rug fibres or provide specialized persian carpet cleaning? Our skilled technicians use state-of-the-art technology to extract embedded dirt, stubborn pet stains, and allergens, leaving your home truly pristine.
           </p>
         </div>
 
@@ -73,10 +70,8 @@ const About = () => {
             <h3 className="text-3xl sm:text-4xl font-bold mb-6">
               Why Choose Us?
             </h3>
-            <p className="text-lg sm:text-xl mb-8 opacity-90">
-              We combine traditional Carpet expertise with modern technology to deliver
-              unmatched quality. Our team is trained to handle all types of fabrics and
-              carpets with precision and care.
+            <p className="text-lg sm:text-xl mb-8 opacity-90 leading-relaxed font-light">
+              When it comes to premium upholstery cleaning in London and professional rug cleaning London, we deliver unmatched results. As the top-rated rug cleaning service London residents trust, we seamlessly combine traditional fabric care expertise with modern, high-powered steam extraction technology. Our fully insured team safely handles all complex fabrics—from durable synthetics to most delicate vintage velvets. We prioritize your family's health by using eco-friendly, biodegradable cleaning solutions that are 100% safe for children and pets, guaranteeing an immaculate clean and total peace of mind.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
               <div>
