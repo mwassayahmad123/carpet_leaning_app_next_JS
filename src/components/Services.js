@@ -1,38 +1,38 @@
 import React from 'react';
 
-const SERVICE_VIDEO_SRC = '/videos/vid.mp4';
+const SERVICE_VIDEO_SRC = '/videos/vid.webm';
 
 const Services = () => {
   const services = [
     {
       icon: '💧',
-      title: 'Deep Steam Carpet Cleaning',
-      description: 'Restore your carpets with our powerful Hot Water Extraction service. We go beyond the surface, injecting pressurized heat and eco-friendly solutions to dissolve stubborn dirt, oils, and bacteria. Our high-powered suction removes 95% of moisture and grime, leaving your carpets fresh, sanitized, and soft. Safe for children and pets, it is the perfect solution for allergy sufferers and busy homes.',
+      title: 'Deep Steam Carpet Cleaning London',
+      description: 'Revitalize your home with our premium hot water extraction carpet cleaning across London. We utilize high-powered, eco-friendly steam techniques to deeply penetrate fibres, dissolving entrenched dirt, stubborn allergens, and bacteria. Fast-drying and safe for family and pets, our five-star service leaves your carpets looking immaculate without harmful chemical residues.',
     },
     {
       icon: '🛋️',
-      title: 'Upholstery Cleaning Specialist',
-      description: 'As upholstery cleaning specialists, we provide a deep, restorative clean for sofas, armchairs, and dining chairs. Using fabric-specific methods, we safely remove deep-seated dust, oils, and allergens that regular cleaning cannot reach. Whether it is delicate velvet or durable synthetic, our process lifts stains and neutralizes odors, leaving your furniture looking revived and smelling fresh.',
+      title: 'Professional Upholstery Cleaning',
+      description: 'Breathe new life into your furniture with our bespoke sofa and upholstery cleaning services in London. Whether dealing with delicate velvet or durable synthetics, our certified technicians carefully lift deep-seated body oils, pet dander, and tough stains. We restore your couch\'s original vibrancy and hygiene, ensuring a much healthier environment.',
     },
     {
       icon: '🧶',
-      title: 'Rugs Cleaner',
-      description: 'A quality rug is an investment. Our specialist cleaning process gently removes years of built-up dust and grime while preserving the integrity of the fibers. We specialize in fringe whitening, pet stain removal, and odor neutralization. Using eco-friendly methods, we ensure your rugs return to you looking beautiful, feeling soft, and safe for your family to enjoy.',
+      title: 'Specialist Rug Cleaning Services',
+      description: 'Protect your valuable investments with our expert rug cleaning serving the Greater London area. From antique Persian and delicate Oriental rugs to modern blends, our meticulous fringe-to-fringe washing process safely eliminates embedded dust, pet odours, and harsh stains. Experience a gentle, restorative clean that maintains colour integrity and fabric softness.',
     },
     {
       icon: '🐾',
-      title: 'Pet Stain & Odor Removal',
-      description: 'Love your pets, hate the mess? Our professional Pet Stain & Odor Removal goes beyond the surface to eliminate accidents at the source. We do not just mask smells—we use enzyme-based cleaners to break down stains and neutralize odors for good. Safe for your furry friends and powerful enough for the toughest messes.',
+      title: 'Pet Stain & Odour Removal',
+      description: 'Accidents happen, but our advanced pet stain and odour removal treatments permanently eradicate the evidence. Utilizing specialized enzymatic cleaners, we actively break down urine crystals and bacteria at a microscopic level rather than just masking smells. Safe for your furry companions, our targeted London service guarantees a sanitized, odour-free home.',
     },
     {
       icon: '🛏️',
-      title: 'Mattress Cleaning',
-      description: 'You spend 8 hours a day on your mattress, but when was the last time it was truly cleaned? Over time, mattresses become a playground for things you cannot see: dust mites, dead skin cells, sweat, and allergens. A standard vacuuming is not enough to reach the deep-seated bacteria that affects your health and sleep quality.',
+      title: 'Deep Mattress Sanitization',
+      description: 'The average mattress harbours millions of microscopic dust mites. Our professional mattress deep cleaning in London effectively extracts dead skin cells, potent sweat stains, and allergens that degrade your sleep quality. Using advanced moisture extraction methods, we thoroughly sanitize your bed, promoting better respiratory health and a truly restful night\'s sleep.',
     },
     {
       icon: '🪟',
-      title: 'Curtain Cleaning',
-      description: 'Breathe Fresh Air Back Into Your Home. Curtains act as a giant air filter for your home, trapping dust, pollen, smoke, and pet dander. Over time, these particles build up, causing fabrics to look dull and contributing to poor indoor air quality. Our professional cleaning service removes years of buildup, restoring the color and texture of your window treatments without the risk of shrinkage.',
+      title: 'On-Site Curtain Cleaning',
+      description: 'Curtains act as massive air filters, trapping pollen, city pollution, and dust. Our hassle-free curtain cleaning service in London safely rejuvenates your window dressings, effectively removing years of buildup without the risk of fabric shrinkage. Improve your indoor air quality and bring back the vibrant colours of your drapes with our expert care.',
     },
   ];
 
@@ -60,7 +60,7 @@ const Services = () => {
                 loop
                 playsInline
               >
-                <source src={SERVICE_VIDEO_SRC} type="video/mp4" />
+                <source src={SERVICE_VIDEO_SRC} type="video/webm" />
                 Your browser does not support the video tag.
               </video>
             </div>

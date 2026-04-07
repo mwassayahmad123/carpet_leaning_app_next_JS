@@ -6,39 +6,45 @@ const Reviews = () => {
   const reviews = [
     {
       id: 1,
-      name: 'John Smith',
+      name: 'Oliver Thompson',
       rating: 5,
-      text: 'Excellent service! My carpets came back looking brand new. The team is professional and the turnaround time was amazing.',
+      text: 'Absolutely the best carpet cleaning in London. They removed stains I thought were permanent. Highly professional and efficient service.',
     },
     {
       id: 2,
-      name: 'Emma Davis',
+      name: 'Amelia Jones',
       rating: 5,
-      text: 'I have been using their service for over a year now. Always reliable, always perfect. Highly recommend!',
+      text: 'I needed a professional upholstery cleaning in London for my velvet sofa. The team did a fantastic job, and it looks brand new. 10/10!',
     },
     {
       id: 3,
-      name: 'Robert Johnson',
+      name: 'Muhammad Khan',
       rating: 5,
-      text: 'Best Carpet service in town! The deep steam cleaning saved me during a busy week. Thank you!',
+      text: 'As a business owner, I highly recommend their commercial carpet cleaners London. They worked around our schedule and delivered a deep clean that exceeded expectations.',
     },
     {
       id: 4,
-      name: 'Sophia Martinez',
+      name: 'Olivia Smith',
       rating: 5,
-      text: 'Their upholstery cleaning service is outstanding. My expensive furniture always comes back perfectly cleaned.',
+      text: 'Found the best deep steam cleaning in London! Eco-friendly products and great results. My house feels so much fresher now.',
     },
     {
       id: 5,
-      name: 'Michael Brown',
+      name: 'George Williams',
       rating: 5,
-      text: 'Convenient service. The quality is consistently excellent. Worth every penny!',
+      text: 'Excellent affordable rug cleaning service London. They handled my Persian rugs with extreme care. The best value for money in the city.',
     },
     {
       id: 6,
-      name: 'Olivia Wilson',
+      name: 'Charlotte Brown',
       rating: 5,
-      text: 'Professional, friendly, and efficient. They handle all my delicate rugs with great care.',
+      text: 'Definitely the top-rated carpet cleaners London. Every step from booking to the actual cleaning was seamless. Five-star service!',
+    },
+    {
+      id: 7,
+      name: 'Arthur Taylor',
+      rating: 5,
+      text: 'Fast, reliable, and truly the best service in London for any deep cleaning needs. The technicians are polite and very thorough.',
     },
   ];
 
