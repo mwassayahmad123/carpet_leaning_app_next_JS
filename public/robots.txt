@@ -8,4 +8,4 @@ Disallow: /api/
 Disallow: /_next/
 
 # XML Sitemap
-Sitemap: https://www.yourwebsite.com/sitemap.xml
+Sitemap: https://fivestarcarpetcleaning.co.uk/sitemap.xml
