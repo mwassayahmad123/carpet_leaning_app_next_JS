@@ -230,9 +230,9 @@ const Contact = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="font-semibold mb-1">Email</p>
-                    <a href="mailto:fivestarservicesltduk@gmail.com?subject=Carpet Cleaning Inquiry&body=Hello! I would like to inquire about your carpet cleaning services." className="opacity-90 hover:opacity-100 transition-opacity">
+                    <a href="mailto:fivestarservicesltduk@gmail.com?subject=Carpet Cleaning Inquiry&body=Hello! I would like to inquire about your carpet cleaning services." className="opacity-90 hover:opacity-100 transition-opacity block w-full text-[13px] min-[375px]:text-sm sm:text-base truncate">
                       fivestarservicesltduk@gmail.com
                     </a>
                   </div>
