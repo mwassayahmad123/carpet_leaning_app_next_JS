@@ -45,7 +45,7 @@ const Home = () => {
           </h1>
 
           <p className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto">
-            Top-rated carpet and upholstery deep cleaning across London. Fast, eco-friendly, and five-star reliable.
+            Top-rated, Best Carpet and upholstery deep cleaning across London. Fast, eco-friendly, and five-star reliable.
           </p>
 
           {/* Two Separate Frosted Glass Buttons */}
