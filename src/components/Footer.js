@@ -68,6 +68,7 @@ const Footer = () => {
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 pr-2 pb-1 inline-block">
               FiveStarCarpetCleaning
             </h3>
+            <p className="text-xs text-gray-600 mb-2 tracking-widest uppercase">fivestarcapertservice</p>
             <p className="text-gray-400 mb-4">
               Five-star London carpet & upholstery deep cleaning for exceptional care of your home.
             </p>
@@ -147,7 +148,7 @@ const Footer = () => {
                 <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:fivestarservicesltduk@gmail.com?subject=Carpet Cleaning Inquiry&body=Hello! I would like to inquire about your carpet cleaning services." className="hover:text-white transition-colors">
+                <a href="mailto:fivestarservicesltduk@gmail.com?subject=Carpet Cleaning Inquiry&body=Hello! I would like to inquire about your carpet cleaning services." className="hover:text-white transition-colors block w-full whitespace-nowrap text-[11px] min-[360px]:text-xs sm:text-sm md:text-base tracking-tight">
                   fivestarservicesltduk@gmail.com
                 </a>
               </li>
