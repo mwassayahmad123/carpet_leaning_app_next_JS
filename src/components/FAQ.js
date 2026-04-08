@@ -7,6 +7,10 @@ const FAQ = () => {
 
   const faqs = [
     {
+      question: "Are you really the best carpet cleaning services near me in London?",
+      answer: "That's a fair question to ask, and we'd rather let the results speak than just say yes. What we can tell you is this — we show up on time, we treat your home with respect, and we don't leave until the job is done properly. Our team uses professional-grade hot water extraction equipment, not the kind you can rent from a supermarket. Every job gets a pre-inspection, a fabric-appropriate treatment, and a final walkthrough with you before we pack up. We've built our reputation entirely through word of mouth and genuine reviews from happy customers across London. Whether you're in East London or further out, we're confident you won't need to search again after your first clean with us."
+    },
+    {
       question: "How long until we can walk on the carpets after you've cleaned them?",
       answer: "It really depends on the fabric and how warm your house is. But honestly, if you're looking for the best steam carpet cleaning service that won't leave your floors soaking wet for days, we've got you covered. Thanks to our heavy-duty extraction machines, we pull out the vast majority of the moisture right away. Usually, your carpets will be dry to the touch in about 4 to 6 hours. For thicker fabrics, it might take a bit longer—around 6 to 8 hours. Pro tip: just cracking a window or turning on the heating speeds things up a lot!"
     },

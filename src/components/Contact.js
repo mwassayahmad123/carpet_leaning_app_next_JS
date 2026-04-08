@@ -7,6 +7,7 @@ const Contact = () => {
     name: '',
     phone: '',
     serviceType: '',
+    appointmentDateTime: '',
     message: '',
   });
 
@@ -21,10 +22,15 @@ const Contact = () => {
     e.preventDefault();
     
     // Format message for WhatsApp
+    const dateFormatted = formData.appointmentDateTime 
+      ? new Date(formData.appointmentDateTime).toLocaleString('en-GB', { dateStyle: 'medium', timeStyle: 'short' }) 
+      : 'Not specified';
+      
     const whatsappMessage = `*New Appointment Request*\n\n` +
       `*Name:* ${formData.name}\n` +
       `*Phone:* ${formData.phone}\n` +
       `*Service Type:* ${formData.serviceType || 'Not specified'}\n` +
+      `*Preferred Date/Time:* ${dateFormatted}\n` +
       `*Message:* ${formData.message || 'No message'}\n\n` +
       `_Sent from FiveStarCarpetCleaning Website_`;
 
@@ -43,6 +49,7 @@ const Contact = () => {
       name: '',
       phone: '',
       serviceType: '',
+      appointmentDateTime: '',
       message: '',
     });
 
@@ -131,6 +138,21 @@ const Contact = () => {
               </div>
 
               <div>
+                <label htmlFor="appointmentDateTime" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Preferred Date & Time
+                </label>
+                <input
+                  type="datetime-local"
+                  id="appointmentDateTime"
+                  name="appointmentDateTime"
+                  value={formData.appointmentDateTime}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
+                  suppressHydrationWarning
+                />
+              </div>
+
+              <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
                   Message
                 </label>
@@ -173,7 +195,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Information Card */}
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl shadow-xl p-8 text-white">
+            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl shadow-xl p-5 sm:p-8 text-white overflow-hidden">
               <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
               <div className="space-y-4">
                 <div className="flex items-start space-x-4">
@@ -230,9 +252,9 @@ const Contact = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="font-semibold mb-1">Email</p>
-                    <a href="mailto:fivestarservicesltduk@gmail.com?subject=Carpet Cleaning Inquiry&body=Hello! I would like to inquire about your carpet cleaning services." className="opacity-90 hover:opacity-100 transition-opacity">
+                    <a href="mailto:fivestarservicesltduk@gmail.com?subject=Carpet Cleaning Inquiry&body=Hello! I would like to inquire about your carpet cleaning services." className="opacity-90 hover:opacity-100 transition-opacity block w-full whitespace-nowrap text-[11px] min-[360px]:text-xs min-[400px]:text-sm sm:text-base tracking-tight">
                       fivestarservicesltduk@gmail.com
                     </a>
                   </div>

@@ -8,19 +8,39 @@ import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Five Star Carpet Cleaning',
+  alternateName: ['Five Star Carpet & Upholstery Cleaning', 'Five Star Carpet Cleaning London'],
+  url: 'https://fivestarcarpetcleaning.co.uk/',
+};
+
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
+
 export default function Page() {
   return (
-    <div className="App">
-      <Navbar />
-      <Home />
-      <About />
-      <Services />
-      <Reviews />
-      <Gallery />
-      <FAQ />
-      <Contact />
-      <Footer />
-    </div>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <div className="App">
+        <Navbar />
+        <Home />
+        <About />
+        <Services />
+        <Reviews />
+        <Gallery />
+        <FAQ />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   );
 }
 
