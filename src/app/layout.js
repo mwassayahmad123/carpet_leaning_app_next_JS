@@ -6,11 +6,11 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata = {
   metadataBase: new URL('https://fivestarcarpetcleaning.co.uk'),
   title: {
-    default: 'Five Star Carpet & Upholstery Cleaning London | Deep Clean Experts',
+    default: 'Five Star Carpet & Upholstery Cleaning London | Deep Clean',
     template: '%s | Five Star Carpet Cleaning London',
   },
   description:
-    'Professional carpet cleaning London. Five-star eco-friendly deep steam cleaning for carpets, rugs & upholstery. Book today!',
+    'Looking for professional carpet cleaning in London? We offer five-star eco-friendly deep steam cleaning for carpets, rugs & upholstery. Book your clean today!',
   keywords: [
     'carpet cleaning London',
     'upholstery cleaning London',
@@ -20,19 +20,18 @@ export const metadata = {
     'eco-friendly carpet cleaning',
     'pet stain removal London',
     'mattress cleaning London',
+    'a1carpet cleaning',
+    'fivestarcapertservice',
   ],
   authors: [{ name: 'Five Star Carpet Cleaning' }],
   creator: 'Five Star Carpet Cleaning',
   publisher: 'Five Star Carpet Cleaning',
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
     url: '/',
     siteName: 'Five Star Carpet Cleaning',
-    title: 'Five Star Carpet & Upholstery Cleaning London | Deep Clean Experts',
+    title: 'Five Star Carpet & Upholstery Cleaning London | Deep Clean',
     description:
       'Professional carpet cleaning London. Five-star eco-friendly deep steam cleaning for carpets, rugs & upholstery. Book today!',
     images: [
@@ -46,7 +45,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'Five Star Carpet & Upholstery Cleaning London | Deep Clean Experts',
+    title: 'Five Star Carpet & Upholstery Cleaning London | Deep Clean',
     description:
       'Professional carpet cleaning London. Five-star eco-friendly deep steam cleaning for carpets, rugs & upholstery. Book today!',
     images: ['/logo.webp'],
