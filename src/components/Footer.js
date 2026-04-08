@@ -68,6 +68,7 @@ const Footer = () => {
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 pr-2 pb-1 inline-block">
               FiveStarCarpetCleaning
             </h3>
+            <p className="text-xs text-gray-600 mb-2 tracking-widest uppercase">fivestarcapertservice</p>
             <p className="text-gray-400 mb-4">
               Five-star London carpet & upholstery deep cleaning for exceptional care of your home.
             </p>

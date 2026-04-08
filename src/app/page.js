@@ -16,6 +16,12 @@ const websiteJsonLd = {
   url: 'https://fivestarcarpetcleaning.co.uk/',
 };
 
+export const metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
+
 export default function Page() {
   return (
     <>
