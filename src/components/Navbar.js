@@ -1,28 +1,35 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import logo from './img/logo.webp';
 
 const Navbar = () => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 	const [isVisible, setIsVisible] = useState(true);
-	const [lastScrollY, setLastScrollY] = useState(0);
+	const lastScrollY = useRef(0);
+	const isMobileMenuOpenRef = useRef(false);
+
+	// Keep ref in sync with state so the scroll handler never becomes stale
+	useEffect(() => {
+		isMobileMenuOpenRef.current = isMobileMenuOpen;
+	}, [isMobileMenuOpen]);
+
+	const handleScroll = useCallback(() => {
+		const currentScrollY = window.scrollY;
+		setIsScrolled(currentScrollY > 20);
+		if (currentScrollY > lastScrollY.current && currentScrollY > 100 && !isMobileMenuOpenRef.current) {
+			setIsVisible(false);
+		} else {
+			setIsVisible(true);
+		}
+		lastScrollY.current = currentScrollY;
+	}, []); // stable — no deps change
 
 	useEffect(() => {
-		const handleScroll = () => {
-			const currentScrollY = window.scrollY;
-			setIsScrolled(currentScrollY > 20);
-			if (currentScrollY > lastScrollY && currentScrollY > 100 && !isMobileMenuOpen) {
-				setIsVisible(false);
-			} else {
-				setIsVisible(true);
-			}
-			setLastScrollY(currentScrollY);
-		};
 		window.addEventListener('scroll', handleScroll, { passive: true });
 		return () => window.removeEventListener('scroll', handleScroll);
-	}, [lastScrollY, isMobileMenuOpen]);
+	}, [handleScroll]);
 
 	const scrollToSection = (sectionId) => {
 		const element = document.getElementById(sectionId);
@@ -50,9 +57,12 @@ const Navbar = () => {
 
 	return (
 		<div
-			className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 bg-white shadow-md ${
-				isVisible ? 'translate-y-0' : '-translate-y-full'
-			}`}
+			className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-md`}
+			style={{
+				transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
+				transition: 'transform 0.25s ease',
+				willChange: 'transform',
+			}}
 		>
 			<nav className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
@@ -92,13 +102,27 @@ const Navbar = () => {
 							<span className="sm:hidden">Book Now</span>
 						</button>
 
-						{/* Mobile hamburger */}
+						{/* Mobile hamburger — touch-optimized */}
 						<button
-							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-							className="lg:hidden text-gray-700 hover:text-gray-900 focus:outline-none p-2 rounded-md hover:bg-gray-100 transition-colors"
+							onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+							className="lg:hidden flex items-center justify-center text-gray-700 hover:text-gray-900 focus:outline-none p-2 rounded-md hover:bg-gray-100"
 							aria-label="Toggle menu"
+							style={{
+								WebkitTapHighlightColor: 'transparent',
+								touchAction: 'manipulation',
+								cursor: 'pointer',
+							}}
 						>
-							<svg className="w-6 h-6" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" stroke="currentColor">
+							<svg
+								className="w-6 h-6"
+								fill="none"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+								strokeWidth="2"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								style={{ transition: 'transform 0.2s ease' }}
+							>
 								{isMobileMenuOpen ? (
 									<path d="M6 18L18 6M6 6l12 12" />
 								) : (
@@ -109,14 +133,25 @@ const Navbar = () => {
 					</div>
 				</div>
 
-				{/* Mobile Dropdown Menu */}
-				<div className={`lg:hidden border-t border-gray-100 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-					<div className="pt-2 pb-4 space-y-1">
+				{/* Mobile Dropdown Menu — smooth slide */}
+				<div
+					className="lg:hidden overflow-hidden"
+					style={{
+						maxHeight: isMobileMenuOpen ? '420px' : '0px',
+						transition: 'max-height 0.25s ease',
+						willChange: 'max-height',
+					}}
+				>
+					<div className="border-t border-gray-100 pt-2 pb-4 space-y-1">
 						{menuItems.map((item) => (
 							<button
 								key={item.id}
 								onClick={() => scrollToSection(item.id)}
 								className="block w-full text-left font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 py-3 px-2 rounded-md transition-colors"
+								style={{
+									WebkitTapHighlightColor: 'transparent',
+									touchAction: 'manipulation',
+								}}
 							>
 								{item.label}
 							</button>
