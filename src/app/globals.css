@@ -2,10 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* Ensure animations only use GPU-composited properties */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -17,11 +20,21 @@ body {
   scroll-behavior: smooth;
   background-color: #0d1117;
   color: #ffffff;
+  /* Prevent layout jank during scroll */
+  overscroll-behavior-y: none;
+  /* Remove 300ms tap delay on touchscreen globally */
+  touch-action: pan-x pan-y;
+  /* iOS momentum scrolling */
+  -webkit-overflow-scrolling: touch;
+  /* GPU layer hint for the whole page */
+  transform: translateZ(0);
 }
 
 html {
   scroll-behavior: smooth;
   background-color: #0d1117;
+  /* Adaptive high refresh rate scrolling — works on 60Hz and 120Hz displays */
+  scroll-padding-top: 4rem;
 }
 
 /* Custom scrollbar */
@@ -40,6 +53,44 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* ─── Interactive Elements — instant tap response ─── */
+button, a, [role="button"] {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+
+/* ─── Smooth transitions — GPU composited only ─── */
+/* Only animate transform & opacity — these NEVER cause layout reflow */
+.transition-gpu {
+  transition-property: transform, opacity;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ─── Section containment — isolates paint & layout per section ─── */
+section {
+  contain: layout style;
+}
+
+/* ─── Respect user's motion preference ─── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── Images: prevent layout shift ─── */
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 /* 3D Perspective for Reviews Carousel */

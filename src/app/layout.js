@@ -1,7 +1,21 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',       // Show text immediately with fallback font — avoids invisible text
+  preload: true,         // Preload font files for faster first paint
+  variable: '--font-inter',
+});
+
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,           // Allow pinch-to-zoom for accessibility
+  viewportFit: 'cover',      // Safe area on notched devices
+  themeColor: '#0d1117',     // Match dark bg — prevents white flash on load
+};
 
 export const metadata = {
   metadataBase: new URL('https://fivestarcarpetcleaning.co.uk'),
@@ -39,6 +53,11 @@ export const metadata = {
   authors: [{ name: 'Five Star Carpet Cleaning' }],
   creator: 'Five Star Carpet Cleaning',
   publisher: 'Five Star Carpet Cleaning',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
@@ -78,7 +97,11 @@ export const metadata = {
     icon: '/logo.webp',
     apple: '/logo.webp',
   },
+  verification: {
+    google: 'YOUR_GOOGLE_VERIFICATION_CODE_HERE', // TODO: User needs to replace this
+  },
 };
+
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -126,6 +149,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* DNS prefetch for external resources */}
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
