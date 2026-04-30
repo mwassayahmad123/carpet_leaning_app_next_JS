@@ -9,14 +9,6 @@ const inter = Inter({
 });
 
 
-export const viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  maximumScale: 5,           // Allow pinch-to-zoom for accessibility
-  viewportFit: 'cover',      // Safe area on notched devices
-  themeColor: '#0d1117',     // Match dark bg — prevents white flash on load
-};
-
 export const metadata = {
   metadataBase: new URL('https://fivestarcarpetcleaning.co.uk'),
   title: {
@@ -53,11 +45,6 @@ export const metadata = {
   authors: [{ name: 'Five Star Carpet Cleaning' }],
   creator: 'Five Star Carpet Cleaning',
   publisher: 'Five Star Carpet Cleaning',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
@@ -97,9 +84,15 @@ export const metadata = {
     icon: '/logo.webp',
     apple: '/logo.webp',
   },
-  verification: {
-    google: 'YOUR_GOOGLE_VERIFICATION_CODE_HERE', // TODO: User needs to replace this
-  },
+};
+
+// Viewport: enables high-refresh-rate rendering on 120Hz devices
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,           // Allow pinch-to-zoom for accessibility
+  viewportFit: 'cover',      // Safe area on notched devices
+  themeColor: '#0d1117',     // Match dark bg — prevents white flash on load
 };
 
 

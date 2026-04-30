@@ -78,7 +78,28 @@ const Gallery = () => {
     },
   ];
 
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  
+  React.useEffect(() => {
+    if (selectedIndex !== null) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedIndex]);
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+    setSelectedIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    setSelectedIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
 
   return (
     <section id="gallery" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -97,7 +118,7 @@ const Gallery = () => {
             <div
               key={image.id}
               className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105"
-              onClick={() => setSelectedImage(image)}
+              onClick={() => setSelectedIndex(index)}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="aspect-square overflow-hidden">
@@ -118,40 +139,65 @@ const Gallery = () => {
       </div>
 
       {/* Image Modal */}
-      {selectedImage && (
+      {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-[100] bg-black/95 flex flex-col items-center justify-center animate-fade-in"
+          onClick={() => setSelectedIndex(null)}
         >
-          <div className="relative max-w-5xl max-h-[90vh]">
+          {/* Close Button on Screen Frame */}
+          <button
+            onClick={() => setSelectedIndex(null)}
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-3 transition-colors z-[110]"
+            aria-label="Close"
+          >
+            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Previous Button on Screen Frame */}
+          <button
+            onClick={(e) => { e.stopPropagation(); handlePrev(e); }}
+            className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-4 transition-colors z-[110] hidden sm:block"
+            aria-label="Previous"
+          >
+            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+
+          {/* Next Button on Screen Frame */}
+          <button
+            onClick={(e) => { e.stopPropagation(); handleNext(e); }}
+            className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-4 transition-colors z-[110] hidden sm:block"
+            aria-label="Next"
+          >
+            <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          {/* Image and Title Wrapper */}
+          <div 
+            className="flex flex-col items-center justify-center animate-scale-in max-w-[90vw] md:max-w-[85vw]"
+            onClick={(e) => e.stopPropagation()}
+          >
             <img
-              src={selectedImage.src}
-              alt={selectedImage.title}
-              className="max-w-full max-h-[90vh] object-contain rounded-lg"
+              src={images[selectedIndex].src}
+              alt={images[selectedIndex].title}
+              className="max-h-[70vh] md:max-h-[80vh] w-auto object-contain rounded-lg select-none shadow-2xl"
             />
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors"
-              aria-label="Close"
-            >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-            <div className="absolute bottom-4 left-4 right-4 text-white bg-black/50 rounded-lg p-4">
-              <h3 className="text-xl font-semibold">{selectedImage.title}</h3>
+            
+            {/* Title Below Image */}
+            <div className="mt-6 text-center z-[110] text-white">
+              <h3 className="text-xl md:text-2xl font-bold tracking-wide">{images[selectedIndex].title}</h3>
+              <p className="text-sm md:text-base text-gray-400 mt-2 font-medium">{selectedIndex + 1} / {images.length}</p>
             </div>
           </div>
+
+          {/* Mobile navigation overlays for easy swiping/tapping */}
+          <div className="absolute inset-y-0 left-0 w-1/3 sm:hidden z-[105]" onClick={(e) => { e.stopPropagation(); handlePrev(e); }}></div>
+          <div className="absolute inset-y-0 right-0 w-1/3 sm:hidden z-[105]" onClick={(e) => { e.stopPropagation(); handleNext(e); }}></div>
         </div>
       )}
     </section>

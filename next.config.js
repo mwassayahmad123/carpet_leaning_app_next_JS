@@ -30,7 +30,6 @@ const nextConfig = {
       {
         source: '/(.*)',
         headers: [
-          { key: 'X-Robots-Tag', value: 'index, follow' },
           // Prevent content-type sniffing (security + perf)
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           // Hint to browser: use high-refresh-rate rendering when available
@@ -62,3 +61,4 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+
