@@ -7,32 +7,32 @@ const Services = () => {
     {
       icon: '💧',
       title: 'Deep Steam Carpet Cleaning London',
-      description: 'Revitalize your home with our premium hot water extraction carpet cleaning across London. We utilize high-powered, eco-friendly steam techniques to deeply penetrate fibres, dissolving entrenched dirt, stubborn allergens, and bacteria. Fast-drying and safe for family and pets, our five-star service leaves your carpets looking immaculate without harmful chemical residues.',
+      description: 'Our professional carpet cleaners in London utilize high-powered, eco-friendly steam techniques. Whether you need a quick refresh or deep soil extraction, we offer the best carpet cleaners in London to leave your floors immaculate and allergen-free.',
     },
     {
       icon: '🛋️',
-      title: 'Professional Upholstery Cleaning',
-      description: 'Breathe new life into your furniture with our bespoke sofa and upholstery cleaning services in London. Whether dealing with delicate velvet or durable synthetics, our certified technicians carefully lift deep-seated body oils, pet dander, and tough stains. We restore your couch\'s original vibrancy and hygiene, ensuring a much healthier environment.',
+      title: 'Upholstery Cleaning London – Sofas, Chairs & More',
+      description: 'Looking for top-tier sofa cleaning London residents trust? We breathe new life into your furniture. Our certified technicians carefully lift deep-seated body oils and tough stains, restoring your couch\'s original vibrancy and ensuring a much healthier environment.',
     },
     {
       icon: '🧶',
-      title: 'Specialist Rug Cleaning Services',
-      description: 'Protect your valuable investments with our expert rug cleaning serving the Greater London area. From antique Persian and delicate Oriental rugs to modern blends, our meticulous fringe-to-fringe washing process safely eliminates embedded dust, pet odours, and harsh stains. Experience a gentle, restorative clean that maintains colour integrity and fabric softness.',
+      title: 'Expert Rug Cleaning London',
+      description: 'Protect your valuable investments with our specialist rug cleaning London service. From antique Persian and delicate Oriental rugs to modern blends, our meticulous process safely eliminates embedded dust and harsh stains while maintaining fabric softness.',
     },
     {
-      icon: '🐾',
-      title: 'Pet Stain & Odour Removal',
-      description: 'Accidents happen, but our advanced pet stain and odour removal treatments permanently eradicate the evidence. Utilizing specialized enzymatic cleaners, we actively break down urine crystals and bacteria at a microscopic level rather than just masking smells. Safe for your furry companions, our targeted London service guarantees a sanitized, odour-free home.',
+      icon: '🏢',
+      title: 'Commercial Carpet Cleaning London',
+      description: 'Maintain a pristine professional environment with our commercial carpet cleaning London services. We work around your business hours to provide deep, effective cleaning for offices, retail spaces, and commercial properties without disrupting your workflow.',
     },
     {
       icon: '🛏️',
-      title: 'Deep Mattress Sanitization',
-      description: 'The average mattress harbours millions of microscopic dust mites. Our professional mattress deep cleaning in London effectively extracts dead skin cells, potent sweat stains, and allergens that degrade your sleep quality. Using advanced moisture extraction methods, we thoroughly sanitize your bed, promoting better respiratory health and a truly restful night\'s sleep.',
+      title: 'Mattress Cleaning London',
+      description: 'Improve your sleep quality with our professional mattress cleaning London service. We effectively extract dead skin cells, potent sweat stains, and allergens. Using advanced moisture extraction methods, we thoroughly sanitize your bed for better respiratory health.',
     },
     {
-      icon: '🪟',
-      title: 'On-Site Curtain Cleaning',
-      description: 'Curtains act as massive air filters, trapping pollen, city pollution, and dust. Our hassle-free curtain cleaning service in London safely rejuvenates your window dressings, effectively removing years of buildup without the risk of fabric shrinkage. Improve your indoor air quality and bring back the vibrant colours of your drapes with our expert care.',
+      icon: '🔑',
+      title: 'End of Tenancy Carpet Cleaning London',
+      description: 'Secure your deposit with our reliable end of tenancy carpet cleaning London service. We provide thorough, landlord-approved deep cleaning that removes stubborn stains and odours, leaving the property in pristine condition for the next tenants.',
     },
   ];
 

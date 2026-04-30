@@ -4,6 +4,7 @@ import About from '../components/About';
 import Services from '../components/Services';
 import Reviews from '../components/Reviews';
 import Gallery from '../components/Gallery';
+import Catalog from '../components/Catalog';
 import FAQ from '../components/FAQ';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -18,7 +19,7 @@ const websiteJsonLd = {
 
 export const metadata = {
   alternates: {
-    canonical: '/',
+    canonical: 'https://fivestarcarpetcleaning.co.uk/',
   },
 };
 
@@ -36,6 +37,7 @@ export default function Page() {
         <Services />
         <Reviews />
         <Gallery />
+        <Catalog />
         <FAQ />
         <Contact />
         <Footer />

@@ -38,14 +38,14 @@ const Home = () => {
         <div className="max-w-4xl mx-auto">
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Five Star Carpet Cleaning Service
+            Professional Carpet Cleaning London
             <span className="block text-3xl sm:text-4xl lg:text-5xl mt-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-              You Can Trust
+              Homeowners Rely On
             </span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto">
-            Top-rated carpet and upholstery deep cleaning across London. Fast, eco-friendly, and five-star reliable.
+            We provide professional carpet cleaning London homeowners rely on, using eco-friendly products that are safe for children and pets.
           </p>
 
           {/* Two Separate Frosted Glass Buttons */}
@@ -84,5 +84,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
