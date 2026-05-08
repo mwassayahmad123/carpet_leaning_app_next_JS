@@ -39,7 +39,7 @@ export const metadata = {
     'sofa and upholstery cleaning',
     'deep clean carpet services',
     'stair carpet cleaning London',
-    'office carpet cleaning London'
+    'office carpet cleaning London',
   ],
   category: 'cleaning service',
   authors: [{ name: 'Five Star Carpet Cleaning' }],

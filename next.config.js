@@ -10,9 +10,6 @@ const nextConfig = {
   compress: true,
 
   images: {
-    // Avoid 502 on /_next/image when the host image optimizer is unavailable or misconfigured
-    // (common on some Netlify / serverless setups). Images load as normal static URLs instead.
-    unoptimized: true,
     qualities: [75, 90],
     // Lazy-load images by default (reduces initial paint cost)
     formats: ['image/avif', 'image/webp'],
@@ -26,7 +23,7 @@ const nextConfig = {
 
   async headers() {
     return [
-      // SEO: allow all crawlers
+      // SEO and Security headers
       {
         source: '/(.*)',
         headers: [
@@ -34,6 +31,8 @@ const nextConfig = {
           { key: 'X-Content-Type-Options', value: 'nosniff' },
           // Hint to browser: use high-refresh-rate rendering when available
           { key: 'Vary', value: 'Accept-Encoding' },
+          // SEO: allow all crawlers
+          { key: 'X-Robots-Tag', value: 'index, follow' },
         ],
       },
       // Long-term cache for all static assets (_next/static)
@@ -61,4 +60,3 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
-
