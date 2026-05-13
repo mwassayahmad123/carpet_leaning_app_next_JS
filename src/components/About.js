@@ -51,9 +51,10 @@ const About = () => {
     <section id="about" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
             About Five Star Carpet Cleaning London
           </h2>
+          <div className="section-divider mb-6" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Five Star Carpet Cleaning is a local London carpet cleaning company based in E11, serving homes, landlords and businesses across East and South East London. We provide eco-friendly hot water extraction for carpets, rugs, upholstery and mattresses, helping remove everyday dirt, allergens, pet odours and stubborn stains from busy UK homes.
           </p>

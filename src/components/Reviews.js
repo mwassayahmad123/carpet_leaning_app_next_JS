@@ -88,9 +88,10 @@ const Reviews = () => {
     <section id="reviews" className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
             London Customer Reviews
           </h2>
+          <div className="section-divider mb-6" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             See what local customers say about our carpet, rug and upholstery cleaning services
           </p>

@@ -1,11 +1,20 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
-  display: 'swap',       // Show text immediately with fallback font — avoids invisible text
-  preload: true,         // Preload font files for faster first paint
+  display: 'swap',
+  preload: true,
   variable: '--font-inter',
+});
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  variable: '--font-playfair',
+  weight: ['400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
 });
 
 const searchEngineVerification = {
@@ -234,7 +243,7 @@ export default function RootLayout({ children }) {
           suppressHydrationWarning
         />
       </head>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={`${inter.variable} ${playfair.variable}`} suppressHydrationWarning>
         {children}
       </body>
     </html>

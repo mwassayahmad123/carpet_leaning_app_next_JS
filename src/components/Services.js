@@ -47,9 +47,10 @@ const Services = () => {
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
             Carpet Cleaning Services in London
           </h2>
+          <div className="section-divider mb-6" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Carpet, upholstery, rug, mattress and end of tenancy cleaning for London homes and businesses
           </p>
@@ -87,7 +88,7 @@ const Services = () => {
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">{service.title}</h3>
               <p className="text-gray-600 leading-relaxed">{service.description}</p>
               <div className="mt-6 pt-4 border-t border-gray-200">
-                <a href="#contact" className="text-blue-600 font-semibold hover:text-purple-600 transition-colors duration-200 flex items-center group-hover:translate-x-2 transition-transform duration-300">
+                <a href="#contact" className="text-blue-600 font-semibold hover:text-purple-600 flex items-center group-hover:translate-x-2 transition-all duration-300">
                   Learn More
                   <svg
                     className="w-5 h-5 ml-2"

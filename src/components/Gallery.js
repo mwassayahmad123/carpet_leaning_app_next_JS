@@ -80,9 +80,10 @@ const Gallery = () => {
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [isClosing, setIsClosing] = useState(false);
   const heading = useScrollReveal();
   const grid = useScrollReveal({ threshold: 0.05 });
-  
+
   React.useEffect(() => {
     if (selectedIndex !== null) {
       document.body.style.overflow = 'hidden';
@@ -93,6 +94,15 @@ const Gallery = () => {
       document.body.style.overflow = 'unset';
     };
   }, [selectedIndex]);
+
+  const closeModal = () => {
+    setIsClosing(true);
+    // Match the exit animation duration in globals.css (modalImageOut 0.28s)
+    setTimeout(() => {
+      setSelectedIndex(null);
+      setIsClosing(false);
+    }, 280);
+  };
 
   const handleNext = (e) => {
     e.stopPropagation();
@@ -108,9 +118,10 @@ const Gallery = () => {
     <section id="gallery" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
             Carpet Cleaning Gallery
           </h2>
+          <div className="section-divider mb-6" />
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             See examples of our carpet, rug, upholstery and stair cleaning work across London
           </p>
@@ -144,13 +155,13 @@ const Gallery = () => {
       {/* Image Modal */}
       {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/95 flex flex-col items-center justify-center animate-fade-in"
-          onClick={() => setSelectedIndex(null)}
+          className={`fixed inset-0 z-[100] bg-black/95 flex flex-col items-center justify-center ${isClosing ? 'animate-fade-out' : 'animate-fade-in'}`}
+          onClick={closeModal}
         >
           {/* Close Button on Screen Frame */}
           <button
-            onClick={() => setSelectedIndex(null)}
-            className="absolute top-4 right-4 md:top-8 md:right-8 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-3 transition-colors z-[110]"
+            onClick={closeModal}
+            className={`absolute top-4 right-4 md:top-8 md:right-8 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-3 transition-colors z-[110] ${isClosing ? '' : 'animate-nav-in'}`}
             aria-label="Close"
           >
             <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -161,7 +172,7 @@ const Gallery = () => {
           {/* Previous Button on Screen Frame */}
           <button
             onClick={(e) => { e.stopPropagation(); handlePrev(e); }}
-            className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-4 transition-colors z-[110] hidden sm:block"
+            className={`absolute left-2 md:left-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-4 transition-colors z-[110] hidden sm:block ${isClosing ? '' : 'animate-nav-in nav-side'}`}
             aria-label="Previous"
           >
             <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -172,7 +183,7 @@ const Gallery = () => {
           {/* Next Button on Screen Frame */}
           <button
             onClick={(e) => { e.stopPropagation(); handleNext(e); }}
-            className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-4 transition-colors z-[110] hidden sm:block"
+            className={`absolute right-2 md:right-8 top-1/2 -translate-y-1/2 text-white bg-white/10 hover:bg-white/20 rounded-full p-2 md:p-4 transition-colors z-[110] hidden sm:block ${isClosing ? '' : 'animate-nav-in nav-side'}`}
             aria-label="Next"
           >
             <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -180,9 +191,10 @@ const Gallery = () => {
             </svg>
           </button>
 
-          {/* Image and Title Wrapper */}
-          <div 
-            className="flex flex-col items-center justify-center animate-scale-in max-w-[90vw] md:max-w-[85vw]"
+          {/* Image and Title Wrapper — re-keyed on index so swap re-animates */}
+          <div
+            key={selectedIndex}
+            className={`flex flex-col items-center justify-center max-w-[90vw] md:max-w-[85vw] ${isClosing ? 'animate-scale-out' : 'animate-scale-in'}`}
             onClick={(e) => e.stopPropagation()}
           >
             <img
@@ -190,9 +202,9 @@ const Gallery = () => {
               alt={images[selectedIndex].title}
               className="max-h-[70vh] md:max-h-[80vh] w-auto object-contain rounded-lg select-none shadow-2xl"
             />
-            
+
             {/* Title Below Image */}
-            <div className="mt-6 text-center z-[110] text-white">
+            <div className={`mt-6 text-center z-[110] text-white ${isClosing ? '' : 'animate-title-in'}`}>
               <h3 className="text-xl md:text-2xl font-bold tracking-wide">{images[selectedIndex].title}</h3>
               <p className="text-sm md:text-base text-gray-400 mt-2 font-medium">{selectedIndex + 1} / {images.length}</p>
             </div>

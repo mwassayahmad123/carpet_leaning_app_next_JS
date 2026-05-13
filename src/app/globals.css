@@ -12,20 +12,32 @@
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
   background-color: #0d1117;
   color: #ffffff;
-  /* Prevent layout jank during scroll */
+  line-height: 1.75;
   overscroll-behavior-y: none;
-  /* Remove 300ms tap delay on touchscreen globally */
   touch-action: pan-x pan-y;
-  /* iOS momentum scrolling */
   -webkit-overflow-scrolling: touch;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-playfair), Georgia, 'Times New Roman', serif;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Decorative gradient underline for section headings */
+.section-divider {
+  width: 3.5rem;
+  height: 3px;
+  background: linear-gradient(to right, #2563eb, #9333ea);
+  margin: 0.75rem auto 0;
+  border-radius: 9999px;
 }
 
 html {
@@ -212,5 +224,160 @@ img, video {
 
 .perspective-1000 > * {
   transform-style: preserve-3d;
+}
+
+/* ─── Blur-up reveal — premium feel for hero/featured sections ─── */
+.reveal-blur-up {
+  opacity: 0;
+  transform: translateY(30px);
+  filter: blur(12px);
+  will-change: transform, opacity, filter;
+}
+.reveal-blur-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.9s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Vacuum Man Widget — floating WhatsApp CTA character
+   ═══════════════════════════════════════════════════════════ */
+
+@keyframes vmBob {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+@keyframes vmPush {
+  0%, 100% { transform: translateX(0px); }
+  50%       { transform: translateX(-5px); }
+}
+@keyframes vmDust {
+  0%   { opacity: 0.9; transform: translate(0, 0) scale(1); }
+  100% { opacity: 0;   transform: translate(5px, -16px) scale(0.1); }
+}
+@keyframes vmCardPop {
+  0%, 100% { box-shadow: 0 4px 24px rgba(37,99,235,0.12); }
+  50%       { box-shadow: 0 10px 40px rgba(37,99,235,0.3); }
+}
+
+.vm-body { animation: vmBob 1s ease-in-out infinite; }
+.vm-push { animation: vmPush 1s ease-in-out infinite; }
+.vm-d1   { animation: vmDust 1.4s ease-in infinite 0s; }
+.vm-d2   { animation: vmDust 1.4s ease-in infinite 0.35s; }
+.vm-d3   { animation: vmDust 1.4s ease-in infinite 0.7s; }
+.vm-card { animation: vmCardPop 3s ease-in-out infinite; }
+.vm-card:hover {
+  animation: none;
+  transform: scale(1.12);
+  box-shadow: 0 12px 48px rgba(37,99,235,0.35);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   Image Modal — Lightbox open / close animations
+   ═══════════════════════════════════════════════════════════ */
+
+/* Backdrop: fade in + progressive blur */
+@keyframes modalBackdropIn {
+  from {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  to {
+    opacity: 1;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+@keyframes modalBackdropOut {
+  from {
+    opacity: 1;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  to {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+}
+.animate-fade-in {
+  animation: modalBackdropIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.animate-fade-out {
+  animation: modalBackdropOut 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+/* Image: scale + lift + unblur — like the photo is rising out of the page */
+@keyframes modalImageIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.85) translateY(24px);
+    filter: blur(10px);
+  }
+  60% {
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+@keyframes modalImageOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+}
+.animate-scale-in {
+  animation: modalImageIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+.animate-scale-out {
+  animation: modalImageOut 0.28s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+/* Title: slides up after image lands */
+@keyframes modalTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-title-in {
+  opacity: 0;
+  animation: modalTitleIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+
+/* Nav / close buttons: fade in after image */
+@keyframes modalNavIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.animate-nav-in {
+  opacity: 0;
+  animation: modalNavIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+/* Keep vertical centering for prev/next while animating in */
+.animate-nav-in.nav-side {
+  animation-name: modalNavSideIn;
+}
+@keyframes modalNavSideIn {
+  from { opacity: 0; transform: translateY(-50%) scale(0.8); }
+  to   { opacity: 1; transform: translateY(-50%) scale(1); }
 }
 

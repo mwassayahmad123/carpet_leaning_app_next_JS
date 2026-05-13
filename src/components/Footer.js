@@ -69,25 +69,28 @@ const Footer = () => {
         <div ref={grid.ref} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 reveal-stagger ${grid.isVisible ? 'revealed' : ''}`}>
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 pr-2 pb-1 inline-block">
+            <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 pr-2 pb-1 inline-block font-playfair">
               Five Star Carpet Cleaning
             </h3>
             <p className="text-gray-400 mb-4">
               Professional London carpet, rug, mattress and upholstery cleaning for homes, landlords and businesses.
             </p>
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
-                  aria-label={social.name}
-                >
-                  {social.icon}
-                </a>
-              ))}
+              {socialLinks.map((social) => {
+                const hasUrl = social.url && social.url !== '#';
+                return hasUrl ? (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-blue-400 transition-colors duration-200"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </a>
+                ) : null;
+              })}
             </div>
           </div>
 

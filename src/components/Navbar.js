@@ -81,7 +81,7 @@ const Navbar = () => {
 							alt="Five Star Carpet Cleaning London logo"
 							className="h-10 w-auto object-contain"
 						/>
-						<span className="text-xl font-bold text-gray-900 hidden sm:block whitespace-nowrap">
+						<span className="text-xl font-bold text-gray-900 hidden sm:block whitespace-nowrap font-playfair">
 							Five Star Carpet Cleaning
 						</span>
 					</a>

@@ -39,9 +39,10 @@ const FAQ = () => {
     <section id="faq" className="py-20 bg-gray-50 border-t border-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-2">
             Carpet Cleaning London FAQs
           </h2>
+          <div className="section-divider mb-8" />
           <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
             Helpful answers about professional carpet, upholstery, rug and mattress cleaning for London homes and businesses.
           </p>
