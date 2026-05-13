@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const Footer = () => {
   const scrollToSection = (sectionId) => {
@@ -16,7 +17,7 @@ const Footer = () => {
     { id: 'services', label: 'Services' },
     { id: 'reviews', label: 'Reviews' },
     { id: 'gallery', label: 'Gallery' },
-    { id: 'area-covered', label: 'Area Covered' },
+    { id: 'area-covered', label: 'Areas Covered' },
     { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Contact' },
   ];
@@ -60,18 +61,19 @@ const Footer = () => {
     },
   ];
 
+  const grid = useScrollReveal({ threshold: 0.1 });
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div ref={grid.ref} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8 reveal-stagger ${grid.isVisible ? 'revealed' : ''}`}>
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-4 pr-2 pb-1 inline-block">
-              FiveStarCarpetCleaning
+              Five Star Carpet Cleaning
             </h3>
-            <p className="text-xs text-gray-600 mb-2 tracking-widest uppercase">fivestarcapertservice</p>
             <p className="text-gray-400 mb-4">
-              Five-star London carpet & upholstery deep cleaning for exceptional care of your home.
+              Professional London carpet, rug, mattress and upholstery cleaning for homes, landlords and businesses.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
@@ -95,12 +97,16 @@ const Footer = () => {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
-                  <button
-                    onClick={() => scrollToSection(link.id)}
+                  <a
+                    href={`#${link.id}`}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      scrollToSection(link.id);
+                    }}
                     className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     {link.label}
-                  </button>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -110,12 +116,12 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Deep Steam Carpet Cleaning</li>
-              <li>Upholstery Cleaning Specialist</li>
-              <li>Rugs Cleaner</li>
-              <li>Pet Stain & Odor Removal</li>
-              <li>Mattress Cleaning</li>
-              <li>Curtain Cleaning</li>
+              <li>Steam Carpet Cleaning London</li>
+              <li>Upholstery & Sofa Cleaning London</li>
+              <li>Rug Cleaning London</li>
+              <li>Pet Stain & Odour Removal</li>
+              <li>Mattress Cleaning London</li>
+              <li>End of Tenancy Carpet Cleaning</li>
             </ul>
           </div>
 
@@ -142,14 +148,14 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <a href="tel:+447871062227" className="hover:text-white transition-colors">
-                  +447871062227
+                  +44 7871 062227
                 </a>
               </li>
               <li className="flex items-center space-x-3">
                 <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <a href="mailto:fivestarservicesltduk@gmail.com?subject=Carpet Cleaning Inquiry&body=Hello! I would like to inquire about your carpet cleaning services." className="hover:text-white transition-colors block w-full whitespace-nowrap text-[11px] min-[360px]:text-xs sm:text-sm md:text-base tracking-tight">
+                <a href="mailto:fivestarservicesltduk@gmail.com?subject=Carpet Cleaning London Inquiry&body=Hello! I would like to inquire about your carpet cleaning services in London." className="hover:text-white transition-colors block w-full whitespace-nowrap text-[11px] min-[360px]:text-xs sm:text-sm md:text-base tracking-tight">
                   fivestarservicesltduk@gmail.com
                 </a>
               </li>
@@ -159,7 +165,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} FiveStarCarpetCleaning. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Five Star Carpet Cleaning. All rights reserved.</p>
         </div>
       </div>
     </footer>

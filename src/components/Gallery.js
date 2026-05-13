@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 import img1 from "./img/1.webp"; 
 import img2 from "./img/2.webp"; 
 import img3 from "./img/3.webp"; 
@@ -19,66 +20,68 @@ const Gallery = () => {
     {
       id: 1,
       src: img1.src,
-      title: 'Modern Carpet Facility',
+      title: 'Carpet Cleaning Equipment in London',
     },
     {
       id: 2,
       src: img2.src,
-      title: 'State-of-the-Art Equipment',
+      title: 'Professional Steam Carpet Cleaning',
     },
     {
       id: 3,
       src: img3.src,
-      title: 'Professional Carpet Cleaning',
+      title: 'London Carpet Cleaning Results',
     },
     {
       id: 4,
       src: img4.src,
-      title: 'Quality Control Area',
+      title: 'Deep Carpet Stain Treatment',
     },
     {
       id: 5,
       src: img5.src,
-      title: 'Carpet Treatment Station',
+      title: 'Upholstery Cleaning Service',
     },
     {
       id: 6,
       src: img6.src,
-      title: 'Cleaning & Maintenance Area',
+      title: 'Rug Cleaning and Maintenance',
     },
     {
       id: 7,
       src: img7.src,
-      title: 'Premium Care Section',
+      title: 'Premium Carpet Care',
     },
     {
       id: 8,
       src: img8.src,
-      title: 'Storage & Organization',
+      title: 'Organised Cleaning Equipment',
     },
     {
       id: 9,
       src: img9.src,
-      title: 'Professional Service Area',
+      title: 'Professional Cleaning Service Area',
     },
     {
       id: 10,
       src: img10.src,
-      title: 'Advanced Carpet Care',
+      title: 'Advanced Carpet Care London',
     },
     {
       id: 11,
       src: img11.src,
-      title: 'TV Lounge',
+      title: 'Home Upholstery Cleaning',
     },
     {
       id: 12,
       src: img12.src,
-      title: 'Stairs Cleaning',
+      title: 'Stair Carpet Cleaning London',
     },
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const heading = useScrollReveal();
+  const grid = useScrollReveal({ threshold: 0.05 });
   
   React.useEffect(() => {
     if (selectedIndex !== null) {
@@ -104,16 +107,16 @@ const Gallery = () => {
   return (
     <section id="gallery" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Our Gallery
+            Carpet Cleaning Gallery
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Take a look at our modern facilities and professional workspace
+            See examples of our carpet, rug, upholstery and stair cleaning work across London
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div ref={grid.ref} className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger ${grid.isVisible ? 'revealed' : ''}`}>
           {images.map((image, index) => (
             <div
               key={image.id}

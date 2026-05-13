@@ -1,50 +1,53 @@
 "use client";
 
 import React, { useState } from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const heading = useScrollReveal();
+  const items = useScrollReveal({ threshold: 0.1 });
 
   const faqs = [
     {
-      question: "Are you really the best carpet cleaning services in London?",
-      answer: "That's a fair question to ask, and we'd rather let the results speak than just say yes. What we can tell you is this — we show up on time, we treat your home with respect, and we don't leave until the job is done properly. Our team uses professional-grade hot water extraction equipment, not the kind you can rent from a supermarket. Every job gets a pre-inspection, a fabric-appropriate treatment, and a final walkthrough with you before we pack up. We've built our reputation entirely through word of mouth and genuine reviews from happy customers across London. Whether you're in East London or further out, we're confident you won't need to search for 'carpet cleaning near me' again after your first clean with us."
+      question: "Do you provide carpet cleaning across London, UK?",
+      answer: "Yes. We provide professional carpet cleaning across London, with regular appointments in East and South East London including Leyton, Leytonstone, Stratford, Wanstead, Walthamstow, Hackney, Ilford, Greenwich and Canary Wharf."
     },
     {
-      question: "Looking for affordable carpet cleaning London without compromising on quality?",
-      answer: "Absolutely! We pride ourselves on offering affordable carpet cleaning London residents can rely on. While you might find cheap carpet cleaning London services out there, they often leave chemical residues or soak your carpets. We offer transparent and highly competitive carpet cleaning prices London, ensuring you get premium, lasting results at a great value."
+      question: "What carpet cleaning method do you use?",
+      answer: "We use professional hot water extraction, often called steam carpet cleaning, with fabric-appropriate pre-treatment, stain spotting and powerful moisture extraction for a deep, hygienic clean."
     },
     {
-      question: "How long until we can walk on the carpets after you've cleaned them?",
-      answer: "It really depends on the fabric and how warm your house is. But honestly, if you're looking for the best steam carpet cleaning service that won't leave your floors soaking wet for days, we've got you covered. Usually, your carpets will be dry to the touch in about 4 to 6 hours. Pro tip: just cracking a window or turning on the heating speeds things up a lot!"
+      question: "Are your cleaning products safe for children and pets?",
+      answer: "Yes. We use eco-friendly, biodegradable cleaning solutions that are safe for family homes when used as directed. Our team can also advise on drying and ventilation after cleaning."
     },
     {
-      question: "Are the cleaning products you use safe for my kids and pets?",
-      answer: "100%, yes. Being a family-focused team, we know exactly why folks search for an 'eco-friendly carpet cleaning near me'. We strictly use high-quality, biodegradable solutions that skip the nasty, harsh chemicals. Our products are totally safe for little ones crawling around and furry friends rolling on the floor."
+      question: "How long do carpets take to dry after cleaning?",
+      answer: "Most carpets are touch-dry within 4 to 6 hours, depending on carpet type, airflow and room temperature. Opening windows or using heating can help speed up drying."
     },
     {
-      question: "Can you actually get rid of those stubborn pet smells and really old stains?",
-      answer: "We would love to promise miracles, but sometimes really old, acidic stains can dye the carpet fibers permanently. That said, as one of the top-rated carpet cleaners near me in the London area, our success rate is incredibly high. We use specialized enzyme treatments that break down the bacteria causing the smell, tackling the root of the problem."
+      question: "Can you help with end of tenancy carpet cleaning in London?",
+      answer: "Yes. We offer end of tenancy carpet cleaning for tenants, landlords and letting agents across London, including stain treatment and deep hot water extraction to help leave the property ready for inspection."
     },
     {
-      question: "Honestly, how often should I be getting my carpets and mattresses professionally cleaned?",
-      answer: "For a typical household, getting the best carpet cleaning London has to offer about once a year (or every 12 to 18 months) is a solid rule of thumb. If you have dogs, cats, kids, or bad seasonal allergies, you might want to bump that up to every 6 to 8 months. Deep cleaning your mattress once a year also makes a huge difference by getting rid of hidden dust mites."
+      question: "Do you clean sofas, rugs and mattresses as well as carpets?",
+      answer: "Yes. We provide upholstery cleaning, sofa cleaning, rug cleaning and mattress cleaning in London using methods suited to each fabric and fibre type."
     }
   ];
 
   return (
     <section id="faq" className="py-20 bg-gray-50 border-t border-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <div className="text-center mb-16">
+        <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Frequently Asked Questions
+            Carpet Cleaning London FAQs
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Review our detailed, expert answers regarding professional carpet and upholstery care in London to ensure you make the best decision for your home.
+            Helpful answers about professional carpet, upholstery, rug and mattress cleaning for London homes and businesses.
           </p>
         </div>
 
-        <div className="space-y-4">
+        <div ref={items.ref} className={`space-y-4 reveal-stagger ${items.isVisible ? 'revealed' : ''}`}>
           {faqs.map((faq, index) => (
             <div 
               key={index} 

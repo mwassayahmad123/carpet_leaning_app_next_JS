@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const About = () => {
   const features = [
@@ -8,6 +11,7 @@ const About = () => {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
       ),
+      title: 'Premium Carpet Care',
       description: 'Every carpet is carefully inspected and treated with premium care.',
     },
     {
@@ -17,7 +21,7 @@ const About = () => {
         </svg>
       ),
       title: 'Hygiene Standards',
-      description: 'State-of-the-art facilities ensuring the highest hygiene standards.',
+      description: 'Professional hot water extraction and hygienic cleaning standards.',
     },
     {
       icon: (
@@ -26,7 +30,7 @@ const About = () => {
         </svg>
       ),
       title: 'Customer Satisfaction',
-      description: '100% satisfaction guarantee with our premium service quality.',
+      description: 'Reliable service with careful attention to your home and furniture.',
     },
     {
       icon: (
@@ -35,28 +39,31 @@ const About = () => {
         </svg>
       ),
       title: 'Fast Service',
-      description: 'Express service available for urgent Carpet needs.',
+      description: 'Fast appointments available for urgent carpet cleaning needs.',
     },
   ];
+
+  const heading = useScrollReveal();
+  const cards = useScrollReveal({ threshold: 0.1 });
+  const banner = useScrollReveal({ threshold: 0.2 });
 
   return (
     <section id="about" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 animate-fade-in">
-            About Us
+        <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            About Five Star Carpet Cleaning London
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto animate-slide-up leading-relaxed">
-            If you are searching for the best carpet cleaning London has right now, or simply looking for reliable London carpet cleaning near me, you have found the right team. Renowned as the best steam carpet cleaning service in the area, we provide exceptional, eco-friendly deep cleaning for homes and businesses. With over a decade of expertise, we don't just stop at standard carpets. Need experts to safely clean oriental rug fibres or provide specialized persian carpet cleaning? Our skilled technicians use state-of-the-art technology to extract embedded dirt, stubborn pet stains, and allergens, leaving your home truly pristine.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Five Star Carpet Cleaning is a local London carpet cleaning company based in E11, serving homes, landlords and businesses across East and South East London. We provide eco-friendly hot water extraction for carpets, rugs, upholstery and mattresses, helping remove everyday dirt, allergens, pet odours and stubborn stains from busy UK homes.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div ref={cards.ref} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 reveal-stagger ${cards.isVisible ? 'revealed' : ''}`}>
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105"
             >
               <div className="text-blue-600 mb-4">{feature.icon}</div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
@@ -65,13 +72,13 @@ const About = () => {
           ))}
         </div>
 
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 sm:p-12 text-white">
+        <div ref={banner.ref} className={`mt-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 sm:p-12 text-white reveal-scale ${banner.isVisible ? 'revealed' : ''}`}>
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-3xl sm:text-4xl font-bold mb-6">
-              Why Choose Us?
+              Why Choose Our London Carpet Cleaners?
             </h3>
             <p className="text-lg sm:text-xl mb-8 opacity-90 leading-relaxed font-light">
-              When it comes to premium upholstery cleaning in London and professional rug cleaning London, we deliver unmatched results. As the top-rated rug cleaning service London residents trust, we seamlessly combine traditional fabric care expertise with modern, high-powered steam extraction technology. Our fully insured team safely handles all complex fabrics—from durable synthetics to most delicate vintage velvets. We prioritize your family's health by using eco-friendly, biodegradable cleaning solutions that are 100% safe for children and pets, guaranteeing an immaculate clean and total peace of mind.
+              When you need carpet cleaning in London, we combine careful fabric care with modern steam extraction technology. Our team handles everyday carpets, stairs, sofas, rugs and end of tenancy cleans with biodegradable solutions that are safe for family homes, children and pets when used as directed.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-10">
               <div>

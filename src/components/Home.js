@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import heroBg from './img/2.webp';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const Home = () => {
   const scrollToSection = (sectionId) => {
@@ -14,9 +15,11 @@ const Home = () => {
 
   const openWhatsApp = () => {
     const whatsappNumber = '447871062227';
-    const message = encodeURIComponent('Hello! I would like to book a free consultation for carpet cleaning services.');
+    const message = encodeURIComponent('Hello! I would like to book a free consultation for carpet cleaning in London.');
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
   };
+
+  const hero = useScrollReveal({ threshold: 0.1 });
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -24,7 +27,7 @@ const Home = () => {
       <div className="absolute inset-0 z-0">
         <Image
           src={heroBg}
-          alt="Professional Carpet Cleaning London background"
+          alt="Professional carpet cleaning in London UK"
           fill
           priority
           className="object-cover object-center"
@@ -35,17 +38,17 @@ const Home = () => {
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="max-w-4xl mx-auto">
+        <div ref={hero.ref} className={`max-w-4xl mx-auto reveal-fade-down ${hero.isVisible ? 'revealed' : ''}`}>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Professional Carpet Cleaning London
+            Professional Carpet Cleaning in London, UK
             <span className="block text-3xl sm:text-4xl lg:text-5xl mt-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-              Homeowners Rely On
+              Trusted by Homes & Businesses
             </span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto">
-            We provide professional carpet cleaning London homeowners rely on, using eco-friendly products that are safe for children and pets.
+            Eco-friendly carpet, rug, mattress and upholstery cleaning across East and South East London, with safe products for children and pets.
           </p>
 
           {/* Two Separate Frosted Glass Buttons */}
@@ -60,14 +63,17 @@ const Home = () => {
               <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/10 transition-colors duration-200" />
             </button>
 
-            {/* Contact Us — clear frosted glass */}
-            <button
-              onClick={() => scrollToSection('contact')}
+            <a
+              href="#contact"
+              onClick={(event) => {
+                event.preventDefault();
+                scrollToSection('contact');
+              }}
               className="group relative w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base sm:text-lg text-white whitespace-nowrap bg-white/10 border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(255,255,255,0.08)] hover:bg-white/20 hover:shadow-[0_6px_30px_rgba(255,255,255,0.2)] hover:scale-105 active:scale-95 transition-all duration-200 will-change-transform"
             >
-              Contact Us
+              Get a London Quote
               <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/10 transition-colors duration-200" />
-            </button>
+            </a>
 
           </div>
         </div>

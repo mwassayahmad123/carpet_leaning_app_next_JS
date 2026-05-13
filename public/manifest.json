@@ -1,6 +1,11 @@
 {
-  "short_name": "FiveStarCarpetCleaning",
-  "name": "FiveStarCarpetCleaning - Five Star Carpet Cleaning Service",
+  "short_name": "Five Star Carpet",
+  "name": "Five Star Carpet Cleaning London",
+  "description": "Professional carpet, rug, mattress and upholstery cleaning in London, UK.",
+  "id": "https://fivestarcarpetcleaning.co.uk/",
+  "lang": "en-GB",
+  "dir": "ltr",
+  "categories": ["business", "home", "utilities"],
   "icons": [
     {
       "src": "/logo.webp",
@@ -10,7 +15,9 @@
     }
   ],
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "theme_color": "#2563eb",
   "background_color": "#ffffff"
 }

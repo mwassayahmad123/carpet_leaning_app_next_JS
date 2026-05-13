@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const SERVICE_VIDEO_SRC = '/videos/vid.webm';
 
@@ -6,50 +9,54 @@ const Services = () => {
   const services = [
     {
       icon: '💧',
-      title: 'Deep Steam Carpet Cleaning London',
-      description: 'Our professional carpet cleaners in London utilize high-powered, eco-friendly steam techniques. Whether you need a quick refresh or deep soil extraction, we offer the best carpet cleaners in London to leave your floors immaculate and allergen-free.',
+      title: 'Steam Carpet Cleaning London',
+      description: 'Our professional carpet cleaners in London use hot water extraction and eco-friendly pre-treatment to lift deep soil, dust and allergens from domestic carpets, stairs and high-traffic areas.',
     },
     {
       icon: '🛋️',
-      title: 'Upholstery Cleaning London – Sofas, Chairs & More',
-      description: 'Looking for top-tier sofa cleaning London residents trust? We breathe new life into your furniture. Our certified technicians carefully lift deep-seated body oils and tough stains, restoring your couch\'s original vibrancy and ensuring a much healthier environment.',
+      title: 'Upholstery & Sofa Cleaning London',
+      description: 'From sofas and armchairs to dining chairs and soft furnishings, our upholstery cleaning service removes body oils, marks and everyday build-up while protecting delicate fabrics.',
     },
     {
       icon: '🧶',
-      title: 'Expert Rug Cleaning London',
-      description: 'Protect your valuable investments with our specialist rug cleaning London service. From antique Persian and delicate Oriental rugs to modern blends, our meticulous process safely eliminates embedded dust and harsh stains while maintaining fabric softness.',
+      title: 'Rug Cleaning London',
+      description: 'Protect your rugs with a careful cleaning process for modern, wool, Persian and Oriental-style rugs. We remove embedded dust and stains while helping maintain fibre softness.',
     },
     {
       icon: '🏢',
       title: 'Commercial Carpet Cleaning London',
-      description: 'Maintain a pristine professional environment with our commercial carpet cleaning London services. We work around your business hours to provide deep, effective cleaning for offices, retail spaces, and commercial properties without disrupting your workflow.',
+      description: 'Maintain a clean working environment with office and commercial carpet cleaning across London. We can work around business hours for offices, shops and rental properties.',
     },
     {
       icon: '🛏️',
       title: 'Mattress Cleaning London',
-      description: 'Improve your sleep quality with our professional mattress cleaning London service. We effectively extract dead skin cells, potent sweat stains, and allergens. Using advanced moisture extraction methods, we thoroughly sanitize your bed for better respiratory health.',
+      description: 'Improve bedroom hygiene with mattress cleaning that helps remove dust mites, sweat marks and allergens using professional extraction methods suitable for UK homes.',
     },
     {
       icon: '🔑',
       title: 'End of Tenancy Carpet Cleaning London',
-      description: 'Secure your deposit with our reliable end of tenancy carpet cleaning London service. We provide thorough, landlord-approved deep cleaning that removes stubborn stains and odours, leaving the property in pristine condition for the next tenants.',
+      description: 'Support your move-out clean with end of tenancy carpet cleaning for tenants, landlords and letting agents, including stain treatment and deep steam extraction.',
     },
   ];
+
+  const heading = useScrollReveal();
+  const video = useScrollReveal({ threshold: 0.2 });
+  const grid = useScrollReveal({ threshold: 0.1 });
 
   return (
     <section id="services" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Our Services
+            Carpet Cleaning Services in London
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive Carpet solutions tailored to meet all your needs
+            Carpet, upholstery, rug, mattress and end of tenancy cleaning for London homes and businesses
           </p>
         </div>
 
         {/* Video Section */}
-        <div className="mb-20 animate-fade-in">
+        <div ref={video.ref} className={`mb-20 reveal-scale ${video.isVisible ? 'revealed' : ''}`}>
           <div className="max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
             <div className="relative aspect-video bg-black">
               <video
@@ -68,7 +75,7 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div ref={grid.ref} className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-stagger ${grid.isVisible ? 'revealed' : ''}`}>
           {services.map((service, index) => (
             <div
               key={index}
@@ -80,7 +87,7 @@ const Services = () => {
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">{service.title}</h3>
               <p className="text-gray-600 leading-relaxed">{service.description}</p>
               <div className="mt-6 pt-4 border-t border-gray-200">
-                <button className="text-blue-600 font-semibold hover:text-purple-600 transition-colors duration-200 flex items-center group-hover:translate-x-2 transition-transform duration-300">
+                <a href="#contact" className="text-blue-600 font-semibold hover:text-purple-600 transition-colors duration-200 flex items-center group-hover:translate-x-2 transition-transform duration-300">
                   Learn More
                   <svg
                     className="w-5 h-5 ml-2"
@@ -95,7 +102,7 @@ const Services = () => {
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                </button>
+                </a>
               </div>
             </div>
           ))}

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const Contact = () => {
       `*Service Type:* ${formData.serviceType || 'Not specified'}\n` +
       `*Preferred Date/Time:* ${dateFormatted}\n` +
       `*Message:* ${formData.message || 'No message'}\n\n` +
-      `_Sent from FiveStarCarpetCleaning Website_`;
+      `_Sent from Five Star Carpet Cleaning Website_`;
 
     // Encode message for URL
     const encodedMessage = encodeURIComponent(whatsappMessage);
@@ -56,31 +57,35 @@ const Contact = () => {
     alert('Opening WhatsApp to send your message!');
   };
 
+  const heading = useScrollReveal();
+  const formReveal = useScrollReveal({ threshold: 0.1 });
+  const infoReveal = useScrollReveal({ threshold: 0.1 });
+
   const serviceTypes = [
-    'Deep Steam Carpet Cleaning',
-    'Upholstery Cleaning Specialist',
-    'Rugs Cleaner',
-    'Pet Stain & Odor Removal',
-    'Mattress Cleaning',
-    'Curtain Cleaning',
+    'Carpet Cleaning London',
+    'Upholstery & Sofa Cleaning London',
+    'Rug Cleaning London',
+    'Pet Stain & Odour Removal',
+    'Mattress Cleaning London',
+    'End of Tenancy Carpet Cleaning',
   ];
 
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Contact Us
+            Contact Our London Carpet Cleaners
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Get in touch with us for any inquiries or book an appointment
+            Book a free quote for carpet, rug, mattress or upholstery cleaning anywhere across our London service areas
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-xl p-8 sm:p-10">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Book Appointment</h3>
+          <div ref={formReveal.ref} className={`bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-xl p-8 sm:p-10 reveal-fade-left ${formReveal.isVisible ? 'revealed' : ''}`}>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">Book a Carpet Cleaning Appointment</h3>
             <form onSubmit={handleSubmit} className="space-y-6" suppressHydrationWarning>
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
@@ -111,7 +116,7 @@ const Contact = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
-                  placeholder="Your phone number"
+                  placeholder="e.g. 07871 062227"
                   suppressHydrationWarning
                 />
               </div>
@@ -163,7 +168,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none resize-none"
-                  placeholder="Tell us about your requirements..."
+                  placeholder="Tell us your postcode, property type and cleaning requirements..."
                   suppressHydrationWarning
                 ></textarea>
               </div>
@@ -179,7 +184,7 @@ const Contact = () => {
           </div>
 
           {/* Map and Contact Info */}
-          <div className="space-y-6">
+          <div ref={infoReveal.ref} className={`space-y-6 reveal-fade-right ${infoReveal.isVisible ? 'revealed' : ''}`}>
             {/* Google Map */}
             <div className="rounded-3xl shadow-xl overflow-hidden h-80">
               <iframe
@@ -190,7 +195,7 @@ const Contact = () => {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Business Location - 6 Frith Road, London"
+                title="Five Star Carpet Cleaning location - 6 Frith Road, London E11"
               ></iframe>
             </div>
 
@@ -227,7 +232,7 @@ const Contact = () => {
                   <div>
                     <p className="font-semibold mb-1">Phone</p>
                     <a href="tel:+447871062227" className="opacity-90 hover:opacity-100 transition-opacity">
-                      +447871062227
+                      +44 7871 062227
                     </a>
                   </div>
                 </div>
@@ -241,7 +246,7 @@ const Contact = () => {
                   <div>
                     <p className="font-semibold mb-1">WhatsApp</p>
                     <a href="https://wa.me/447871062227" target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100 transition-opacity">
-                      +447871062227
+                      +44 7871 062227
                     </a>
                   </div>
                 </div>
@@ -254,7 +259,7 @@ const Contact = () => {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold mb-1">Email</p>
-                    <a href="mailto:fivestarservicesltduk@gmail.com?subject=Carpet Cleaning Inquiry&body=Hello! I would like to inquire about your carpet cleaning services." className="opacity-90 hover:opacity-100 transition-opacity block w-full whitespace-nowrap text-[11px] min-[360px]:text-xs min-[400px]:text-sm sm:text-base tracking-tight">
+                    <a href="mailto:fivestarservicesltduk@gmail.com?subject=Carpet Cleaning London Inquiry&body=Hello! I would like to inquire about your carpet cleaning services in London." className="opacity-90 hover:opacity-100 transition-opacity block w-full whitespace-nowrap text-[11px] min-[360px]:text-xs min-[400px]:text-sm sm:text-base tracking-tight">
                       fivestarservicesltduk@gmail.com
                     </a>
                   </div>

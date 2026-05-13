@@ -8,65 +8,107 @@ const inter = Inter({
   variable: '--font-inter',
 });
 
+const searchEngineVerification = {
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : {}),
+  ...(process.env.NEXT_PUBLIC_YANDEX_SITE_VERIFICATION
+    ? { yandex: process.env.NEXT_PUBLIC_YANDEX_SITE_VERIFICATION }
+    : {}),
+  ...(process.env.NEXT_PUBLIC_YAHOO_SITE_VERIFICATION
+    ? { yahoo: process.env.NEXT_PUBLIC_YAHOO_SITE_VERIFICATION }
+    : {}),
+  ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION || process.env.NEXT_PUBLIC_PINTEREST_SITE_VERIFICATION
+    ? {
+        other: {
+          ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+            ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+            : {}),
+          ...(process.env.NEXT_PUBLIC_PINTEREST_SITE_VERIFICATION
+            ? { 'p:domain_verify': process.env.NEXT_PUBLIC_PINTEREST_SITE_VERIFICATION }
+            : {}),
+        },
+      }
+    : {}),
+};
 
 export const metadata = {
   metadataBase: new URL('https://fivestarcarpetcleaning.co.uk'),
   title: {
-    default: 'Five Star Carpet & Upholstery Cleaning London | Deep Clean',
-    template: '%s | Five Star Carpet Cleaning London',
+    default: 'Carpet Cleaning London, UK | Five Star Carpet Cleaning',
+    template: '%s | Five Star Carpet Cleaning UK',
   },
   description:
-    'Looking for professional carpet cleaning in London? We offer five-star eco-friendly deep steam cleaning for carpets, rugs & upholstery. Book your clean today!',
+    'Professional carpet cleaning in London, UK. Eco-friendly steam cleaning for carpets, rugs, sofas and mattresses across East & South East London.',
   keywords: [
     'carpet cleaning London',
+    'carpet cleaning London UK',
+    'professional carpet cleaners London',
     'upholstery cleaning London',
+    'sofa cleaning London',
     'rug cleaning London',
-    'deep steam carpet cleaning',
-    'professional carpet cleaners near me',
-    'eco-friendly carpet cleaning',
-    'pet stain removal London',
-    'mattress cleaning London',
-    'a1carpet cleaning',
-    'fivestarcapertservice',
+    'steam carpet cleaning London',
     'end of tenancy carpet cleaning London',
     'commercial carpet cleaning London',
-    'best carpet cleaner London',
-    'same day carpet cleaning services',
+    'mattress cleaning London',
+    'pet stain removal London',
+    'eco friendly carpet cleaning London',
     'affordable carpet cleaning London',
-    'local carpet cleaners near me',
-    'professional rug washing London',
-    'carpet stain removal services',
-    'sofa and upholstery cleaning',
-    'deep clean carpet services',
+    'same day carpet cleaning London',
+    'carpet cleaning East London',
+    'carpet cleaning South East London',
+    'carpet cleaners Leyton',
+    'carpet cleaning Leytonstone',
+    'carpet cleaning Stratford',
+    'carpet cleaning Wanstead',
+    'carpet cleaning Walthamstow',
+    'carpet cleaning Hackney',
+    'carpet cleaning Ilford',
     'stair carpet cleaning London',
     'office carpet cleaning London',
+    'Five Star Carpet Cleaning',
   ],
   category: 'cleaning service',
   authors: [{ name: 'Five Star Carpet Cleaning' }],
   creator: 'Five Star Carpet Cleaning',
   publisher: 'Five Star Carpet Cleaning',
+  applicationName: 'Five Star Carpet Cleaning',
+  manifest: '/manifest.json',
+  referrer: 'origin-when-cross-origin',
+  verification: searchEngineVerification,
+  formatDetection: {
+    telephone: false,
+    date: false,
+    address: false,
+    email: false,
+  },
+  appleWebApp: {
+    capable: true,
+    title: 'Five Star Carpet Cleaning',
+    statusBarStyle: 'black-translucent',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: '/',
+    url: 'https://fivestarcarpetcleaning.co.uk/',
     siteName: 'Five Star Carpet Cleaning',
-    title: 'Five Star Carpet & Upholstery Cleaning London | Deep Clean',
+    title: 'Carpet Cleaning London, UK | Five Star Carpet Cleaning',
     description:
-      'Professional carpet cleaning London. Five-star eco-friendly deep steam cleaning for carpets, rugs & upholstery. Book today!',
+      'Professional carpet cleaning in London, UK. Eco-friendly steam cleaning for carpets, rugs, sofas and mattresses across East & South East London.',
     images: [
       {
         url: '/logo.webp',
         width: 512,
         height: 512,
-        alt: 'Five Star Carpet Cleaning London Logo',
+        alt: 'Five Star Carpet Cleaning London UK logo',
       },
     ],
   },
   twitter: {
-    card: 'summary',
-    title: 'Five Star Carpet & Upholstery Cleaning London | Deep Clean',
+    card: 'summary_large_image',
+    title: 'Carpet Cleaning London, UK | Five Star Carpet Cleaning',
     description:
-      'Professional carpet cleaning London. Five-star eco-friendly deep steam cleaning for carpets, rugs & upholstery. Book today!',
+      'Professional carpet cleaning in London, UK. Eco-friendly steam cleaning for carpets, rugs, sofas and mattresses across East & South East London.',
     images: ['/logo.webp'],
   },
   robots: {
@@ -84,6 +126,15 @@ export const metadata = {
     icon: '/logo.webp',
     apple: '/logo.webp',
   },
+  other: {
+    'geo.region': 'GB-LND',
+    'geo.placename': 'London',
+    'geo.position': '51.5674;0.0094',
+    ICBM: '51.5674, 0.0094',
+    'business:contact_data:locality': 'London',
+    'business:contact_data:region': 'England',
+    'business:contact_data:country_name': 'United Kingdom',
+  },
 };
 
 // Viewport: enables high-refresh-rate rendering on 120Hz devices
@@ -98,17 +149,20 @@ export const viewport = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
+  '@type': ['LocalBusiness', 'ProfessionalService'],
   name: 'Five Star Carpet Cleaning',
+  alternateName: ['Five Star Carpet & Upholstery Cleaning', 'Five Star Carpet Cleaning London'],
   image: 'https://fivestarcarpetcleaning.co.uk/logo.webp',
-  '@id': 'https://fivestarcarpetcleaning.co.uk',
+  logo: 'https://fivestarcarpetcleaning.co.uk/logo.webp',
+  '@id': 'https://fivestarcarpetcleaning.co.uk/#localbusiness',
   url: 'https://fivestarcarpetcleaning.co.uk',
-  telephone: '+447871062227',
+  telephone: '+44 7871 062227',
   email: 'fivestarservicesltduk@gmail.com',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '6 Frith Rd',
     addressLocality: 'London',
+    addressRegion: 'England',
     postalCode: 'E11 4EY',
     addressCountry: 'GB',
   },
@@ -123,24 +177,51 @@ const jsonLd = {
     opens: '08:00',
     closes: '20:00',
   },
-  priceRange: '$$',
+  priceRange: '££',
+  currenciesAccepted: 'GBP',
+  paymentAccepted: ['Cash', 'Bank transfer', 'Card'],
   aggregateRating: {
     '@type': 'AggregateRating',
     ratingValue: '5',
     reviewCount: '150',
   },
   description:
-    'Professional carpet cleaning London. Five-star eco-friendly deep steam cleaning for carpets, rugs & upholstery.',
-  areaServed: {
-    '@type': 'City',
-    name: 'London',
+    'Professional carpet, rug, mattress and upholstery cleaning in London, UK, with eco-friendly steam cleaning for homes, landlords and businesses.',
+  areaServed: [
+    { '@type': 'City', name: 'London' },
+    { '@type': 'Place', name: 'East London' },
+    { '@type': 'Place', name: 'South East London' },
+    { '@type': 'Place', name: 'Leyton' },
+    { '@type': 'Place', name: 'Leytonstone' },
+    { '@type': 'Place', name: 'Stratford' },
+    { '@type': 'Place', name: 'Wanstead' },
+    { '@type': 'Place', name: 'Walthamstow' },
+    { '@type': 'Place', name: 'Hackney' },
+    { '@type': 'Place', name: 'Ilford' },
+    { '@type': 'Place', name: 'Greenwich' },
+    { '@type': 'Place', name: 'Canary Wharf' },
+  ],
+  serviceType: [
+    'Carpet cleaning',
+    'Upholstery cleaning',
+    'Rug cleaning',
+    'Mattress cleaning',
+    'End of tenancy carpet cleaning',
+    'Commercial carpet cleaning',
+  ],
+  hasMap: 'https://www.google.com/maps/search/?api=1&query=6+Frith+Rd,+London+E11+4EY,+UK',
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+44 7871 062227',
+    contactType: 'customer service',
+    areaServed: 'GB',
+    availableLanguage: ['English'],
   },
-  sameAs: ['https://wa.me/447871062227'],
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en-GB">
       <head>
         {/* DNS prefetch for external resources */}
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -150,6 +231,7 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          suppressHydrationWarning
         />
       </head>
       <body className={inter.className} suppressHydrationWarning>

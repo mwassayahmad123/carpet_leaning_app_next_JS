@@ -29,10 +29,17 @@ const nextConfig = {
         headers: [
           // Prevent content-type sniffing (security + perf)
           { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Content-Language', value: 'en-GB' },
           // Hint to browser: use high-refresh-rate rendering when available
           { key: 'Vary', value: 'Accept-Encoding' },
           // SEO: allow all crawlers
-          { key: 'X-Robots-Tag', value: 'index, follow' },
+          { key: 'X-Robots-Tag', value: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
+        ],
+      },
+      {
+        source: '/',
+        headers: [
+          { key: 'Link', value: '<https://fivestarcarpetcleaning.co.uk/>; rel="canonical"' },
         ],
       },
       // Long-term cache for all static assets (_next/static)

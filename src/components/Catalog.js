@@ -1,12 +1,13 @@
 "use client";
 
 import React from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 export default function AreaCovered() {
   const servicePackages = [
     {
       title: "Silver Package",
-      features: ["Deep Steam Cleaning", "Stain Spot Treatment", "Deodorizing", "Basic Drying"]
+      features: ["Hot Water Extraction", "Stain Spot Treatment", "Deodorising", "Basic Drying"]
     },
     {
       title: "Gold Package",
@@ -20,22 +21,26 @@ export default function AreaCovered() {
   ];
 
   const serviceAreas = [
-    "Leyton & Leytonstone", "Stratford", "Wanstead", "Walthamstow", "Hackney", "Ilford", "Greenwich", "Canary Wharf"
+    "Leyton & Leytonstone", "Stratford", "Wanstead", "Walthamstow", "Hackney", "Ilford", "Forest Gate", "Manor Park", "Greenwich", "Canary Wharf"
   ];
+
+  const heading = useScrollReveal();
+  const packages = useScrollReveal({ threshold: 0.1 });
+  const mapArea = useScrollReveal({ threshold: 0.15 });
 
   return (
     <section id="area-covered" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Area Covered
+            Areas We Cover in London
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Explore our cleaning packages and the areas we serve across London
+            Local carpet cleaning packages for homes, landlords and businesses across East London and South East London
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div ref={packages.ref} className={`grid grid-cols-1 md:grid-cols-3 gap-8 mb-20 reveal-stagger ${packages.isVisible ? 'revealed' : ''}`}>
           {servicePackages.map((pkg, index) => (
             <div 
               key={index} 
@@ -70,12 +75,12 @@ export default function AreaCovered() {
         </div>
 
         {/* Service Areas & Map */}
-        <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-[3rem] overflow-hidden shadow-2xl">
+        <div ref={mapArea.ref} className={`bg-gradient-to-br from-blue-600 to-purple-600 rounded-[3rem] overflow-hidden shadow-2xl reveal-scale ${mapArea.isVisible ? 'revealed' : ''}`}>
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="p-12 lg:p-16 flex flex-col justify-center">
-              <h3 className="text-3xl font-bold text-white mb-6">Service Areas</h3>
+              <h3 className="text-3xl font-bold text-white mb-6">London Service Areas</h3>
               <p className="text-blue-100 mb-8 text-lg">
-                We provide professional carpet cleaning services across London, focusing on East and South East London areas.
+                We provide professional carpet cleaning services across London, with regular appointments near E11 and surrounding UK postcodes.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {serviceAreas.map((area, index) => (

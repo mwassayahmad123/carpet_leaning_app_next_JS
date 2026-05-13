@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const Reviews = () => {
   const reviews = [
@@ -20,7 +21,7 @@ const Reviews = () => {
       id: 3,
       name: 'Muhammad Khan',
       rating: 5,
-      text: 'As a business owner, I highly recommend their commercial carpet cleaners London. They worked around our schedule and delivered a deep clean that exceeded expectations.',
+      text: 'As a business owner, I highly recommend their commercial carpet cleaning in London. They worked around our schedule and delivered a deep clean that exceeded expectations.',
     },
     {
       id: 4,
@@ -80,19 +81,22 @@ const Reviews = () => {
     return visible;
   };
 
+  const heading = useScrollReveal();
+  const carousel = useScrollReveal({ threshold: 0.1 });
+
   return (
     <section id="reviews" className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div ref={heading.ref} className={`text-center mb-16 reveal-fade-up ${heading.isVisible ? 'revealed' : ''}`}>
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
-            Customer Reviews
+            London Customer Reviews
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            See what our satisfied customers have to say
+            See what local customers say about our carpet, rug and upholstery cleaning services
           </p>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
+        <div ref={carousel.ref} className={`relative max-w-5xl mx-auto reveal-scale ${carousel.isVisible ? 'revealed' : ''}`}>
           {/* 3D Carousel Container */}
           <div className="relative h-96 perspective-1000">
             {getVisibleReviews().map((review) => {

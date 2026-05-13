@@ -41,7 +41,7 @@ const Navbar = () => {
 
 	const openWhatsApp = () => {
 		const whatsappNumber = '447871062227';
-		const message = encodeURIComponent('Hello! I would like to book a free consultation for carpet cleaning services.');
+		const message = encodeURIComponent('Hello! I would like to book a free consultation for carpet cleaning in London.');
 		window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
 	};
 
@@ -51,7 +51,7 @@ const Navbar = () => {
 		{ id: 'services', label: 'Services' },
 		{ id: 'reviews', label: 'Reviews' },
 		{ id: 'gallery', label: 'Gallery' },
-		{ id: 'area-covered', label: 'Area Covered' },
+		{ id: 'area-covered', label: 'Areas Covered' },
 		{ id: 'faq', label: 'FAQ' },
 		{ id: 'contact', label: 'Contact' },
 	];
@@ -68,27 +68,38 @@ const Navbar = () => {
 			<nav className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
 					{/* Logo + Brand */}
-					<div className="flex items-center gap-2 flex-shrink-0 cursor-pointer" onClick={() => scrollToSection('home')}>
+					<a
+						href="#home"
+						className="flex items-center gap-2 flex-shrink-0 cursor-pointer"
+						onClick={(event) => {
+							event.preventDefault();
+							scrollToSection('home');
+						}}
+					>
 						<img
 							src={logo.src}
-							alt="FiveStarCarpetCleaning Logo"
+							alt="Five Star Carpet Cleaning London logo"
 							className="h-10 w-auto object-contain"
 						/>
 						<span className="text-xl font-bold text-gray-900 hidden sm:block whitespace-nowrap">
-							FiveStarCarpetCleaning
+							Five Star Carpet Cleaning
 						</span>
-					</div>
+					</a>
 
 					{/* Desktop Nav Links */}
 					<div className="hidden lg:flex items-center gap-8 flex-1 justify-center">
 						{menuItems.map((item) => (
-							<button
+							<a
 								key={item.id}
-								onClick={() => scrollToSection(item.id)}
+								href={`#${item.id}`}
+								onClick={(event) => {
+									event.preventDefault();
+									scrollToSection(item.id);
+								}}
 								className="text-gray-700 hover:text-blue-600 font-semibold text-sm tracking-wide transition-colors duration-200"
 							>
 								{item.label}
-							</button>
+							</a>
 						))}
 					</div>
 
@@ -145,9 +156,13 @@ const Navbar = () => {
 				>
 					<div className="border-t border-gray-100 pt-2 pb-4 space-y-1">
 						{menuItems.map((item) => (
-							<button
+							<a
 								key={item.id}
-								onClick={() => scrollToSection(item.id)}
+								href={`#${item.id}`}
+								onClick={(event) => {
+									event.preventDefault();
+									scrollToSection(item.id);
+								}}
 								className="block w-full text-left font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 py-3 px-2 rounded-md transition-colors"
 								style={{
 									WebkitTapHighlightColor: 'transparent',
@@ -155,7 +170,7 @@ const Navbar = () => {
 								}}
 							>
 								{item.label}
-							</button>
+							</a>
 						))}
 					</div>
 				</div>
