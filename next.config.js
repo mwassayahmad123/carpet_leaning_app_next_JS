@@ -3,6 +3,9 @@ const nextConfig = {
   // Strict mode catches rendering issues early
   reactStrictMode: true,
 
+  // Allow cross-origin requests from local network devices (e.g. mobile preview)
+  allowedDevOrigins: ['192.168.100.45'],
+
   // Remove "X-Powered-By: Next.js" header (tiny security + perf win)
   poweredByHeader: false,
 

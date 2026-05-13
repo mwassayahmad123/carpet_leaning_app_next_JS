@@ -1,13 +1,4 @@
-import Navbar from '../components/Navbar';
-import Home from '../components/Home';
-import About from '../components/About';
-import Services from '../components/Services';
-import Reviews from '../components/Reviews';
-import Gallery from '../components/Gallery';
-import Catalog from '../components/Catalog';
-import FAQ from '../components/FAQ';
-import Contact from '../components/Contact';
-import Footer from '../components/Footer';
+import PageContent from '../components/PageContent';
 
 const pageJsonLd = {
   '@context': 'https://schema.org',
@@ -109,25 +100,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }}
-      />
-      <div className="App">
-        <Navbar />
-        <Home />
-        <About />
-        <Services />
-        <Reviews />
-        <Gallery />
-        <Catalog />
-        <FAQ />
-        <Contact />
-        <Footer />
-      </div>
-    </>
-  );
+  return <PageContent jsonLd={JSON.stringify(pageJsonLd)} />;
 }
-
