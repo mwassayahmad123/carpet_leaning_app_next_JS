@@ -213,7 +213,7 @@ const Contact = () => {
                       rel="noopener noreferrer" 
                       className="opacity-90 hover:opacity-100 transition-opacity block"
                     >
-                      6 Frith Rd, London E11 4EY, UK
+                      United Kingdom
                     </a>
                   </div>
                 </div>

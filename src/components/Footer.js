@@ -133,7 +133,7 @@ const Footer = () => {
                   rel="noopener noreferrer" 
                   className="hover:text-white transition-colors"
                 >
-                  6 Frith Rd, London E11 4EY, UK
+                  United Kingdom
                 </a>
               </li>
               <li className="flex items-center space-x-3">
