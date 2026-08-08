@@ -12,12 +12,6 @@ const Home = () => {
     }
   };
 
-  const openWhatsApp = () => {
-    const whatsappNumber = '447871062227';
-    const message = encodeURIComponent('Hello! I would like to book a free consultation for carpet cleaning services.');
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
@@ -53,7 +47,7 @@ const Home = () => {
 
             {/* Book Free Consultation — solid gradient frosted */}
             <button
-              onClick={openWhatsApp}
+              onClick={() => scrollToSection('contact')}
               className="group relative w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base sm:text-lg text-white whitespace-nowrap bg-gradient-to-r from-blue-600/85 to-purple-600/85 border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(99,102,241,0.4)] hover:shadow-[0_6px_30px_rgba(99,102,241,0.6)] hover:scale-105 active:scale-95 transition-all duration-200 will-change-transform"
             >
               Book Free Consultation

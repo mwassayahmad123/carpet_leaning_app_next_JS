@@ -115,7 +115,22 @@ const Contact = () => {
                   suppressHydrationWarning
                 />
               </div>
-
+              <div>
+                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Address *
+                </label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  required
+                  value={formData.address}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
+                  placeholder="Your phone number"
+                  suppressHydrationWarning
+                />
+              </div>
               <div>
                 <label htmlFor="serviceType" className="block text-sm font-semibold text-gray-700 mb-2">
                   Service Type
@@ -181,9 +196,9 @@ const Contact = () => {
           {/* Map and Contact Info */}
           <div className="space-y-6">
             {/* Google Map */}
-            <div className="rounded-3xl shadow-xl overflow-hidden h-80">
+            {/* <div className="rounded-3xl shadow-xl overflow-hidden h-80">
               <iframe
-                src="https://www.google.com/maps?q=6+Frith+Road,+London&output=embed"
+                src="https://www.google.com/maps?q=United+Kingdom&z=5&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -192,7 +207,7 @@ const Contact = () => {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Business Location - 6 Frith Road, London"
               ></iframe>
-            </div>
+            </div> */}
 
             {/* Contact Information Card */}
             <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl shadow-xl p-5 sm:p-8 text-white overflow-hidden">

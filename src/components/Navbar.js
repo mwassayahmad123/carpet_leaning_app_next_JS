@@ -32,12 +32,6 @@ const Navbar = () => {
 		}
 	};
 
-	const openWhatsApp = () => {
-		const whatsappNumber = '447871062227';
-		const message = encodeURIComponent('Hello! I would like to book a free consultation for carpet cleaning services.');
-		window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-	};
-
 	const menuItems = [
 		{ id: 'home', label: 'Home' },
 		{ id: 'about', label: 'About' },
@@ -85,7 +79,7 @@ const Navbar = () => {
 					<div className="flex items-center gap-4 flex-shrink-0">
 						{/* CTA */}
 						<button
-							onClick={openWhatsApp}
+							onClick={() => scrollToSection('contact')}
 							className="bg-blue-600 text-white px-5 py-2 rounded-lg font-bold text-sm tracking-wide hover:bg-blue-700 transition-colors duration-200 shadow-sm"
 						>
 							<span className="hidden sm:inline">Book Free Consultation</span>
