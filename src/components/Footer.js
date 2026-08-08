@@ -128,7 +128,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <a 
-                  href="https://www.google.com/maps/search/?api=1&query=6+Frith+Rd,+London+E11+4EY,+UK" 
+                  href="#" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="hover:text-white transition-colors"

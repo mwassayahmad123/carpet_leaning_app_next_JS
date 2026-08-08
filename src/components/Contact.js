@@ -127,7 +127,7 @@ const Contact = () => {
                   value={formData.address}
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none"
-                  placeholder="Your phone number"
+                  placeholder="Your Address"
                   suppressHydrationWarning
                 />
               </div>
@@ -223,7 +223,7 @@ const Contact = () => {
                   <div>
                     <p className="font-semibold mb-1">Address</p>
                     <a 
-                      href="https://www.google.com/maps/search/?api=1&query=6+Frith+Rd,+London+E11+4EY,+UK" 
+                      href="#" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="opacity-90 hover:opacity-100 transition-opacity block"
