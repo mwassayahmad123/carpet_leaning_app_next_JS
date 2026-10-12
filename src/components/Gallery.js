@@ -19,62 +19,62 @@ const Gallery = () => {
     {
       id: 1,
       src: img1.src,
-      title: 'Modern Carpet Facility',
+      title: 'Velvet sofa and cream carpet after cleaning',
     },
     {
       id: 2,
       src: img2.src,
-      title: 'State-of-the-Art Equipment',
+      title: 'Bay-window living room carpet',
     },
     {
       id: 3,
       src: img3.src,
-      title: 'Professional Carpet Cleaning',
+      title: 'Cream carpet with fresh extraction lines',
     },
     {
       id: 4,
       src: img4.src,
-      title: 'Quality Control Area',
+      title: 'Grey carpet mid-clean',
     },
     {
       id: 5,
       src: img5.src,
-      title: 'Carpet Treatment Station',
+      title: 'Bedroom carpet after cleaning',
     },
     {
       id: 6,
       src: img6.src,
-      title: 'Cleaning & Maintenance Area',
+      title: 'Hot water extraction in a hallway',
     },
     {
       id: 7,
       src: img7.src,
-      title: 'Premium Care Section',
+      title: 'Dining area carpet after spot treatment',
     },
     {
       id: 8,
       src: img8.src,
-      title: 'Storage & Organization',
+      title: 'Living room carpet after deep clean',
     },
     {
       id: 9,
       src: img9.src,
-      title: 'Professional Service Area',
+      title: 'Dining room carpet after cleaning',
     },
     {
       id: 10,
       src: img10.src,
-      title: 'Advanced Carpet Care',
+      title: 'Grey stair carpet cleaned',
     },
     {
       id: 11,
       src: img11.src,
-      title: 'TV Lounge',
+      title: 'Extraction wand on living room carpet',
     },
     {
       id: 12,
       src: img12.src,
-      title: 'Stairs Cleaning',
+      title: 'Stair carpet treads after cleaning',
     },
   ];
 
@@ -88,7 +88,7 @@ const Gallery = () => {
             Our Gallery
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Take a look at our modern facilities and professional workspace
+            Real photos from recent carpet and upholstery cleaning jobs in London
           </p>
         </div>
 

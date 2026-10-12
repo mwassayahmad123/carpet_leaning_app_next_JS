@@ -1,11 +1,7 @@
-"use client";
+import React from 'react';
+import FaqAccordion from './FaqAccordion';
 
-import React, { useState } from 'react';
-
-const FAQ = () => {
-  const [activeIndex, setActiveIndex] = useState(null);
-
-  const faqs = [
+export const faqs = [
     {
       question: "Are you really the best carpet cleaning services near me in London?",
       answer: "That's a fair question to ask, and we'd rather let the results speak than just say yes. What we can tell you is this — we show up on time, we treat your home with respect, and we don't leave until the job is done properly. Our team uses professional-grade hot water extraction equipment, not the kind you can rent from a supermarket. Every job gets a pre-inspection, a fabric-appropriate treatment, and a final walkthrough with you before we pack up. We've built our reputation entirely through word of mouth and genuine reviews from happy customers across London. Whether you're in East London or further out, we're confident you won't need to search again after your first clean with us."
@@ -30,61 +26,22 @@ const FAQ = () => {
       question: "Honestly, how often should I be getting my carpets and mattresses professionally cleaned?",
       answer: "For a typical household, getting the best carpet cleaning London has to offer about once a year (or every 12 to 18 months) is a solid rule of thumb. It keeps everything looking fresh and really extends the life of your investments. But if you have dogs, cats, kids, or someone with bad seasonal allergies, you might want to bump that up to every 6 to 8 months. Also, don't overlook your beds! So many people end up searching for a 'London mattress cleaning service near me' when their allergies start acting up. Deep cleaning your mattress once a year makes a huge difference by getting rid of hidden dust mites."
     }
-  ];
+];
 
-  return (
-    <section id="faq" className="py-20 bg-gray-50 border-t border-gray-100">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            Review our detailed, expert answers regarding professional carpet and upholstery care in London to ensure you make the best decision for your home.
-          </p>
-        </div>
-
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div 
-              key={index} 
-              className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
-            >
-              <button
-                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
-                className="w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-inset"
-                aria-expanded={activeIndex === index}
-              >
-                <span className="font-semibold text-lg text-gray-900 pr-8 leading-snug">
-                  {faq.question}
-                </span>
-                <span className="text-blue-600 flex-shrink-0 bg-blue-50 p-2 rounded-full">
-                  <svg 
-                    className={`w-6 h-6 transform transition-transform duration-300 ${activeIndex === index ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                </span>
-              </button>
-              
-              <div 
-                className={`px-6 overflow-hidden transition-all duration-300 ease-in-out ${
-                  activeIndex === index ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'
-                }`}
-              >
-                <p className="text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
-                  {faq.answer}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+const FAQ = () => (
+  <section id="faq" className="py-20 bg-gray-50 border-t border-gray-100">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          Frequently Asked Questions
+        </h2>
+        <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          Straight answers about professional carpet and upholstery cleaning in London. For service-specific questions, see each service page.
+        </p>
       </div>
-    </section>
-  );
-};
+      <FaqAccordion faqs={faqs} />
+    </div>
+  </section>
+);
 
 export default FAQ;

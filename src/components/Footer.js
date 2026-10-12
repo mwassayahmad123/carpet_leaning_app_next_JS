@@ -1,23 +1,16 @@
-"use client";
-
 import React from 'react';
+import Link from 'next/link';
+import { SERVICES, serviceHref } from '../data/services';
+import { SITE } from '../data/site';
 
 const Footer = () => {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const quickLinks = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'services', label: 'Services' },
-    { id: 'reviews', label: 'Reviews' },
-    { id: 'gallery', label: 'Gallery' },
-    { id: 'faq', label: 'FAQ' },
-    { id: 'contact', label: 'Contact' },
+    { href: '/', label: 'Home' },
+    { href: '/about/', label: 'About Us' },
+    { href: '/#reviews', label: 'Reviews' },
+    { href: '/#gallery', label: 'Gallery' },
+    { href: '/#faq', label: 'FAQ' },
+    { href: '/contact/', label: 'Contact & Booking' },
   ];
 
   const socialLinks = [
@@ -93,13 +86,10 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
-                <li key={link.id}>
-                  <button
-                    onClick={() => scrollToSection(link.id)}
-                    className="text-gray-400 hover:text-white transition-colors duration-200"
-                  >
+                <li key={link.href}>
+                  <Link href={link.href} className="text-gray-400 hover:text-white transition-colors duration-200">
                     {link.label}
-                  </button>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -108,13 +98,14 @@ const Footer = () => {
           {/* Services */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-gray-400">
-              <li>Deep Steam Carpet Cleaning</li>
-              <li>Upholstery Cleaning Specialist</li>
-              <li>Rugs Cleaner</li>
-              <li>Pet Stain & Odor Removal</li>
-              <li>Mattress Cleaning</li>
-              <li>Curtain Cleaning</li>
+            <ul className="space-y-2">
+              {SERVICES.map((service) => (
+                <li key={service.slug}>
+                  <Link href={serviceHref(service.slug)} className="text-gray-400 hover:text-white transition-colors duration-200">
+                    {service.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -127,14 +118,7 @@ const Footer = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <a 
-                  href="#" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="hover:text-white transition-colors"
-                >
-                  United Kingdom
-                </a>
+                <span>{SITE.baseArea} · Serving London & Greater London</span>
               </li>
               <li className="flex items-center space-x-3">
                 <svg className="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

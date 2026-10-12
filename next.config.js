@@ -1,11 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Matches the URL format in the SEO plan: /about/, /services/carpet-cleaning/ etc.
+  trailingSlash: true,
   images: {
     // Avoid 502 on /_next/image when the host image optimizer is unavailable or misconfigured
     // (common on some Netlify / serverless setups). Images load as normal static URLs instead.
     unoptimized: true,
     // If you use next/image quality other than defaults (Next.js 16+), keep allowed values here.
     qualities: [75, 90],
+  },
+  async redirects() {
+    return [
+      // No standalone services index yet — send visitors to the homepage services overview.
+      { source: '/services/', destination: '/#services', permanent: false },
+    ];
   },
   async rewrites() {
     return [

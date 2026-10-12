@@ -1,24 +1,16 @@
-"use client";
-
 import React from 'react';
 import Image from 'next/image';
 import heroBg from './img/2.webp';
+import CtaButtons from './CtaButtons';
 
 const Home = () => {
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
           src={heroBg}
-          alt="Professional Carpet Cleaning London background"
+          alt="Freshly cleaned cream carpet in a London living room"
           fill
           priority
           className="object-cover object-center"
@@ -28,42 +20,23 @@ const Home = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 text-center">
         <div className="max-w-4xl mx-auto">
-
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
-            Five Star Carpet Cleaning Service
-            <span className="block text-3xl sm:text-4xl lg:text-5xl mt-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-              You Can Trust
+          <p className="text-sm sm:text-base font-semibold tracking-widest uppercase text-blue-200 mb-4">
+            Five Star Carpet Cleaning
+          </p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Professional Carpet Cleaning{' '}
+            <span className="block mt-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
+              in London
             </span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto">
-            Top-rated, Best Carpet and upholstery deep cleaning across London. Fast, eco-friendly, and five-star reliable.
+            Deep hot water extraction for carpets, sofas, rugs, mattresses and curtains — for homes, landlords and businesses across London.
           </p>
 
-          {/* Two Separate Frosted Glass Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-
-            {/* Book Free Consultation — solid gradient frosted */}
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="group relative w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base sm:text-lg text-white whitespace-nowrap bg-gradient-to-r from-blue-600/85 to-purple-600/85 border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(99,102,241,0.4)] hover:shadow-[0_6px_30px_rgba(99,102,241,0.6)] hover:scale-105 active:scale-95 transition-all duration-200 will-change-transform"
-            >
-              Book Free Consultation
-              <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/10 transition-colors duration-200" />
-            </button>
-
-            {/* Contact Us — clear frosted glass */}
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="group relative w-full sm:w-auto px-8 py-4 rounded-full font-bold text-base sm:text-lg text-white whitespace-nowrap bg-white/10 border border-white/30 backdrop-blur-md shadow-[0_4px_20px_rgba(255,255,255,0.08)] hover:bg-white/20 hover:shadow-[0_6px_30px_rgba(255,255,255,0.2)] hover:scale-105 active:scale-95 transition-all duration-200 will-change-transform"
-            >
-              Contact Us
-              <span className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/10 transition-colors duration-200" />
-            </button>
-
-          </div>
+          <CtaButtons showQuote className="justify-center" />
         </div>
       </div>
 
@@ -78,5 +51,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
