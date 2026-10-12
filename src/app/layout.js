@@ -5,6 +5,8 @@ import Footer from '../components/Footer';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const GA_ID = 'G-Y77RLZ5JB1';
+
 export const metadata = {
   metadataBase: new URL('https://fivestarcarpetcleaning.co.uk'),
   title: {
@@ -115,6 +117,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        {/* Google tag (gtag.js) */}
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${GA_ID}');`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
