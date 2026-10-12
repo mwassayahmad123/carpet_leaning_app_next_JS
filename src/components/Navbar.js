@@ -63,7 +63,7 @@ const Navbar = () => {
 				<div className="flex items-center justify-between h-16">
 					{/* Logo + Brand */}
 					<Link href="/" className="flex items-center gap-2 flex-shrink-0">
-						<img src={logo.src} alt="Five Star Carpet Cleaning logo" className="h-10 w-auto object-contain" />
+						<img src={logo.src} width={logo.width} height={logo.height} alt="Five Star Carpet Cleaning logo" className="h-10 w-auto object-contain" />
 						<span className="text-xl font-bold text-gray-900 hidden sm:block whitespace-nowrap">
 							FiveStarCarpetCleaning
 						</span>

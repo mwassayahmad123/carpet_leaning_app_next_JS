@@ -20,7 +20,7 @@ const ContactDetails = ({ title = 'Get in Touch' }) => (
       </Row>
       <Row icon={<WhatsAppIcon className="w-6 h-6" />} label="WhatsApp">
         <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer" className="opacity-90 hover:opacity-100">
-          {SITE.phoneDisplay}
+          Chat with us on WhatsApp
         </a>
       </Row>
       <Row icon={<MailIcon className="w-6 h-6" />} label="Email">

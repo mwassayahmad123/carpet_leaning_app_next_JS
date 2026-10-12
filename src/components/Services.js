@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { SERVICES, serviceHref } from '../data/services';
+import { PHOTOS, SERVICES, serviceHref } from '../data/services';
+import LazyVideo from './LazyVideo';
 import { ArrowIcon } from './Icons';
 import SectionHeading from './SectionHeading';
 
@@ -20,12 +21,11 @@ const Services = () => {
         {/* Video Section */}
         <div className="mb-16">
           <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
-            <div className="relative aspect-video bg-black">
-              <video className="w-full h-full object-cover" controls autoPlay muted loop playsInline>
-                <source src={SERVICE_VIDEO_SRC} type="video/webm" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
+            <LazyVideo
+              src={SERVICE_VIDEO_SRC}
+              poster={PHOTOS.extractionWand.src.src}
+              label="Five Star Carpet Cleaning team at work cleaning carpets in London"
+            />
           </div>
         </div>
 

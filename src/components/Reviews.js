@@ -184,21 +184,24 @@ const Reviews = () => {
           </button>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center space-x-2 mt-8">
+          <div className="flex justify-center mt-8">
             {reviews.map((_, index) => (
+              // 24px+ tap area around a small visual dot.
               <button
                 key={index}
                 onClick={() => {
                   setIsAutoPlaying(false);
                   setCurrentIndex(index);
                 }}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? 'bg-blue-600 w-8'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
+                className="group flex items-center justify-center min-w-[2rem] h-8 px-1"
                 aria-label={`Go to review ${index + 1}`}
-              />
+              >
+                <span
+                  className={`block h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex ? 'bg-blue-600 w-8' : 'w-3 bg-gray-300 group-hover:bg-gray-400'
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>
