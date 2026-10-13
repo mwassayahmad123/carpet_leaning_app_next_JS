@@ -1,8 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PHOTOS } from '../data/services';
+import { PHOTOS, serviceHref } from '../data/services';
 import { ArrowIcon } from './Icons';
+import { inlineLinkClass } from './LinkedText';
 
 // Short homepage introduction — the full story lives on /about/.
 const About = () => (
@@ -31,7 +32,8 @@ const About = () => (
           </p>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
             Every job starts with an inspection and a fabric test, so the cleaning method suits your carpet or upholstery.
-            We use professional hot water extraction equipment and family and pet-friendly cleaning solutions.
+            We use professional hot water extraction equipment and family and{' '}
+            <Link href={serviceHref('stain-removal')} className={inlineLinkClass.light}>pet-friendly cleaning solutions</Link>.
           </p>
           <Link
             href="/about/"

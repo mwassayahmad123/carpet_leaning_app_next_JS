@@ -4,8 +4,17 @@ import { SERVICES, serviceHref } from '../data/services';
 import LazyVideo from './LazyVideo';
 import { ArrowIcon } from './Icons';
 import SectionHeading from './SectionHeading';
+import LinkedText from './LinkedText';
 
 const SERVICE_VIDEO_SRC = '/videos/vid.webm';
+
+// In-text anchor for each card, as specified in the homepage SEO copy.
+const CARD_ANCHORS = {
+  'upholstery-sofa-cleaning': 'cleaning for sofas',
+  'rug-cleaning': 'rug cleaning service',
+  'mattress-cleaning': 'mattress cleaning service',
+  'curtain-cleaning': 'curtain cleaning service',
+};
 
 // Homepage services overview: one card per service, each linking to its own page.
 const Services = () => {
@@ -15,7 +24,12 @@ const Services = () => {
         <SectionHeading
           eyebrow="Our services"
           title="Find the Right Cleaning Service for Your Needs"
-          intro="Every home and business has different cleaning needs. From everyday dirt in busy hallways to marks on a favourite sofa, our carpet cleaning services cover a range of fabrics and surfaces. Explore each service to find the right option, understand what the cleaning involves, and see answers to common questions before booking."
+          intro={
+            <LinkedText
+              text="Every home and business has different cleaning needs. From everyday dirt in busy hallways to marks on a favourite sofa, our carpet cleaning services cover a range of fabrics and surfaces. Explore each service to find the right option, understand what the cleaning involves, and see answers to common questions before booking."
+              link={{ text: 'carpet cleaning services', href: serviceHref('carpet-cleaning') }}
+            />
+          }
         />
 
         {/* Video Section */}
@@ -32,21 +46,28 @@ const Services = () => {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((service) => (
-            <Link
+            <div
               key={service.slug}
-              href={serviceHref(service.slug)}
               className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 group flex flex-col"
             >
               <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                 {service.icon}
               </div>
               <h3 className="text-2xl font-semibold text-gray-900 mb-3">{service.name}</h3>
-              <p className="text-gray-600 leading-relaxed flex-1">{service.summary}</p>
-              <span className="mt-6 pt-4 border-t border-gray-200 text-blue-600 font-semibold group-hover:text-purple-600 transition-colors flex items-center">
+              <p className="text-gray-600 leading-relaxed flex-1">
+                <LinkedText
+                  text={service.summary}
+                  link={CARD_ANCHORS[service.slug] && { text: CARD_ANCHORS[service.slug], href: serviceHref(service.slug) }}
+                />
+              </p>
+              <Link
+                href={serviceHref(service.slug)}
+                className="mt-6 pt-4 border-t border-gray-200 text-blue-600 font-semibold hover:text-purple-600 transition-colors flex items-center"
+              >
                 View {service.name.toLowerCase()}
                 <ArrowIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
+              </Link>
+            </div>
           ))}
         </div>
       </div>

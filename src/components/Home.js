@@ -1,7 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
 import heroBg from './img/2.webp';
+import Link from 'next/link';
 import CtaButtons from './CtaButtons';
+import { inlineLinkClass } from './LinkedText';
 
 const Home = () => {
   return (
@@ -33,7 +35,8 @@ const Home = () => {
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Five Star Carpet Cleaning is a reliable carpet cleaning company in London, helping refresh tired carpets and
+            Five Star Carpet Cleaning is a reliable{' '}
+            <Link href="/about/" className={inlineLinkClass.dark}>carpet cleaning company in London</Link>, helping refresh tired carpets and
             upholstery by removing built-up dirt, everyday stains, and unwanted odours. Whether you need one room cleaned
             or several items refreshed, we’ll assess the material and choose a suitable cleaning method for your home or
             workplace.

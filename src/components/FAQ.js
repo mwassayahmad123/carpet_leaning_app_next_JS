@@ -12,6 +12,7 @@ export const faqs = [
     question: 'Which carpet cleaning company is the best in London?',
     answer:
       'Look for a reliable carpet cleaning company in London with genuine customer reviews, clear pricing, and suitable cleaning methods. Five Star Carpet Cleaning serves homes and businesses across London, with cleaning methods chosen to suit the carpet or fabric.',
+    link: { text: 'Five Star Carpet Cleaning', href: '/contact/' },
   },
   {
     question: 'What is the average carpet cleaning price in London?',

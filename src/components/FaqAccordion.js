@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import LinkedText from './LinkedText';
 
 const FaqAccordion = ({ faqs }) => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -37,7 +38,9 @@ const FaqAccordion = ({ faqs }) => {
               activeIndex === index ? 'max-h-[40rem] pb-6 opacity-100' : 'max-h-0 opacity-0'
             }`}
           >
-            <p className="text-gray-600 leading-relaxed pt-3 border-t border-gray-100">{faq.answer}</p>
+            <p className="text-gray-600 leading-relaxed pt-3 border-t border-gray-100">
+              <LinkedText text={faq.answer} link={faq.link} />
+            </p>
           </div>
         </div>
       ))}
