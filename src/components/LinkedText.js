@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 // Visible styling for in-content (internal) anchor text.
 export const inlineLinkClass = {
-  light: 'text-blue-600 font-semibold underline decoration-2 underline-offset-2 hover:text-purple-600',
-  dark: 'text-blue-200 font-semibold underline decoration-2 underline-offset-2 hover:text-white',
+  light: 'text-blue-600 font-semibold hover:text-purple-600',
+  dark: 'text-blue-200 font-semibold hover:text-white',
 };
 
 // Renders `text`, turning the first occurrence of `link.text` into an internal link.
