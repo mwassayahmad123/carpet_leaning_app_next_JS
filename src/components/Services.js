@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { PHOTOS, SERVICES, serviceHref } from '../data/services';
+import { SERVICES, serviceHref } from '../data/services';
 import LazyVideo from './LazyVideo';
 import { ArrowIcon } from './Icons';
 import SectionHeading from './SectionHeading';
@@ -23,7 +23,7 @@ const Services = () => {
           <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
             <LazyVideo
               src={SERVICE_VIDEO_SRC}
-              poster={PHOTOS.extractionWand.src.src}
+              poster="/videos/poster.webp"
               label="Five Star Carpet Cleaning team at work cleaning carpets in London"
             />
           </div>
