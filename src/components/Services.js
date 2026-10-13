@@ -14,8 +14,8 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Our services"
-          title="Cleaning Services Across London"
-          intro="From whole-house carpet cleans to a single stained sofa, choose a service to see how we work, what to expect and common questions."
+          title="Find the Right Cleaning Service for Your Needs"
+          intro="Every home and business has different cleaning needs. From everyday dirt in busy hallways to marks on a favourite sofa, our carpet cleaning services cover a range of fabrics and surfaces. Explore each service to find the right option, understand what the cleaning involves, and see answers to common questions before booking."
         />
 
         {/* Video Section */}

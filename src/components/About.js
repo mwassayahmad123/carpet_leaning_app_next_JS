@@ -22,16 +22,16 @@ const About = () => (
         <div>
           <p className="text-sm font-bold tracking-widest uppercase text-blue-600 mb-3">About us</p>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            London Carpet Cleaners Who Take Care of Your Home
+            London Carpet Cleaners for Homes and Businesses
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed mb-4">
             Five Star Carpet Cleaning is a London-based team cleaning carpets, sofas, rugs, mattresses and curtains for
-            homeowners, tenants, landlords and businesses. We built our reputation through word of mouth and genuine
+            homeowners, tenants, landlords and businesses. We’ve built our reputation through word of mouth and genuine
             customer reviews.
           </p>
           <p className="text-lg text-gray-600 leading-relaxed mb-8">
             Every job starts with an inspection and a fabric test, so the cleaning method suits your carpet or upholstery.
-            We use professional hot water extraction equipment and family- and pet-friendly cleaning solutions.
+            We use professional hot water extraction equipment and family and pet-friendly cleaning solutions.
           </p>
           <Link
             href="/about/"

@@ -28,12 +28,15 @@ const Home = () => {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
             Professional Carpet Cleaning{' '}
             <span className="block mt-2 bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-              in London
+              London
             </span>
           </h1>
 
-          <p className="text-xl sm:text-2xl text-gray-200 mb-10 max-w-2xl mx-auto">
-            Deep hot water extraction for carpets, sofas, rugs, mattresses and curtains — for homes, landlords and businesses across London.
+          <p className="text-lg sm:text-xl text-gray-200 mb-10 max-w-3xl mx-auto leading-relaxed">
+            Five Star Carpet Cleaning is a reliable carpet cleaning company in London, helping refresh tired carpets and
+            upholstery by removing built-up dirt, everyday stains, and unwanted odours. Whether you need one room cleaned
+            or several items refreshed, we’ll assess the material and choose a suitable cleaning method for your home or
+            workplace.
           </p>
 
           <CtaButtons showQuote className="justify-center" />

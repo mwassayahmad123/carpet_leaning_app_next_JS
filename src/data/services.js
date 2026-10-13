@@ -52,7 +52,7 @@ export const SERVICES = [
     heroIntro:
       'Deep hot water extraction that lifts embedded dirt, stains and odours from your carpets — for homes, rentals and businesses across London.',
     summary:
-      'Hot water extraction for living rooms, bedrooms, hallways and stairs. Lifts embedded dirt, stains and odours and brings colour back to tired carpets.',
+      'Our carpet washing service uses hot water extraction to remove embedded dirt, treat suitable stains, and freshen carpets in living rooms, bedrooms, hallways and on stairs. We provide professional carpet cleaning for homes and businesses, helping carpets look fresher and feel cleaner.',
     heroImage: PHOTOS.creamCarpet,
     benefitsIntro:
       'Regular vacuuming only removes surface dust. Professional carpet cleaning reaches the base of the fibres where grit, oils and odours build up.',
@@ -109,7 +109,7 @@ export const SERVICES = [
     heroIntro:
       'Careful, fabric-specific cleaning for sofas, armchairs, dining chairs and headboards — from everyday fabrics to delicate velvets.',
     summary:
-      'Fabric-safe cleaning for sofas, armchairs and dining chairs, including velvet. Lifts body oils, spills and pet hair to refresh your furniture.',
+      'Give your furniture the care it needs with fabric-aware cleaning for sofas, armchairs and dining chairs, including suitable velvet fabrics. We target body oils, everyday spills and built-up dirt to refresh your furniture while taking care to protect delicate materials.',
     heroImage: PHOTOS.sofaRoom,
     benefitsIntro:
       'Sofas and chairs absorb body oils, spills, dust and pet hair every day. A professional clean refreshes them without damaging the fabric.',
@@ -166,7 +166,7 @@ export const SERVICES = [
     heroIntro:
       'Gentle, colour-tested cleaning for wool, Persian, Oriental and modern rugs — removing embedded dust, stains and odours while protecting the fibres.',
     summary:
-      'Colour-tested cleaning for wool, Persian, Oriental and modern rugs. Removes embedded dust, odours and stains while protecting colours and fringes.',
+      'From wool and Persian rugs to Oriental and modern designs, we check colours and fibres before choosing a suitable cleaning method. Our rug cleaning service targets embedded dust, stains and unwanted odours while helping protect delicate colours and fringes.',
     heroImage: PHOTOS.extractionWand,
     benefitsIntro:
       'Rugs trap a surprising amount of grit and dust in their base. Cleaning them with the right method keeps colours bright and fibres soft.',
@@ -222,7 +222,7 @@ export const SERVICES = [
     heroIntro:
       'Targeted enzyme treatments that break down pet urine, accidents and odours at the source — in carpets, rugs and upholstery.',
     summary:
-      'Enzyme treatments that break down pet urine and odour at the source rather than masking it. For carpets, rugs and sofas.',
+      'Pet accidents can leave marks and lingering smells in carpets, rugs and sofas. We use suitable treatments designed to break down pet urine residues and tackle odours at their source, rather than simply covering them with fragrance. Results depend on the material, the stain, and how deeply it has soaked in.',
     heroImage: PHOTOS.diningCarpet,
     benefitsIntro:
       'Pet accidents soak through the fibres into the backing and underlay. Surface sprays hide the smell for a while — treating the source is what lasts.',
@@ -278,7 +278,7 @@ export const SERVICES = [
     heroIntro:
       'Deep, fast-drying mattress cleaning that removes dust, sweat stains and odours so your bed feels fresher.',
     summary:
-      'Deep cleaning for mattresses that removes dust, sweat stains and odours, using low-moisture extraction so beds dry quickly.',
+      'Mattresses collect sweat, body oils, dust and everyday marks over time. Our mattress cleaning service helps remove built-up dirt and unwanted odours using a suitable cleaning method. We manage moisture carefully and explain the expected drying time so you know when your bed can be used again.',
     heroImage: PHOTOS.greyBedroom,
     benefitsIntro:
       'We spend a third of our lives in bed. Mattresses collect dust, skin cells, sweat and spills that a sheet change alone does not remove.',
@@ -334,7 +334,7 @@ export const SERVICES = [
     heroIntro:
       'On-site curtain cleaning that refreshes your curtains and drapes while they stay hanging — no taking down, no re-hanging.',
     summary:
-      'On-site curtain and drape cleaning while they stay hanging. Removes dust, city grime and odours without taking them down.',
+      'Keep your curtains looking fresher without the hassle of taking them down. Our on-site curtain cleaning service treats suitable curtains and drapes while they remain hanging. We assess the fabric first, then work to remove dust, everyday grime and unwanted odours with care.',
     heroImage: PHOTOS.bayWindow,
     benefitsIntro:
       'Curtains trap dust, pollen, cooking smells and city grime. Cleaning them in place saves the hassle of taking them down and re-hanging them.',

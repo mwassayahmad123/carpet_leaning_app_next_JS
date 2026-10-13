@@ -28,12 +28,30 @@ export const TrustBar = () => (
 );
 
 const differentiators = [
-  { title: 'Professional equipment', text: 'Commercial-grade hot water extraction machines that remove more dirt and moisture than rental machines.' },
-  { title: 'Fabric-aware cleaning', text: 'We inspect and colour-test first, then choose the right method for wool, synthetics, velvet and delicate rugs.' },
-  { title: 'Transparent communication', text: 'Clear quotes up front and honest advice about which stains will and won’t come out.' },
-  { title: 'Convenient booking', text: 'Book by phone, WhatsApp or online, seven days a week, at a time that suits you.' },
-  { title: 'Family & pet-friendly', text: 'Biodegradable cleaning solutions without overpowering chemical smells.' },
-  { title: 'Careful, tidy service', text: 'We respect your home, protect your furniture and walk through the result with you before we leave.' },
+  {
+    title: 'Professional equipment',
+    text: 'We use commercial-grade hot water extraction machines to help lift embedded dirt and remove cleaning solution from suitable carpets. The equipment and method are chosen according to the material and its condition.',
+  },
+  {
+    title: 'Fabric-aware cleaning',
+    text: 'Different fabrics need different care. We inspect and colour-test materials before cleaning, taking account of wool, synthetic fibres, velvet and delicate rugs to help reduce the risk of damage.',
+  },
+  {
+    title: 'Transparent communication',
+    text: 'We provide clear quotes before work begins and explain what to expect from the cleaning process. If a stain is unlikely to come out completely, we’ll be honest about it rather than promise results we cannot guarantee.',
+  },
+  {
+    title: 'Convenient booking',
+    text: 'Arrange your appointment by phone, WhatsApp, or online, seven days a week. Tell us what needs cleaning, and we’ll help you discuss the available options and a suitable appointment time.',
+  },
+  {
+    title: 'Family & pet-friendly',
+    text: 'We use biodegradable cleaning solutions selected with household comfort in mind. We’ll explain any necessary precautions and drying guidance so you know when the cleaned areas are ready to use.',
+  },
+  {
+    title: 'Careful, tidy service',
+    text: 'We treat your home and belongings with care, take sensible steps to protect surrounding furniture and check the results with you before we leave. We aim to leave you with a clean space and a clear understanding of the work completed.',
+  },
 ];
 
 export const WhyChoose = () => (
@@ -41,8 +59,8 @@ export const WhyChoose = () => (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Why choose us"
-        title="Why Choose Five Star Carpet Cleaning"
-        intro="What you can expect every time you book with us."
+        title="Why Choose Five Star Carpet Cleaning?"
+        intro="Choosing a cleaner is about more than the equipment they bring. You also want clear communication, careful work and advice you can trust. Whether you need residential or commercial carpet cleaning, we aim to make the whole process straightforward from booking to the final check."
       />
       <FeatureGrid items={differentiators} />
     </div>
@@ -60,7 +78,11 @@ const steps = [
 export const HowItWorks = () => (
   <section id="how-it-works" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionHeading eyebrow="How it works" title="How Our Cleaning Service Works" intro="From first message to final check in five simple steps." />
+      <SectionHeading
+        eyebrow="How it works"
+        title="How Our Cleaning Service Works"
+        intro="Booking a professional clean should be simple. We guide you through each stage, from your first enquiry to the final inspection, so you know what to expect. Whether you need one carpet cleaned or several items treated, we’ll discuss your needs, explain the process, and help you prepare for your appointment."
+      />
       <ProcessSteps steps={steps} />
     </div>
   </section>
