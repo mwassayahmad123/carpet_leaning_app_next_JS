@@ -1,5 +1,6 @@
 import './globals.css';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -117,8 +118,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        {/* Google tag (gtag.js) */}
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        {/* Google tag (gtag.js): the tiny dataLayer setup runs immediately so the pageview is queued;
+            the 177 KB gtag.js library is loaded after the page has finished loading (see <Script> below)
+            so it doesn't compete with the hero content on slow mobile connections. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
@@ -136,6 +138,7 @@ gtag('config', '${GA_ID}');`,
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
       </body>
     </html>
   );

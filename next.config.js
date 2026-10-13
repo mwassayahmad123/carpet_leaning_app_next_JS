@@ -2,6 +2,10 @@
 const nextConfig = {
   // Matches the URL format in the SEO plan: /about/, /services/carpet-cleaning/ etc.
   trailingSlash: true,
+  experimental: {
+    // Inline the (small) Tailwind CSS into the HTML so it doesn't block first render on mobile.
+    inlineCss: true,
+  },
   images: {
     // Avoid 502 on /_next/image when the host image optimizer is unavailable or misconfigured
     // (common on some Netlify / serverless setups). Images load as normal static URLs instead.
