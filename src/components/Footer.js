@@ -10,6 +10,7 @@ const Footer = () => {
     { href: '/#reviews', label: 'Reviews' },
     { href: '/#gallery', label: 'Gallery' },
     { href: '/#faq', label: 'FAQ' },
+    { href: '/blog/', label: 'Blog' },
     { href: '/contact/', label: 'Contact & Booking' },
   ];
 

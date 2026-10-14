@@ -12,6 +12,7 @@ const menuItems = [
 	{ href: '/services/', label: 'Services', children: true },
 	{ href: '/#reviews', label: 'Reviews' },
 	{ href: '/#gallery', label: 'Gallery' },
+	{ href: '/blog/', label: 'Blog' },
 	{ href: '/contact/', label: 'Contact' },
 ];
 

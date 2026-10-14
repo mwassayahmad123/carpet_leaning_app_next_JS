@@ -1,6 +1,7 @@
 // Numbered step-by-step customer journey.
-const ProcessSteps = ({ steps }) => (
-  <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+// `columns` lets pages with longer step text use fewer, wider columns.
+const ProcessSteps = ({ steps, columns = 'lg:grid-cols-5' }) => (
+  <ol className={`grid grid-cols-1 md:grid-cols-2 ${columns} gap-6`}>
     {steps.map((step, index) => (
       <li key={step.title} className="relative bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
         <span className="flex items-center justify-center w-11 h-11 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg mb-4">

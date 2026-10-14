@@ -4,10 +4,12 @@ import SectionHeading from './SectionHeading';
 
 const defaultIntro = `We are based in ${SITE.baseArea} and travel to homes and businesses across London and Greater London. Not sure if we cover your postcode? Just ask.`;
 
-const ServiceArea = ({ background = 'bg-gray-50', intro = defaultIntro }) => (
+// `extra` is an optional follow-up paragraph shown under the intro.
+const ServiceArea = ({ background = 'bg-gray-50', intro = defaultIntro, extra }) => (
   <section id="service-area" className={`py-20 ${background}`}>
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading eyebrow="Service area" title="Carpet Cleaning Across London" intro={intro} />
+      {extra && <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto text-center -mt-6 mb-12">{extra}</p>}
       <ul className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
         {SITE.serviceAreas.map((area) => (
           <li

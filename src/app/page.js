@@ -5,6 +5,7 @@ import { TrustBar, WhyChoose, HowItWorks } from '../components/HomeSections';
 import ServiceArea from '../components/ServiceArea';
 import Reviews from '../components/Reviews';
 import Gallery from '../components/Gallery';
+import LatestPosts from '../components/LatestPosts';
 import FAQ, { faqs } from '../components/FAQ';
 import Contact from '../components/Contact';
 
@@ -57,6 +58,7 @@ export default function Page() {
       <ServiceArea intro={serviceAreaIntro} />
       <Reviews />
       <Gallery />
+      <LatestPosts />
       <FAQ />
       <Contact />
     </>
