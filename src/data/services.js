@@ -45,56 +45,108 @@ export const SERVICES = [
     slug: 'carpet-cleaning',
     name: 'Carpet Cleaning',
     icon: '💧',
-    metaTitle: 'Carpet Cleaning London | Professional Deep Steam Cleaning',
+    metaTitle: 'Carpet Cleaning Services London | Deep, Professional Clean',
     metaDescription:
-      'Professional carpet cleaning in London for homes, landlords and offices. Hot water extraction that lifts dirt, stains and odours. Free quote — call or WhatsApp.',
-    h1: 'Carpet Cleaning in London',
+      'Get professional carpet cleaning services in London for your home or business. Remove built-up dirt, refresh your carpets, and request a clear, upfront quote.',
+    h1: 'Carpet Cleaning Services London',
     heroIntro:
-      'Deep hot water extraction that lifts embedded dirt, stains and odours from your carpets — for homes, rentals and businesses across London.',
+      'Bring your carpets back to life with professional carpet cleaning that removes built-up dirt, everyday marks and unwanted odours. Five Star Carpet Cleaning provides deep carpet cleaning in London for homes, rental properties and businesses, using hot water extraction and suitable cleaning solutions to refresh your carpets.',
+    heroIntroLink: { text: 'Five Star Carpet Cleaning', href: '/' },
     summary:
       'Our carpet washing service uses hot water extraction to remove embedded dirt, treat suitable stains, and freshen carpets in living rooms, bedrooms, hallways and on stairs. We provide professional carpet cleaning for homes and businesses, helping carpets look fresher and feel cleaner.',
     heroImage: PHOTOS.creamCarpet,
     benefitsIntro:
-      'Regular vacuuming only removes surface dust. Professional carpet cleaning reaches the base of the fibres where grit, oils and odours build up.',
+      "Vacuuming helps remove loose dust and dirt, but it cannot always reach the grime trapped deeper in carpet fibres. Our professional carpet cleaning service helps tackle everyday dirt, spills and worn-looking areas, leaving your carpets cleaner and fresher. Whether you need a one-off deep clean or regular care, we choose a suitable method for your carpet's material and condition.",
     benefits: [
-      { title: 'Removes deep-down dirt', text: 'Hot water extraction flushes out grit and residue that wears fibres down over time.' },
-      { title: 'Restores appearance', text: 'Traffic lanes, dull patches and flattened pile are lifted so carpets look fresher.' },
-      { title: 'Reduces odours', text: 'Cooking, pet and everyday odours trapped in the pile are rinsed out rather than masked.' },
-      { title: 'Less dust and allergens', text: 'Extraction removes dust and allergens held in the carpet, helping keep your home fresher.' },
-      { title: 'Helps carpets last longer', text: 'Removing abrasive dirt protects the fibres and extends the life of your carpet.' },
+      {
+        title: 'Removes Deep-Down Dirt',
+        text: 'Foot traffic can push grit, dust and other dirt into carpet fibres over time. Our hot water extraction method helps loosen and remove this build-up, leaving your carpet feeling cleaner underfoot.',
+      },
+      {
+        title: 'Refreshes the Look of Your Carpet',
+        text: 'Hallways, stairs and living areas often show signs of daily use first. Professional carpet washing helps remove built-up dirt and improve the appearance of dull or flattened areas, giving your carpet a fresher look.',
+      },
+      {
+        title: 'Helps Tackle Unwanted Odours',
+        text: 'Food spills, pets, and everyday use can leave smells trapped in carpet fibres. Our cleaning process helps remove the residue behind many common odours instead of simply covering them with fragrance.',
+      },
+      {
+        title: 'Helps Remove Trapped Dust and Dirt',
+        text: 'Carpets can hold dust and other particles that ordinary vacuuming may not remove completely. Deep cleaning helps lift this build-up, making your carpets feel fresher. It is not a replacement for regular vacuuming or a guarantee of allergy relief.',
+      },
+      {
+        title: 'Helps Protect Your Carpet Over Time',
+        text: 'Dirt and grit can rub against carpet fibres as people walk across them. Removing this build-up through suitable cleaning and regular care can help reduce wear and keep your carpet looking its best for longer.',
+      },
     ],
-    residential:
-      'Living rooms, bedrooms, hallways and stairs, plus end-of-tenancy cleans for tenants and landlords who need carpets ready for inspection.',
-    commercial:
-      'Offices, shops, rental properties and communal areas. We can work around your opening hours to keep disruption to a minimum.',
-    whyUs: commonWhyUs,
+    // Single-paragraph residential/commercial section (replaces the two cards).
+    residentialTitle: 'Residential and Commercial Carpet Cleaning in London',
+    residentialText:
+      'We clean carpets in homes, flats, rental properties, offices and other business spaces across London. Whether you need a bedroom refreshed before moving out, a living room cleaned after everyday family use, or office carpets freshened up, we tailor the work to the space and carpet condition. If you’re searching for “carpet cleaning services near me” or “carpet wash near me”, contact our team to check coverage for your London postcode and discuss your cleaning needs.',
+    residentialLink: { text: 'contact our team', href: '/contact/' },
+    whyUsTitle: 'Why Choose Five Star for Carpet Cleaning?',
+    whyUsIntro:
+      'Choosing a carpet cleaner should be about more than getting a stain out. You also want clear communication, careful work, and a service that respects your property. At Five Star Carpet Cleaning, we focus on understanding what your carpets need, explaining the work before we start, and helping you choose a suitable cleaning option. If you are comparing carpet cleaning companies, here is what you can expect from our team.',
+    whyUsIntroLink: { text: 'carpet cleaning companies', href: '/about/' },
+    whyUs: [
+      {
+        title: 'Professional Equipment',
+        text: 'We use professional hot water extraction machines and suitable tools to help remove embedded dirt and cleaning residue. This method is often called steam carpet cleaning, although hot water extraction and steam cleaning are not the same. We select the approach that best suits the carpet and its care instructions.',
+      },
+      {
+        title: 'Cleaning Suited to Your Carpet',
+        text: 'Different carpet materials need different levels of care. We inspect the carpet and check for colourfastness before cleaning, where suitable, so we can choose an appropriate method for the material and condition.',
+      },
+      {
+        title: 'Clear, Upfront Quotes',
+        text: 'Before work begins, we explain the expected cost based on the details you provide and the cleaning required. This helps you understand what is included and avoid unexpected charges. If you want to compare professional carpet washing options, we recommend looking at the work included as well as the price.',
+      },
+      {
+        title: 'Considerate Products and Care',
+        text: 'We choose cleaning solutions based on the carpet and the job. We aim to avoid unnecessarily strong smells and take care around your home, furniture, and belongings. If you have children, pets, or particular product concerns, tell us before the appointment so we can discuss suitable options.',
+      },
+    ],
+    processIntro:
+      'Booking professional carpet cleaning should feel simple. First, tell us which rooms or areas need attention and share any stains or concerns. We provide a quote based on the information available and arrange a suitable appointment. When we arrive, we inspect the carpet, discuss any problem areas, and choose an appropriate cleaning method. We then carry out the cleaning, remove as much moisture as the method allows, and explain how to care for the carpet while it dries.',
     process: commonProcess('carpets'),
     images: [PHOTOS.greyCarpetMidClean, PHOTOS.extractionHallway, PHOTOS.creamCarpet, PHOTOS.stairsGrey],
+    faqsTitle: 'FAQs About Carpet Cleaning Service',
     faqs: [
       {
-        question: 'How much does carpet cleaning cost in London?',
+        question: 'How Much Do Carpet Cleaners Charge in London?',
         answer:
-          'The price depends on the number and size of rooms, stairs and the condition of the carpet. Send us the details or a few photos on WhatsApp and we will give you a clear quote before booking.',
+          "The cost depends on the number and size of the rooms, the carpet's condition, the type of stains, and whether extra treatments are needed. The best way to understand your cost is to request a quote based on your property and cleaning needs. Five Star Carpet Cleaning can discuss the work required before you book, so you know what to expect.",
       },
       {
-        question: 'How often should carpets be professionally cleaned?',
+        question: 'Is It Worth Getting Carpets Professionally Cleaned?',
         answer:
-          'For most homes every 12 to 18 months is a good rule. Homes with pets, young children or allergy sufferers often benefit from a clean every 6 to 8 months.',
+          'Professional cleaning can be worthwhile when carpets have built-up dirt, traffic marks or smells that regular vacuuming cannot tackle. It can also help refresh carpets before moving in or out of a property. The results depend on the carpet material, its condition, and the type of stain, so not every mark can be removed completely.',
       },
       {
-        question: 'Can you remove all stains?',
+        question: 'Do Carpets Get Dirtier After Cleaning?',
         answer:
-          'Most everyday stains come out well. Some old or dye-based stains (wine, bleach, some pet accidents) can permanently change the fibre colour. We will tell you honestly what to expect before we start.',
+          'Carpets should not become dirtier simply because they have been cleaned. However, leftover cleaning residue can attract dirt, and walking on a damp carpet can transfer dirt back onto the fibres. Using a suitable amount of cleaning solution, removing residue properly and allowing the carpet to dry before normal use can help reduce this risk.',
       },
       {
-        question: 'How should I prepare before you arrive?',
+        question: 'Should Carpet Be Vacuumed After Cleaning?',
         answer:
-          'Please vacuum if you can and move small items, breakables and anything on the floor. We can help move light furniture; heavy items can be cleaned around.',
+          'Wait until the carpet is fully dry before vacuuming, unless your cleaner or the equipment instructions advise otherwise. Vacuuming a damp carpet may not give the best result. Once dry, vacuuming can help remove loose particles and keep the carpet looking fresh.',
       },
       {
-        question: 'What cleaning method do you use and how long does it take to dry?',
+        question: 'How Often Should Carpets Be Professionally Cleaned?',
         answer:
-          'We use hot water extraction (often called steam cleaning). Carpets are usually dry to the touch in 4–6 hours, a little longer for thick pile. Good ventilation or heating speeds drying up.',
+          'It depends on how much the carpet is used, whether you have pets or children, and how quickly dirt builds up. Busy hallways and family living areas may need attention more often than spare rooms. Regular vacuuming and prompt treatment of spills can help you decide when a professional clean is needed.',
+      },
+      {
+        question: 'Can You Remove All Carpet Stains?',
+        answer:
+          'No cleaning company can promise to remove every stain. Results depend on what caused the mark, how long it has been there, the carpet material, and any previous cleaning attempts. We assess the affected area and explain what may be possible before starting.',
+        link: { text: 'remove every stain', href: '/services/stain-removal/' },
+      },
+      {
+        question: 'How Should I Prepare Before You Arrive?',
+        answer:
+          'Please remove small items and personal belongings from the areas to be cleaned where possible. Tell us about any stains, pet accidents, or previous cleaning treatments, and let us know about furniture that may need moving. We can then explain how to prepare for your appointment.',
       },
     ],
   },
