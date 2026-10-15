@@ -83,7 +83,7 @@ export default async function ServicePage({ params }) {
 
       <PageHero
         title={service.h1}
-        intro={service.heroIntro}
+        intro={<LinkedText text={service.heroIntro} link={service.heroIntroLink} tone="dark" />}
         image={service.heroImage}
         breadcrumbs={[{ label: 'Services', href: '/#services' }, { label: service.name }]}
         whatsappText={whatsappText}
@@ -101,27 +101,41 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      {/* Residential & Commercial */}
+      {/* Residential & Commercial — a single paragraph when the service provides `residentialText`, otherwise two cards. */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Who it's for" title={`Residential & Commercial ${service.name}`} />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-3">For homes</h3>
-              <p className="text-gray-600 leading-relaxed">{service.residential}</p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-              <h3 className="text-2xl font-semibold text-gray-900 mb-3">For businesses & landlords</h3>
-              <p className="text-gray-600 leading-relaxed">{service.commercial}</p>
-            </div>
-          </div>
+          {service.residentialText ? (
+            <SectionHeading
+              eyebrow="Who it's for"
+              title={service.residentialTitle}
+              intro={<LinkedText text={service.residentialText} link={service.residentialLink} />}
+            />
+          ) : (
+            <>
+              <SectionHeading eyebrow="Who it's for" title={`Residential & Commercial ${service.name}`} />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">For homes</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.residential}</p>
+                </div>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">For businesses & landlords</h3>
+                  <p className="text-gray-600 leading-relaxed">{service.commercial}</p>
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </section>
 
       {/* Why Choose Us */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Why us" title={`Why Choose Five Star for ${service.name}`} />
+          <SectionHeading
+            eyebrow="Why us"
+            title={service.whyUsTitle || `Why Choose Five Star for ${service.name}`}
+            intro={service.whyUsIntro && <LinkedText text={service.whyUsIntro} link={service.whyUsIntroLink} />}
+          />
           <FeatureGrid items={service.whyUs} columns="lg:grid-cols-4" />
         </div>
       </section>
@@ -129,7 +143,7 @@ export default async function ServicePage({ params }) {
       {/* Process */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="What to expect" title="Our Process, Step by Step" />
+          <SectionHeading eyebrow="What to expect" title="Our Process, Step by Step" intro={service.processIntro} />
           <ProcessSteps steps={service.process} />
         </div>
       </section>
