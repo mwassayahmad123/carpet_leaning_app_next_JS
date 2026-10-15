@@ -8,6 +8,7 @@ import PhotoGrid from '../../../components/PhotoGrid';
 import FaqAccordion from '../../../components/FaqAccordion';
 import CallToAction from '../../../components/CallToAction';
 import { ArrowIcon } from '../../../components/Icons';
+import LinkedText from '../../../components/LinkedText';
 import { SERVICES, getService, serviceHref } from '../../../data/services';
 import { SITE } from '../../../data/site';
 
@@ -159,7 +160,7 @@ export default async function ServicePage({ params }) {
       {/* FAQs */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <SectionHeading eyebrow="FAQs" title={`${service.name} FAQs`} />
+          <SectionHeading eyebrow="FAQs" title={service.faqsTitle || `${service.name} FAQs`} />
           <FaqAccordion faqs={service.faqs} />
         </div>
       </section>
