@@ -27,6 +27,11 @@ export const post = {
     src: image,
     alt: 'Complete guide on how to remove stains from carpet by Five Star Carpet Cleaning.',
   },
+  cta: {
+    title: 'Need Help With a Stubborn Carpet Stain?',
+    text: 'Call or WhatsApp us with a photo of the stain for a free, no-obligation quote.',
+    whatsappText: "Hi, I'd like help with a carpet stain.",
+  },
   faqs: [
     {
       question: 'How to clean stains from carpet?',

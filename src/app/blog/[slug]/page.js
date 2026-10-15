@@ -127,9 +127,9 @@ export default async function BlogPostPage({ params }) {
       </article>
 
       <CallToAction
-        title="Need Help With a Stubborn Carpet Stain?"
-        text="Call or WhatsApp us with a photo of the stain for a free, no-obligation quote."
-        whatsappText="Hi, I'd like help with a carpet stain."
+        title={post.cta?.title || 'Need Help With Your Carpets?'}
+        text={post.cta?.text || 'Call or WhatsApp us for a free, no-obligation quote.'}
+        whatsappText={post.cta?.whatsappText}
       />
     </>
   );
