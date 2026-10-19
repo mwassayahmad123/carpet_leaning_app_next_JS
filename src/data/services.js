@@ -154,56 +154,101 @@ export const SERVICES = [
     slug: 'upholstery-sofa-cleaning',
     name: 'Upholstery & Sofa Cleaning',
     icon: '🛋️',
-    metaTitle: 'Upholstery & Sofa Cleaning London | Fabric & Velvet Sofas',
+    metaTitle: 'Upholstery Cleaning London | Sofa Cleaning Experts',
     metaDescription:
-      'Professional sofa and upholstery cleaning in London. Fabric-safe cleaning for sofas, armchairs and dining chairs, including velvet. Get a free quote today.',
-    h1: 'Upholstery & Sofa Cleaning in London',
+      'Give your sofas and armchairs a fresh new look with professional upholstery cleaning in London. Remove built-up dirt and odours. Contact Five Star for a quote!',
+    h1: 'Upholstery Cleaning London',
     heroIntro:
-      'Careful, fabric-specific cleaning for sofas, armchairs, dining chairs and headboards — from everyday fabrics to delicate velvets.',
+      'Give your furniture a fresh start with professional upholstery cleaning in London. We clean sofas, armchairs, dining chairs, and headboards using methods suited to the fabric, helping remove everyday dirt, spills, body oils, and unwanted odours while caring for your furniture.',
     summary:
       'Give your furniture the care it needs with fabric-aware cleaning for sofas, armchairs and dining chairs, including suitable velvet fabrics. We target body oils, everyday spills and built-up dirt to refresh your furniture while taking care to protect delicate materials.',
     heroImage: PHOTOS.sofaRoom,
     benefitsIntro:
-      'Sofas and chairs absorb body oils, spills, dust and pet hair every day. A professional clean refreshes them without damaging the fabric.',
+      'Your sofa is one of the most-used pieces of furniture in your home. Over time, fabric can collect dust, food crumbs, body oils, and pet hair that regular vacuuming may not remove. Our professional sofa cleaning service in London helps freshen your furniture and keep it looking its best.',
     benefits: [
-      { title: 'Removes dirt and body oils', text: 'Lifts the grime that builds up on arms, headrests and seat cushions.' },
-      { title: 'Brings colour back', text: 'Dull, greyed fabric is refreshed so your furniture looks cared for again.' },
-      { title: 'Reduces odours', text: 'Food, pet and everyday smells are cleaned out of the fabric and padding.' },
-      { title: 'Less dust and pet dander', text: 'Extraction removes dust, hair and dander trapped deep in the upholstery.' },
-      { title: 'Protects your investment', text: 'Cleaning with the right method for the fabric helps furniture last longer.' },
+      {
+        title: 'Removes Dirt and Body Oils',
+        text: 'Arms, seat cushions, and headrests collect dirt through daily use. Our cleaning process helps lift built-up grime and marks, leaving your upholstery cleaner and fresher.',
+      },
+      {
+        title: 'Refreshes the Look of Your Furniture',
+        text: 'Dirt can make fabric look dull and tired. A suitable cleaning method helps improve the appearance of your sofa and chairs without using harsh treatment that could harm the material.',
+      },
+      {
+        title: 'Helps Reduce Unwanted Odours',
+        text: 'Food spills, pets and everyday use can leave unpleasant smells in upholstery. We treat affected areas with suitable cleaning methods to help remove the source of the odour rather than simply covering it up.',
+      },
+      {
+        title: 'Removes Trapped Dust and Pet Hair',
+        text: 'Sofas can hold dust, loose hair, and other everyday debris between the fibres and cushions. Careful cleaning helps remove this build-up, making your furniture feel fresher.',
+      },
+      {
+        title: 'Helps Care for Your Furniture',
+        text: 'Using a cleaning method that suits the fabric helps reduce the risk of unnecessary wear or damage. Regular care can also help keep your sofas and chairs in better condition for longer.',
+      },
     ],
-    residential:
-      'Fabric and velvet sofas, corner sofas, armchairs, footstools, dining chairs and upholstered headboards.',
-    commercial:
-      'Office chairs, reception seating, waiting rooms, restaurant and hospitality seating, and furnished rental properties.',
-    whyUs: commonWhyUs,
+    residentialTitle: 'Residential & Commercial Upholstery Cleaning in London',
+    residentialText: [
+      'Our upholstery cleaning service in London is available for homes, rental properties and business premises. Whether you need a family sofa refreshed or several chairs cleaned at work, we can discuss your furniture, its fabric and the most suitable cleaning approach.',
+      'For residential customers, we help freshen everyday furniture, including sofas, armchairs, dining chairs and upholstered headboards. For offices, waiting rooms, rental properties and other commercial spaces, we can discuss cleaning needs based on the furniture and level of use.',
+      'If you are looking for commercial and residential upholstery cleaning services in London, contact us to explain what needs cleaning and request a quote. We can also discuss carpet and upholstery cleaning in London if you would like both services arranged.',
+    ],
+    whyUsTitle: 'Why Choose Five Star for Upholstery & Sofa Cleaning?',
+    whyUsIntro:
+      'At Five Star Carpet Cleaning, we focus on careful work, clear communication and cleaning methods suited to your furniture. If you are comparing sofa cleaners or searching for professional upholstery cleaning in London, we want you to know what to expect before you book.',
+    whyUs: [
+      {
+        title: 'Professional Equipment',
+        text: 'We use professional cleaning machines and upholstery tools designed for fabric furniture. The right equipment helps lift dirt from upholstery while allowing us to control the amount of moisture used.',
+      },
+      {
+        title: 'Fabric-Aware Cleaning',
+        text: 'Not every sofa can be cleaned in the same way. We inspect the material and carry out a suitable colour test before choosing the cleaning method. This is especially important for delicate materials, including velvet.',
+      },
+      {
+        title: 'Clear, Up-Front Pricing',
+        text: 'Before work begins, we explain the quoted cost so you can make an informed decision. The price depends on factors such as the furniture type, size, fabric and cleaning needs.',
+      },
+      {
+        title: 'Family & Pet-Conscious Products',
+        text: 'We choose cleaning products with care and use suitable solutions for the fabric being treated. We aim to leave your furniture fresh without strong, lingering cleaning smells. Follow any aftercare advice we provide, especially if children or pets use the furniture.',
+      },
+    ],
+    processIntro:
+      'Booking a sofa cleaning service should be simple. We explain what your furniture needs, discuss the cleaning approach, and keep you informed throughout the visit. If you have been searching for “upholstery cleaning near me” or “professional sofa cleaning near me”, contact Five Star Carpet Cleaning to discuss your furniture and arrange a quote.',
     process: commonProcess('sofa or chairs'),
     images: [PHOTOS.sofaRoom, PHOTOS.bayWindow],
+    faqsTitle: 'FAQs About Upholstery & Sofa Cleaning',
     faqs: [
       {
-        question: 'How much does sofa cleaning cost?',
+        question: 'How Much Does It Cost to Have a Sofa Cleaned in London?',
         answer:
-          'It depends on the size of the sofa, the number of seats and cushions, and the fabric. Send a photo on WhatsApp and we will give you a clear price.',
+          'The cost depends on the size and type of sofa, the fabric, its condition, and the level of cleaning needed. A small sofa may cost less to clean than a large corner sofa or a delicate fabric sofa that needs extra care. Contact Five Star Carpet Cleaning with details of your furniture to request a quote before booking.',
       },
       {
-        question: 'How often should upholstery be cleaned?',
+        question: 'Is It Worth Getting a Sofa Cleaned?',
         answer:
-          'Once a year is enough for most homes. Sofas used daily by children or pets usually benefit from a clean every 6 to 12 months.',
+          "Professional sofa cleaning can be worthwhile when your furniture has built-up dirt, everyday marks or unwanted odours. It can help refresh the fabric and improve the sofa's appearance without the need to replace it. The best option depends on the sofa's condition, material, and cleaning needs.",
       },
       {
-        question: 'Can you remove stains from my sofa?',
+        question: 'Is Professional Upholstery Cleaning Better Than Doing It Yourself?',
         answer:
-          'Most food, drink and everyday stains respond well. Some stains on delicate or dyed fabrics may only lighten — we always test first and explain what to expect.',
+          "It depends on the fabric and the type of dirt or stain. Home cleaning may help with small, fresh spills when you use a suitable method. Professional upholstery cleaning can be a better choice for built-up dirt, larger items, or delicate fabrics because the cleaning method and equipment can be chosen to suit the furniture. Always check the manufacturer's care instructions before cleaning.",
       },
       {
-        question: 'Do I need to do anything before you arrive?',
+        question: 'How Long Does a Professional Sofa Clean Take?',
         answer:
-          'Just clear cushions, throws and personal items off the furniture. If you know the fabric type or have the care label, that helps too.',
+          "The time needed depends on the sofa's size, fabric, condition and the number of items being cleaned. A simple job may take less time than cleaning a large corner sofa or treating several pieces of furniture. Drying time is separate and varies with the fabric, cleaning method, ventilation and room conditions. We can give you a better estimate once we know what needs cleaning.",
       },
       {
-        question: 'Can you clean velvet and delicate fabrics?',
+        question: 'Is It a Good Idea to Steam Clean a Sofa?',
         answer:
-          'Yes. We check the care code and test colour-fastness before choosing a low-moisture or gentle extraction method suitable for the fabric.',
+          "Steam cleaning is not suitable for every sofa. Some fabrics can shrink, lose colour, or become damaged when exposed to too much heat or moisture. Before choosing a cleaning method, check the manufacturer's instructions and the fabric's care label. A professional can assess the material and recommend a suitable approach.",
+      },
+      {
+        question: 'How Often Should a Couch Be Cleaned?',
+        answer:
+          'How often a couch needs cleaning depends on how much it is used, whether pets or children use it, and how quickly dirt builds up. A frequently used family sofa may need attention more often than furniture in a spare room. Vacuuming regularly, dealing with spills promptly and arranging a professional clean when needed can help keep upholstery in good condition.',
       },
     ],
   },

@@ -102,15 +102,20 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      {/* Residential & Commercial — a single paragraph when the service provides `residentialText`, otherwise two cards. */}
+      {/* Residential & Commercial — paragraph(s) when the service provides `residentialText` (string or array), otherwise two cards. */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {service.residentialText ? (
-            <SectionHeading
-              eyebrow="Who it's for"
-              title={service.residentialTitle}
-              intro={<LinkedText text={service.residentialText} link={service.residentialLink} />}
-            />
+            <>
+              <SectionHeading eyebrow="Who it's for" title={service.residentialTitle} />
+              <div className="max-w-3xl mx-auto -mt-6 space-y-4 text-center text-lg sm:text-xl text-gray-600 leading-relaxed">
+                {[].concat(service.residentialText).map((paragraph) => (
+                  <p key={paragraph.slice(0, 40)}>
+                    <LinkedText text={paragraph} link={service.residentialLink} />
+                  </p>
+                ))}
+              </div>
+            </>
           ) : (
             <>
               <SectionHeading eyebrow="Who it's for" title={`Residential & Commercial ${service.name}`} />
