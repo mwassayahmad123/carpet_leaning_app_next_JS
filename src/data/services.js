@@ -386,113 +386,226 @@ export const SERVICES = [
     slug: 'stain-removal',
     name: 'Pet Stain & Odour Removal',
     icon: '🐾',
-    metaTitle: 'Pet Stain & Odour Removal London | Carpet & Sofa',
+    metaTitle: 'Stain Removal London | Professional Carpet Stain Cleaning',
     metaDescription:
-      'Pet stain and odour removal in London. Enzyme treatments that break down urine and odour at the source in carpets, rugs and upholstery. Free quote.',
-    h1: 'Pet Stain & Odour Removal in London',
+      'Need stain removal in London? Five Star Carpet Cleaning treats stubborn carpet stains with suitable cleaning methods. Contact us today for a friendly quote.',
+    h1: 'Professional Stain Removal London',
     heroIntro:
-      'Targeted enzyme treatments that break down pet urine, accidents and odours at the source — in carpets, rugs and upholstery.',
+      'Spills, food marks, and stubborn stains can make carpets look worn and untidy. We provide professional stain removal in London, helping homes and businesses tackle unwanted marks with suitable cleaning methods. We assess each stain and carpet type before choosing the right treatment.',
     summary:
       'Pet accidents can leave marks and lingering smells in carpets, rugs and sofas. We use suitable treatments designed to break down pet urine residues and tackle odours at their source, rather than simply covering them with fragrance. Results depend on the material, the stain, and how deeply it has soaked in.',
     heroImage: PHOTOS.diningCarpet,
+    benefitsTitle: 'Why Choose Professional Carpet Stain Removal?',
     benefitsIntro:
-      'Pet accidents soak through the fibres into the backing and underlay. Surface sprays hide the smell for a while — treating the source is what lasts.',
+      'Some stains sit near the surface, while others work deeper into the carpet fibres. Household sprays may not remove the full mark and can sometimes leave residue behind. Professional carpet stain cleaning uses suitable products and equipment to treat the affected area carefully.',
+    benefitsIntroLink: { text: 'carpet stain cleaning', href: '/blog/how-to-clean-carpet-at-home/' },
     benefits: [
-      { title: 'Treats the source', text: 'Enzyme treatments break down the residue that causes lingering odours.' },
-      { title: 'Lifts visible stains', text: 'Targeted pre-treatment and extraction remove as much staining as possible.' },
-      { title: 'Discourages repeat marking', text: 'Removing the scent helps stop pets returning to the same spot.' },
-      { title: 'Pet-friendly products', text: 'We use solutions that are suitable for homes with cats and dogs.' },
+      {
+        title: 'Treats Different Types of Stains',
+        text: 'From coffee and tea spills to food marks, mud, and everyday dirt, we assess the stain before deciding how to clean it. The right treatment depends on what caused the mark, how long it has been there, and the carpet material.',
+      },
+      {
+        title: 'Targets Stubborn Marks',
+        text: 'Old or deeply set stains can be harder to remove with household cleaning products. Our professional carpet stain removal service in London uses suitable pre-treatment and cleaning methods to help lift as much of the mark as possible.',
+      },
+      {
+        title: 'Protects Your Carpet',
+        text: 'Using the wrong product or scrubbing too hard can damage carpet fibres or affect their colour. We inspect the material and choose a suitable method to help clean the affected area without unnecessary damage.',
+      },
+      {
+        title: 'Honest Advice About Results',
+        text: 'Not every stain can be removed completely. We explain what may be possible after assessing the stain, so you can make an informed decision before treatment begins.',
+      },
     ],
-    residential:
-      'Carpets, rugs, sofas and mattresses in family homes — from a single accident to a whole room.',
-    commercial:
-      'Rental properties after pet-owning tenants, pet-friendly offices and hospitality spaces.',
-    whyUs: commonWhyUs,
+    residentialTitle: 'Residential & Commercial Stain Removal',
+    residentialText: [
+      'Our stain removal service in London is available for homes, rental properties and business premises. Whether you are dealing with a drink spill in your living room or marks in a busy office, we assess the affected carpet and recommend a suitable cleaning approach.',
+      'For homeowners and tenants, targeted carpet cleaning and stain removal can help refresh rooms without treating every carpeted area unnecessarily. Landlords and property managers may also benefit from stain treatment when preparing a property for new occupants.',
+      'We can also discuss commercial carpet stain removal in London for suitable business spaces. The recommended method will depend on the carpet, the type of stain, and the condition of the affected area.',
+    ],
+    whyUsTitle: 'Why Choose Five Star for Stain Removal?',
+    whyUsIntro:
+      'Finding a reliable carpet stain removal company means knowing what to expect before the work starts. At Five Star Carpet Cleaning, we focus on careful assessment, clear communication, and suitable treatment for each carpet.',
+    whyUsIntroLink: { text: 'carpet stain removal company', href: '/about/' },
+    whyUs: [
+      {
+        title: 'Professional Equipment',
+        text: 'We use professional hot water extraction equipment and appropriate cleaning tools to help remove dirt, cleaning residue, and loosened stains. The equipment and method are selected according to the carpet and the type of treatment required.',
+      },
+      {
+        title: 'Carpet-Safe Cleaning Methods',
+        text: 'Every carpet is different. We inspect the affected area and check the material before choosing a cleaning method. Where needed, we test a suitable product in a hidden spot to check for colour changes.',
+      },
+      {
+        title: 'Clear, Upfront Pricing',
+        text: [
+          'We explain the expected cost before starting work. Your quote may depend on the size of the stained area, the number of marks, the carpet material, and how difficult the stains are to treat.',
+          'If you are comparing professional stain removal in London, we can discuss your needs and provide information to help you understand the options.',
+        ],
+      },
+      {
+        title: 'Careful Product Selection',
+        text: 'We choose cleaning solutions according to the carpet and the stain being treated. If you have concerns about products in a home with children or pets, let us know before the appointment so we can explain the available options and any care instructions.',
+      },
+    ],
+    processIntro:
+      'We keep the process straightforward, from your first enquiry to the final check. We aim to understand the problem, choose a suitable treatment, and explain the likely result before work begins.',
     process: commonProcess('stained areas'),
     images: [PHOTOS.diningCarpet, PHOTOS.greyCarpetMidClean, PHOTOS.greyBedroom],
+    faqsTitle: 'FAQs About Stain Removal Service in London',
     faqs: [
       {
-        question: 'How much does pet stain and odour removal cost?',
+        question: 'Can the cleaners get a stain out?',
         answer:
-          'It depends on how many areas are affected and whether we are also cleaning the whole carpet. Send photos on WhatsApp for a quick quote.',
+          'Many stains can be improved with the right cleaning method, especially when treated early. However, the result depends on the type of stain, how long it has been there, and whether the carpet fibres have been damaged or permanently discoloured. We assess the area and explain what is realistic before treatment.',
       },
       {
-        question: 'How often will I need this treatment?',
+        question: 'Are there stains that cannot be removed?',
         answer:
-          'Treat accidents as soon as you can. For homes with pets, a full carpet clean every 6 to 8 months alongside spot treatments works well.',
+          "Yes. Some stains may permanently change the carpet's colour or damage its fibres. Certain dyes, old stains, and marks treated with unsuitable household products can be especially difficult to remove. Professional treatment may improve their appearance, but complete removal cannot be guaranteed.",
       },
       {
-        question: 'Will the stain and smell come out completely?',
+        question: 'How much does carpet stain removal cost in London?',
         answer:
-          'Odours usually respond very well to enzyme treatment. Older urine stains can permanently change carpet colour, so some marks may lighten rather than disappear. We will be upfront about this.',
+          'The price depends on the size of the affected area, the number and type of stains, the carpet material and the treatment required. Contact Five Star Carpet Cleaning with details of your stain to discuss a suitable quote before work begins.',
       },
       {
-        question: 'What should I do before you arrive?',
+        question: 'Can you remove old and stubborn carpet stains?',
         answer:
-          'Blot fresh accidents with plain water and kitchen roll — avoid household sprays, which can set stains. Keep pets in another room during the clean.',
+          'Some old stains can be reduced or removed, but results vary. We assess the carpet and the stain before choosing a treatment. Avoid repeatedly scrubbing the area or applying several cleaning products, as this can make the problem worse.',
+        link: { text: 'old stains can be reduced or removed', href: '/blog/how-to-remove-stains-from-carpet/' },
       },
       {
-        question: 'How does enzyme treatment work?',
+        question: 'Do you provide carpet stain removal near London?',
         answer:
-          'Enzymes break down the organic residue left by urine and accidents. We apply the treatment, give it time to work, then extract it along with the residue.',
+          'Five Star Carpet Cleaning serves homes and businesses across London. If you are searching for “carpet stain removal service near me”, contact us with your postcode so we can confirm whether your property is within our service area.',
+      },
+      {
+        question: 'Should I use a stain remover before a professional arrives?',
+        answer:
+          'It is usually best to blot up fresh spills with a clean cloth and avoid rubbing. Before applying a stain remover, check that it is suitable for your carpet. Some products can leave residue or affect carpet colour, so tell us about anything you have already used when you contact us.',
       },
     ],
+    closing: {
+      title: 'Get Help with Carpet Stains in London',
+      text: [
+        'A stubborn carpet stain does not always mean you need to replace your carpet. The right treatment may improve its appearance and help you get more use from it.',
+        'Five Star Carpet Cleaning provides professional carpet stain cleaning across London, with suitable methods selected for the stain and carpet material. If you need help with a spill, an old mark, or several stained areas, contact our team to discuss the problem and request a quote.',
+      ],
+      link: { text: 'carpet stain cleaning across London', href: '/' },
+    },
   },
   {
     slug: 'mattress-cleaning',
     name: 'Mattress Cleaning',
     icon: '🛏️',
-    metaTitle: 'Mattress Cleaning London | Deep Clean & Stain Removal',
+    metaTitle: 'Mattress Cleaning London | Fresh, Clean Beds at Home',
     metaDescription:
-      'Professional mattress cleaning in London. Removes dust, sweat stains and odours from mattresses with fast-drying extraction. Book a free quote today.',
-    h1: 'Mattress Cleaning in London',
+      'Need mattress cleaning in London? Refresh your bed with professional cleaning to tackle dust, sweat stains, and odours. Get a friendly, no-obligation quote.',
+    h1: 'Mattress Cleaning London',
     heroIntro:
-      'Deep, fast-drying mattress cleaning that removes dust, sweat stains and odours so your bed feels fresher.',
+      'Give your bed a fresh start with professional mattress cleaning in London. We remove built-up dirt, sweat marks, and unwanted odours using cleaning methods suited to your mattress type. If you want to professionally clean a mattress, our experienced team can help refresh your sleeping surface and improve its overall cleanliness. Regular mattress cleaning also helps tackle everyday dirt and keep your bed feeling fresher for longer.',
     summary:
       'Mattresses collect sweat, body oils, dust and everyday marks over time. Our mattress cleaning service helps remove built-up dirt and unwanted odours using a suitable cleaning method. We manage moisture carefully and explain the expected drying time so you know when your bed can be used again.',
     heroImage: PHOTOS.greyBedroom,
     benefitsIntro:
-      'We spend a third of our lives in bed. Mattresses collect dust, skin cells, sweat and spills that a sheet change alone does not remove.',
+      'Mattresses collect sweat, skin cells, dust, and everyday spills over time. Changing your sheets helps keep your bed fresh, but it does not clean the mattress itself. Professional mattress cleaning tackles this hidden dirt and refreshes the surface you sleep on every night.',
     benefits: [
-      { title: 'Removes dust and debris', text: 'Deep extraction pulls out dust and skin cells from the mattress surface.' },
-      { title: 'Lifts sweat and spill stains', text: 'Yellowing and everyday marks are pre-treated and extracted.' },
-      { title: 'Reduces odours', text: 'Leaves your mattress smelling clean rather than perfumed.' },
-      { title: 'Quick drying', text: 'Low-moisture methods mean your bed is ready to use again the same day.' },
-    ],
-    residential:
-      'Single, double, king and cot mattresses, plus mattress toppers and upholstered bed bases.',
-    commercial:
-      'Rental and HMO properties, Airbnb and holiday lets, care settings and staff accommodation.',
-    whyUs: commonWhyUs,
-    process: commonProcess('mattress'),
-    images: [PHOTOS.greyBedroom, PHOTOS.extractionWand],
-    faqs: [
       {
-        question: 'How much does mattress cleaning cost?',
-        answer:
-          'Pricing depends on the mattress size and how many you need cleaned. Many customers book it alongside carpet or sofa cleaning. Ask us for a quote.',
+        title: 'Removes Built-Up Dirt',
+        text: 'Everyday use can leave dust, skin cells, and other dirt on your mattress. Our cleaning process helps lift this build-up and remove loose dirt, leaving your mattress cleaner and fresher.',
       },
       {
-        question: 'How often should a mattress be cleaned?',
+        title: 'Helps Treat Sweat and Spill Stains',
+        text: 'Sweat, drinks, and other spills can leave marks that become harder to remove over time. We assess each stain and use a suitable treatment to improve its appearance without using harsh methods unnecessarily.',
+      },
+      {
+        title: 'Reduces Unwanted Odours',
+        text: 'Sweat, spills, and everyday use can leave your mattress with an unpleasant smell. Our cleaning methods help remove the dirt causing these odours rather than simply covering them with strong fragrances.',
+      },
+      {
+        title: 'Careful Cleaning for Your Mattress',
+        text: 'Different mattresses need different care. We check the material and condition before choosing a suitable method. Where appropriate, we use controlled-moisture cleaning to help avoid leaving the mattress wetter than necessary.',
+      },
+    ],
+    residentialTitle: 'Mattress Cleaning for Your Home',
+    residentialText: [
+      'Your mattress collects sweat, dust, everyday dirt, and occasional spills over time. Our mattress cleaning service in London helps homeowners and tenants refresh their mattresses with a cleaning method suited to the material and its condition. Whether you need routine care or deep mattress cleaning services to tackle stubborn marks and unwanted smells, we assess your mattress before recommending a suitable treatment.',
+      'If you’re searching for queries like “professional bed cleaner near me” or “mattress cleaners near me”, Five Star Carpet Cleaning can help you understand the available options, expected results, and drying time. Contact us to discuss your mattress and request a quote for professional mattress cleaning at home.',
+    ],
+    whyUsTitle: 'Why Choose Five Star for Mattress Cleaning?',
+    whyUsIntro:
+      'Choosing a reliable mattress cleaning company means knowing how your mattress will be treated and what to expect from the service. At Five Star Carpet Cleaning, we focus on careful inspection, clear pricing and cleaning methods suited to the item being cleaned.',
+    whyUsIntroLink: { text: 'mattress cleaning company', href: '/about/' },
+    whyUs: [
+      {
+        title: 'Professional Equipment',
+        text: 'We use professional cleaning equipment designed for fabric and upholstery care. The equipment and treatment are selected according to your mattress, helping us tackle everyday dirt and suitable stains more effectively than basic surface cleaning alone.',
+      },
+      {
+        title: 'Cleaning Suited to Your Mattress',
+        text: 'Before cleaning, we inspect the mattress and consider its material, condition, and care instructions. This helps us choose a suitable method rather than assuming every mattress can be cleaned in the same way.',
+      },
+      {
+        title: 'Clear, Upfront Pricing',
+        text: 'We explain the price before work begins, so you know what to expect. The cost may depend on the mattress size, its condition, the type of stains and the treatment required. Contact us for a quote based on your cleaning needs.',
+      },
+      {
+        title: 'Thoughtful Product Selection',
+        text: 'We choose cleaning products according to the mattress material and the work required. If you have children or pets at home, let us know so we can explain the products being used and any care instructions you should follow after cleaning.',
+      },
+    ],
+    processIntro:
+      'We keep mattress cleaning straightforward, from your first enquiry to the final check. Our process helps us understand what your mattress needs and choose a suitable approach.',
+    process: commonProcess('mattress'),
+    images: [PHOTOS.greyBedroom, PHOTOS.extractionWand],
+    faqsTitle: 'FAQs About Mattress Cleaning',
+    faqs: [
+      {
+        question: 'How much does it cost to clean a mattress in London?',
         answer:
-          'Once a year is a good habit for most households, or more often for children’s beds and anyone with allergies.',
+          'The price depends on the mattress size, its condition, the number of stains, and the cleaning method needed. A single mattress may cost less to clean than a larger mattress or one that needs extra attention. Contact Five Star Carpet Cleaning for a quote based on your mattress and the service required.',
+        link: { text: 'Contact Five Star Carpet Cleaning', href: '/contact/' },
+      },
+      {
+        question: 'Is it worth getting a mattress cleaned?',
+        answer:
+          'Professional mattress cleaning can be worthwhile if your mattress has built-up dirt, sweat marks, spills, or unwanted odours. It can help refresh the surface and improve its appearance. However, cleaning cannot repair damaged materials or guarantee that every old stain will disappear.',
+      },
+      {
+        question: 'Is it better to steam or dry clean a mattress?',
+        answer:
+          "Neither method is best for every mattress. Mattress steam cleaning can help remove dirt, allergens, and certain stains, but it may not be suitable for all mattress materials. The right cleaning method depends on the mattress material, its care instructions, and the type of dirt or stain. Some mattresses may be better suited to a low-moisture method, while others may allow professional steam cleaning. Always check the manufacturer's guidance before choosing a treatment. If you are unsure, consult a professional mattress cleaning service to determine the safest and most effective option for your mattress.",
+        link: { text: 'cleaning service', href: '/' },
+      },
+      {
+        question: 'How often should your mattress be cleaned?',
+        answer:
+          "There is no single schedule that suits every home. Consider professional mattress cleaning when you notice stains, unwanted smells, or visible dirt. Homes with pets, young children, or frequent spills may need cleaning more often. Follow the mattress manufacturer's care advice and keep up with regular sheet changes and routine surface care between professional cleans.",
       },
       {
         question: 'Can you remove old stains from a mattress?',
         answer:
-          'Many sweat and spill stains lighten significantly. Older stains that have set into the fabric may not disappear completely — we will tell you what to expect.',
+          'Some old stains can be reduced, but the result depends on the stain, how long it has been there, and whether it has affected the mattress material. We assess the area before treatment and explain what results may be possible. Complete removal cannot be guaranteed.',
       },
       {
-        question: 'How do I prepare my mattress?',
+        question: 'How do I prepare my mattress for cleaning?',
         answer:
-          'Strip all bedding and protectors before we arrive, and make sure there is space to access both sides of the bed.',
+          'Remove your sheets, pillows, and bedding before the appointment. Clear the space around the bed so the mattress is easy to reach. If you know what caused a stain or have already tried a cleaning product, tell us when booking. This information helps us choose a suitable approach.',
       },
       {
         question: 'How long does a mattress take to dry?',
         answer:
-          'We use low-moisture extraction, so most mattresses are dry within a few hours. Opening a window helps it dry faster.',
+          "Drying time depends on the mattress material, the cleaning method, the amount of moisture used, and the room's airflow. We will explain the expected drying time after assessing your mattress. Wait until it is fully dry before replacing your bedding or sleeping on it.",
       },
     ],
+    closing: {
+      title: 'Book Your Mattress Cleaning in London',
+      text: [
+        'A cleaner mattress can make your bed feel fresher and help you deal with everyday dirt, stains and unwanted smells. Five Star Carpet Cleaning provides professional mattress cleaning in London, with methods chosen according to your mattress and its condition.',
+        'Whether you need a routine refresh or help with a stubborn mark, contact our team to discuss your mattress cleaning needs and request a quote.',
+      ],
+    },
   },
   {
     slug: 'curtain-cleaning',

@@ -95,8 +95,8 @@ export default async function ServicePage({ params }) {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Benefits"
-            title={`Why Choose Professional ${service.name}?`}
-            intro={service.benefitsIntro}
+            title={service.benefitsTitle || `Why Choose Professional ${service.name}?`}
+            intro={<LinkedText text={service.benefitsIntro} link={service.benefitsIntroLink} />}
           />
           <FeatureGrid items={service.benefits} columns={service.benefits.length > 4 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} />
         </div>
@@ -203,6 +203,7 @@ export default async function ServicePage({ params }) {
           service.closing?.text ||
           `Call or WhatsApp us with a few details and photos for a free, no-obligation ${lowerName} quote.`
         }
+        link={service.closing?.link}
         whatsappText={whatsappText}
       />
     </>
