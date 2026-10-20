@@ -256,57 +256,131 @@ export const SERVICES = [
     slug: 'rug-cleaning',
     name: 'Rug Cleaning',
     icon: '🧶',
-    metaTitle: 'Rug Cleaning London | Persian, Wool & Modern Rugs',
+    metaTitle: 'Rug Cleaning London | Professional Care for Your Rugs',
     metaDescription:
-      'Specialist rug cleaning in London for wool, Persian, Oriental and modern rugs. Colour-tested, fringe-to-fringe cleaning. Get a free rug cleaning quote.',
-    h1: 'Rug Cleaning in London',
+      'Looking for rug cleaning in London? We clean wool, Persian, and modern rugs, helping remove dirt, stains, and odours with care. Contact us today for a free quote!',
+    h1: 'Rug Cleaning London',
     heroIntro:
-      'Gentle, colour-tested cleaning for wool, Persian, Oriental and modern rugs — removing embedded dust, stains and odours while protecting the fibres.',
+      "Keep your rugs looking fresh and feeling clean with professional rug cleaning in London. We clean wool, Persian, Oriental, and modern rugs using a method suited to their material and condition. Our rug cleaning service helps remove built-up dust, everyday dirt, stains, and unwanted odours while taking care to protect the rug's colours and fibres.",
     summary:
       'From wool and Persian rugs to Oriental and modern designs, we check colours and fibres before choosing a suitable cleaning method. Our rug cleaning service targets embedded dust, stains and unwanted odours while helping protect delicate colours and fringes.',
     heroImage: PHOTOS.extractionWand,
     benefitsIntro:
-      'Rugs trap a surprising amount of grit and dust in their base. Cleaning them with the right method keeps colours bright and fibres soft.',
+      'Rugs collect more than the dirt you can see. Dust, grit, food crumbs, and other debris can settle deep between the fibres, even when a rug looks clean on the surface. Professional rug cleaning helps remove this build-up and gives your rug the care it needs to stay in good condition.',
     benefits: [
-      { title: 'Removes embedded grit', text: 'Dry soil and grit work into the base of a rug and slowly wear the fibres.' },
-      { title: 'Protects colours', text: 'Colour-fastness testing means the method suits the dyes in your rug.' },
-      { title: 'Refreshes fringes', text: 'Fringes are cleaned carefully to lift discolouration and grime.' },
-      { title: 'Reduces odours', text: 'Pet, food and damp smells are cleaned out rather than covered up.' },
+      {
+        title: 'Removes Embedded Dirt and Grit',
+        text: 'Small pieces of grit can settle deep inside rug fibres and cause wear as people walk across them. Deep cleaning rugs helps remove trapped dirt that regular vacuuming may leave behind, keeping your rugs fresher and more comfortable underfoot.',
+      },
+      {
+        title: 'Helps Protect Colours and Fibres',
+        text: 'Different rugs need different cleaning methods. We inspect the material and test colour-fastness before choosing a suitable approach. This is especially important for wool, Persian and Oriental rugs, where the wrong cleaning product or too much moisture may cause damage.',
+      },
+      {
+        title: 'Refreshes Rug Fringes',
+        text: 'Rug fringes can collect dust and become discoloured over time. We pay attention to these details and clean them carefully using a method suited to the rug, helping improve its overall appearance without unnecessary wear.',
+      },
+      {
+        title: 'Helps Reduce Unwanted Odours',
+        text: "Food spills, pets, and everyday use can leave rugs with unpleasant smells. Our cleaning process helps remove the dirt and residue behind many common odours rather than simply covering them with fragrance. Results depend on the source of the smell and the rug's condition.",
+      },
     ],
-    residential:
-      'Living room and bedroom rugs, runners, wool and silk-blend rugs, and traditional Persian and Oriental pieces.',
-    commercial:
-      'Entrance mats, office and reception rugs, showroom rugs and rugs in rental or holiday properties.',
-    whyUs: commonWhyUs,
-    process: commonProcess('rug'),
+    residentialTitle: 'Residential and Commercial Rug Cleaning in London',
+    residentialText: [
+      'A clean rug can make a room feel more welcoming, whether it is in your home, office, or business premises. Five Star Carpet Cleaning provides residential and commercial rug cleaning in London, with care suited to the type of rug and how it is used. For homes, we help refresh rugs in living rooms, bedrooms, hallways and other busy areas. We can assess everyday dirt, food spills, pet marks, and general wear to recommend a suitable cleaning method.',
+      "For offices, shops, reception areas, and other business premises, regular rug care can help maintain a clean and professional setting. We can discuss your rugs, cleaning needs, and preferred timing before providing a quote. Whether you need a single rug cleaned or several rugs refreshed, contact us to discuss your requirements. If you are comparing rug cleaning near me options, look for a service that considers the rug's material, condition, and cleaning needs rather than choosing on price alone.",
+    ],
+    whyUsTitle: 'Why Choose Five Star for Rug Cleaning?',
+    whyUsIntro:
+      'Choosing a rug cleaner is about more than removing visible dirt. You also want clear communication, careful handling, and a cleaning method that suits your rug. At Five Star Carpet Cleaning, we focus on practical advice and a straightforward service from the first enquiry to the final check.',
+    whyUsIntroLink: { text: 'Five Star Carpet Cleaning', href: '/about/' },
+    whyUs: [
+      {
+        title: 'Professional Cleaning Equipment',
+        text: "We use professional cleaning equipment and suitable tools to help remove embedded dirt and cleaning residue. The method depends on the rug's material, construction, and condition, rather than using the same process for every item.",
+      },
+      {
+        title: 'Careful, Material-Specific Cleaning',
+        text: 'Before cleaning, we inspect your rug and carry out colour testing where appropriate. This helps us choose a suitable approach for different materials and identify any areas that need extra care. We take particular care with delicate rugs and visible fringes.',
+      },
+      {
+        title: 'Clear, Upfront Rug Cleaning Prices',
+        text: [
+          "We discuss the work and provide a quote before cleaning begins, so you know what to expect. Rug cleaning prices can vary depending on the rug's size, material, condition, stains, and the method required. Contact us with details of your rug to request a price.",
+          'If you are looking for cheap rug cleaners, it is worth comparing what each quote includes. A low price is not the only consideration: suitable cleaning methods and careful handling are important, too.',
+        ],
+        link: { text: 'cleaning methods', href: '/blog/how-to-remove-stains-from-carpet/' },
+      },
+      {
+        title: 'Family and Pet-Conscious Cleaning',
+        text: 'We use cleaning solutions selected for the job and follow their use instructions carefully. If you have children or pets at home, let us know before the appointment so we can explain any relevant product and drying precautions. Always follow the advice given for keeping the area safe until the rug is dry.',
+        link: { text: 'cleaning solutions', href: '/blog/how-to-clean-carpet-at-home/' },
+      },
+    ],
+    processTitle: 'Our Rug Cleaning Process, Step by Step',
+    processIntro:
+      'Every rug is different, so we begin by checking its condition rather than immediately applying a cleaning product. Our process is designed to help us choose an appropriate cleaning method and explain what results may be possible.',
+    processColumns: 'lg:grid-cols-3',
+    process: [
+      {
+        title: 'Inspect the Rug',
+        text: "We look at the rug's material, construction, colours, fringes, and overall condition. We also ask about visible stains, pet accidents, or previous cleaning treatments that may affect the work.",
+        link: { text: 'pet accidents', href: '/blog/how-to-remove-pet-stains-from-carpet/' },
+      },
+      {
+        title: 'Test the Colours and Fibres',
+        text: 'Where suitable, we test colour-fastness and check how the material responds. This helps us identify potential risks and decide which cleaning approach is appropriate.',
+      },
+      {
+        title: 'Choose a Suitable Cleaning Method',
+        text: 'Depending on the rug, we select a suitable method and cleaning products. Not every rug should be treated with hot water extraction or the same amount of moisture, particularly delicate or colour-sensitive rugs.',
+      },
+      {
+        title: 'Clean the Rug Carefully',
+        text: 'We treat each rug according to its needs, focusing on built-up dirt, everyday marks, and effective rug stain removal methods. We use cleaning techniques suited to the rug’s material and condition, as results can vary depending on the type of stain and rug fibers.',
+      },
+      {
+        title: 'Final Check',
+        text: 'After cleaning, we check the treated areas and explain any care or drying advice that applies. Drying time varies with the rug, cleaning method, room conditions, and amount of moisture used.',
+      },
+    ],
     images: [PHOTOS.extractionWand, PHOTOS.extractionHallway],
+    faqsTitle: 'FAQs About Rug Cleaning Service',
     faqs: [
       {
-        question: 'How much does rug cleaning cost?',
+        question: 'How much does it cost to get a rug cleaned in London?',
         answer:
-          'Rug cleaning is priced by size, material and condition. Send us the measurements and a photo and we will give you a quote.',
+          "Rug cleaning prices depend on the rug's size, material, condition, stain level, and the cleaning method required. A delicate Persian rug may need different care from a standard synthetic rug. Contact Five Star Carpet Cleaning with your rug's approximate dimensions and material to request a quote.",
       },
       {
-        question: 'How often should a rug be cleaned?',
+        question: 'Is it worth getting a rug cleaned?',
         answer:
-          'Rugs in busy areas benefit from a professional clean every 12 months; rugs in quieter rooms every 18 to 24 months.',
+          "Professional rug cleaning can be worthwhile when a rug has built-up dirt, visible marks or lingering odours that regular vacuuming cannot remove. It can also help you care for rugs that need a more suitable cleaning method. The best option depends on the rug's value, condition and cleaning needs.",
       },
       {
-        question: 'Can you remove stains from Persian or wool rugs?',
+        question: 'Where can I get my rug cleaned in London?',
         answer:
-          'Many stains can be removed or greatly reduced. Natural dyes can be sensitive, so we test first and choose a gentle method — we will be honest if a stain is permanent.',
+          'Five Star Carpet Cleaning provides rug cleaning services across London. If you are searching for “London rug cleaning” or a “professional rug cleaning service near me”, contact us with your postcode and details of the rug to discuss availability and a suitable cleaning approach.',
       },
       {
-        question: 'How do I prepare my rug for cleaning?',
+        question: 'How often should rugs be professionally cleaned?',
         answer:
-          'Vacuum it if you can and clear the area around it. Let us know about any known damage, loose fringes or previous repairs.',
+          'There is no single schedule for every rug. Rugs in busy areas, homes with pets, or places where spills happen often may need more frequent cleaning than rugs in lightly used rooms. Vacuum regularly and arrange professional cleaning when dirt builds up, or the rug needs more care. Always consider the material and care instructions.',
+        link: { text: 'professional cleaning', href: '/services/carpet-cleaning/' },
       },
       {
-        question: 'What method do you use for rugs?',
+        question: 'Is it better to steam clean or wash a rug?',
         answer:
-          'It depends on the rug. Synthetic rugs usually suit hot water extraction; wool and delicate rugs are cleaned with gentler, lower-moisture methods after testing.',
+          "It depends on the rug's material, construction, dye stability, and condition. Some rugs may be suitable for a carefully controlled hot water extraction method, while others need a different approach. Neither steam cleaning nor washing is best for every rug. A proper inspection helps determine the safest suitable method.",
       },
     ],
+    closing: {
+      title: 'Book Your Rug Cleaning Service in London',
+      text: [
+        'If your rug looks dull, has built-up dirt, or needs attention after a spill, Five Star Carpet Cleaning is here to help. We assess the rug before recommending a suitable cleaning approach, with care for its material, colours and condition.',
+        'Whether you need deep cleaning rugs at home or rug cleaning for a business, contact us to discuss your requirements and request a quote. If you are searching for a “rug cleaner near me” or “rug wash near me”, we can help you understand the service available for your rug before you book.',
+      ],
+    },
   },
   {
     slug: 'stain-removal',

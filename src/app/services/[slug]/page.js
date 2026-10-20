@@ -149,8 +149,12 @@ export default async function ServicePage({ params }) {
       {/* Process */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="What to expect" title="Our Process, Step by Step" intro={service.processIntro} />
-          <ProcessSteps steps={service.process} />
+          <SectionHeading
+            eyebrow="What to expect"
+            title={service.processTitle || 'Our Process, Step by Step'}
+            intro={service.processIntro}
+          />
+          <ProcessSteps steps={service.process} columns={service.processColumns} />
         </div>
       </section>
 
@@ -194,8 +198,11 @@ export default async function ServicePage({ params }) {
       </section>
 
       <CallToAction
-        title={`Get a Quote for ${service.name}`}
-        text={`Call or WhatsApp us with a few details and photos for a free, no-obligation ${lowerName} quote.`}
+        title={service.closing?.title || `Get a Quote for ${service.name}`}
+        text={
+          service.closing?.text ||
+          `Call or WhatsApp us with a few details and photos for a free, no-obligation ${lowerName} quote.`
+        }
         whatsappText={whatsappText}
       />
     </>

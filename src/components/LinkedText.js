@@ -8,6 +8,7 @@ export const inlineLinkClass = {
 
 // Renders `text`, turning the first occurrence of `link.text` into an internal link.
 const LinkedText = ({ text, link, tone = 'light' }) => {
+  if (typeof text !== 'string') return text;
   const index = link ? text.indexOf(link.text) : -1;
   if (index === -1) return text;
 
