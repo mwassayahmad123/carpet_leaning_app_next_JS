@@ -33,13 +33,6 @@ const commonProcess = (itemName) => [
   { title: 'Final check with you', text: 'We walk through the result with you before we leave and give simple aftercare advice.' },
 ];
 
-const commonWhyUs = [
-  { title: 'Professional equipment', text: 'Commercial-grade hot water extraction machines and upholstery tools, not supermarket rental machines.' },
-  { title: 'Fabric-aware cleaning', text: 'Every item is inspected and colour-tested first so the method suits the material.' },
-  { title: 'Clear, up-front pricing', text: 'You get a quote before any work starts — no surprises on the day.' },
-  { title: 'Family & pet-friendly products', text: 'We use biodegradable cleaning solutions without harsh chemical smells.' },
-];
-
 export const SERVICES = [
   {
     slug: 'carpet-cleaning',
@@ -611,53 +604,98 @@ export const SERVICES = [
     slug: 'curtain-cleaning',
     name: 'Curtain Cleaning',
     icon: '🪟',
-    metaTitle: 'Curtain Cleaning London | On-Site Curtain & Drape Cleaning',
+    metaTitle: 'Curtain Cleaning London | Professional On-Site Service',
     metaDescription:
-      'On-site curtain cleaning in London. We clean curtains and drapes in place — no taking down or re-hanging. Removes dust and odours. Get a free quote.',
-    h1: 'Curtain Cleaning in London',
+      'Need curtain cleaning in London? Refresh your curtains with professional on-site cleaning while they stay hanging. Get a friendly quote from our team today.',
+    h1: 'Curtain Cleaning London',
     heroIntro:
-      'On-site curtain cleaning that refreshes your curtains and drapes while they stay hanging — no taking down, no re-hanging.',
+      'Keep your curtains looking fresh with professional curtain cleaning in London from Five Star Carpet Cleaning. Our on-site curtain cleaning service refreshes your curtains and drapes while they remain hanging, saving you the hassle of taking them down and putting them back up. Whether you need help with everyday dust, built-up grime, or unwanted odours, we assess your curtains and choose a suitable cleaning method for the fabric.',
+    heroIntroLink: { text: 'suitable cleaning method', href: '/blog/how-to-remove-stains-from-carpet/' },
     summary:
       'Keep your curtains looking fresher without the hassle of taking them down. Our on-site curtain cleaning service treats suitable curtains and drapes while they remain hanging. We assess the fabric first, then work to remove dust, everyday grime and unwanted odours with care.',
     heroImage: PHOTOS.bayWindow,
     benefitsIntro:
-      'Curtains trap dust, pollen, cooking smells and city grime. Cleaning them in place saves the hassle of taking them down and re-hanging them.',
+      'Curtains collect dust, pollen, cooking smells, and everyday dirt over time. Regular care can help keep your home feeling fresher and your window coverings looking their best. Our professional curtain cleaning service in London is designed to clean your curtains with care while making the process as convenient as possible.',
     benefits: [
-      { title: 'No taking down', text: 'Curtains are cleaned where they hang, so there is nothing to remove or re-hang.' },
-      { title: 'Removes dust and grime', text: 'Lifts the dust and pollution that builds up in the folds.' },
-      { title: 'Reduces odours', text: 'Cooking and smoke odours are cleaned out of the fabric.' },
-      { title: 'Fabric-appropriate care', text: 'We check the fabric and lining first to avoid shrinkage or water marks.' },
-    ],
-    residential: 'Lined and unlined curtains, heavy drapes, bay-window curtains and voiles.',
-    commercial: 'Offices, hotels, restaurants, meeting rooms and rental properties.',
-    whyUs: commonWhyUs,
-    process: commonProcess('curtains'),
-    images: [PHOTOS.bayWindow, PHOTOS.sofaRoom],
-    faqs: [
       {
-        question: 'How much does curtain cleaning cost?',
-        answer:
-          'It depends on the number of windows, the size of the curtains and the fabric. Send us a photo and rough measurements for a quote.',
+        title: 'No Taking Down',
+        text: 'Forget the hassle of removing heavy curtains and rehanging them after cleaning. Where the fabric and condition allow, we clean your curtains while they stay in place. This on-site approach makes professional curtain cleaning a convenient option for busy households.',
       },
       {
-        question: 'How often should curtains be cleaned?',
+        title: 'Removes Dust and Everyday Grime',
+        text: 'Dust and outdoor pollution can settle deep in curtain folds, making fabrics look dull over time. Our cleaning process helps lift built-up dirt and refresh your curtains. A suitable method is selected after checking the material and its condition.',
+      },
+      {
+        title: 'Helps Reduce Unwanted Odours',
+        text: 'Curtains can absorb cooking smells and other everyday odours, especially in busy rooms. Appropriate cleaning can help freshen the fabric and reduce lingering smells, leaving your room feeling more pleasant.',
+      },
+      {
+        title: 'Care for Different Curtain Fabrics',
+        text: 'Not every curtain can be cleaned in the same way. We check the fabric, lining and condition before starting, then choose a suitable approach to help reduce the risk of shrinkage, colour changes or water marks.',
+      },
+    ],
+    residentialTitle: 'Residential & Commercial Curtain Cleaning',
+    residentialText:
+      'We provide residential and commercial curtain cleaning in London for customers who want to keep their window coverings clean and well cared for. At home, our service can help refresh bedroom curtains, living room drapes, bay-window curtains and other suitable fabrics. For businesses, we can assess curtains in offices, hotels, restaurants, meeting rooms, and rental properties. Whether you need a one-off clean or regular maintenance, contact our team to discuss your curtains, the fabric type, and the most suitable cleaning option.',
+    residentialLink: { text: 'contact our team to discuss your curtains', href: '/contact/' },
+    whyUsTitle: 'Why Choose Five Star for Curtain Cleaning?',
+    whyUsIntro:
+      'Choosing a reliable curtain cleaning company in London means finding a team that understands your fabric, explains the process, and provides clear pricing. At Five Star Carpet Cleaning, we focus on careful preparation, suitable cleaning methods, and straightforward communication from your first enquiry to the final check.',
+    whyUsIntroLink: { text: 'curtain cleaning company in London', href: '/' },
+    whyUs: [
+      {
+        title: 'Professional Equipment',
+        text: 'We use professional cleaning equipment and suitable upholstery tools to clean curtains where the fabric allows. Our equipment helps us treat everyday dirt and grime more effectively than basic household cleaning methods.',
+      },
+      {
+        title: 'Fabric-Aware Cleaning',
+        text: 'Before cleaning, we inspect your curtains and check the material and colour where appropriate. This helps us select a suitable method for the fabric rather than using the same approach on every curtain.',
+      },
+      {
+        title: 'Clear, Upfront Pricing',
+        text: 'The cost depends on factors such as curtain size, fabric, condition, and the work required. We explain the price before starting, so you can decide whether to go ahead without unexpected charges.',
+      },
+      {
+        title: 'Family and Pet-Conscious Cleaning',
+        text: 'We take care when choosing cleaning products for your home or business. We can explain the products and process used for your curtains, so you know what to expect before the work begins.',
+      },
+    ],
+    processIntro:
+      'Booking a curtain cleaning service in London should be straightforward. First, get in touch and tell us about your curtains, including their approximate size, fabric if known, and any stains or odours you would like us to address. We’ll discuss your requirements and provide a quote. Before cleaning, we inspect the curtains and choose a suitable method based on their material and condition. We then carry out the agreed cleaning, where appropriate, and check the result before finishing. If you are searching for a “curtain cleaner near me” or “curtain cleaning near me”, contact Five Star Carpet Cleaning to discuss your needs and availability.',
+    process: commonProcess('curtains'),
+    images: [PHOTOS.bayWindow, PHOTOS.sofaRoom],
+    faqsTitle: 'FAQs About Curtain Cleaning in London',
+    faqs: [
+      {
+        question: 'How much does it cost to have curtains cleaned?',
         answer:
-          'Every 12 to 18 months for most rooms. Kitchens and rooms near busy roads may need cleaning more often.',
+          'The cost of curtain cleaning depends on the number and size of your curtains, the type of fabric, their condition, and the cleaning method required. Some curtains need more care than others, especially if they are heavily soiled or made from delicate material. Contact Five Star Carpet Cleaning for a quote based on your curtains and location.',
+        link: { text: 'Five Star Carpet Cleaning', href: '/about/' },
+      },
+      {
+        question: 'Is it worth getting curtains dry cleaned?',
+        answer:
+          "Dry cleaning can be suitable for some curtains, particularly when the care label recommends it or the fabric needs specialist treatment. However, not every curtain requires dry cleaning. The best option depends on the material, lining and manufacturer's care instructions. We recommend checking these details before choosing a cleaning method. If you are unsure, contact us to discuss the options available for your curtains.",
+      },
+      {
+        question: 'How often should house curtains be washed?',
+        answer:
+          'For many homes, cleaning curtains about once or twice a year is a useful starting point. You may need to clean them more often if you live near a busy road, cook frequently, have pets or notice a build-up of dust and odours. Always consider the fabric care instructions before washing or cleaning your curtains.',
       },
       {
         question: 'Can you remove stains from curtains?',
         answer:
-          'Many marks and water stains can be treated. Sun fading and some old stains cannot be reversed — we will explain this after inspecting the fabric.',
+          'We can assess marks and discuss suitable curtain stain removal options. The outcome depends on the type of stain, how long it has been there, and the fabric. Some stains may fade rather than disappear completely, and certain treatments may not be suitable for delicate materials. We’ll check the curtains first and explain what may be possible before starting.',
       },
       {
-        question: 'How should I prepare?',
+        question: 'How should I prepare for curtain cleaning?',
         answer:
-          'Clear window sills and the floor area in front of the curtains, and tie back any voiles so we can reach the main curtains.',
+          'Please let us know about any visible stains, odours, or concerns when you book. If possible, share the fabric type or care label information. Move small items away from the work area and make sure we can access the curtains safely. We’ll let you know if any further preparation is needed for your appointment.',
       },
       {
         question: 'Do you clean curtains on site?',
         answer:
-          'Yes. We clean curtains while they hang, using a fabric-appropriate low-moisture method, so there is no need to take them down.',
+          'Yes, we offer on-site curtain cleaning where the fabric and condition are suitable. This means your curtains can often be cleaned while they remain hanging, without the need to take them down and rehang them. The method depends on the material and its care requirements, so we inspect the curtains before proceeding. If you’re looking for a curtain cleaning service in London, customers can contact us for an assessment and get in touch with our team.',
       },
     ],
   },

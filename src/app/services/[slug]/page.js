@@ -102,35 +102,17 @@ export default async function ServicePage({ params }) {
         </div>
       </section>
 
-      {/* Residential & Commercial — paragraph(s) when the service provides `residentialText` (string or array), otherwise two cards. */}
+      {/* Residential & Commercial — `residentialText` is a string or an array of paragraphs. */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {service.residentialText ? (
-            <>
-              <SectionHeading eyebrow="Who it's for" title={service.residentialTitle} />
-              <div className="max-w-3xl mx-auto -mt-6 space-y-4 text-center text-lg sm:text-xl text-gray-600 leading-relaxed">
-                {[].concat(service.residentialText).map((paragraph) => (
-                  <p key={paragraph.slice(0, 40)}>
-                    <LinkedText text={paragraph} link={service.residentialLink} />
-                  </p>
-                ))}
-              </div>
-            </>
-          ) : (
-            <>
-              <SectionHeading eyebrow="Who it's for" title={`Residential & Commercial ${service.name}`} />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">For homes</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.residential}</p>
-                </div>
-                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">For businesses & landlords</h3>
-                  <p className="text-gray-600 leading-relaxed">{service.commercial}</p>
-                </div>
-              </div>
-            </>
-          )}
+          <SectionHeading eyebrow="Who it's for" title={service.residentialTitle} />
+          <div className="max-w-3xl mx-auto -mt-6 space-y-4 text-center text-lg sm:text-xl text-gray-600 leading-relaxed">
+            {[].concat(service.residentialText).map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>
+                <LinkedText text={paragraph} link={service.residentialLink} />
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 
