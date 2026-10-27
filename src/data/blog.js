@@ -3,9 +3,10 @@ import * as cleanCarpetAtHome from '../content/blog/how-to-clean-carpet-at-home'
 import * as removePetStains from '../content/blog/how-to-remove-pet-stains-from-carpet';
 import * as redWine from '../content/blog/how-to-get-red-wine-out-of-carpet';
 import * as mudStains from '../content/blog/how-to-remove-mud-stains-from-carpet';
+import * as oilStains from '../content/blog/how-to-remove-oil-stains-from-carpet';
 
 // Add each new article module here (sorted by date below).
-const MODULES = [mudStains, redWine, removePetStains, cleanCarpetAtHome, removeStains];
+const MODULES = [oilStains, mudStains, redWine, removePetStains, cleanCarpetAtHome, removeStains];
 
 export const POSTS = MODULES.map((m) => ({ ...m.post, Body: m.Body, Conclusion: m.Conclusion })).sort((a, b) =>
   b.datePublished.localeCompare(a.datePublished)
