@@ -124,9 +124,9 @@ export const Body = () => (
       Coffee, tea, juice, and red wine can leave visible marks, especially on light-coloured carpets. Blot fresh spills
       promptly, then follow a method designed for that particular stain.
     </p>
-    {/* TODO: link "removing coffee stains" once the coffee stain guide is published. */}
     <p>
-      For detailed instructions, see our guides on removing coffee stains and{' '}
+      For detailed instructions, see our guides on{' '}
+      <A href="/blog/how-to-remove-coffee-stains-from-carpet/">removing coffee stains</A> and{' '}
       <A href="/blog/how-to-get-red-wine-out-of-carpet/">red wine from carpet</A>.
     </p>
 
