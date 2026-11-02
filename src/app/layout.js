@@ -70,6 +70,9 @@ export const metadata = {
     icon: '/logo.webp',
     apple: '/logo.webp',
   },
+  verification: {
+    google: '2NM_A-ykPNz492LWWBZOGanFe_F4ZFvJayRNUxbrYx4',
+  },
 };
 
 const jsonLd = {
