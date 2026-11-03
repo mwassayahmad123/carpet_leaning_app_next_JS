@@ -114,7 +114,9 @@ export default async function BlogPostPage({ params }) {
           </Prose>
 
           <section className="mt-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+              {post.faqsTitle || 'Frequently Asked Questions'}
+            </h2>
             <FaqAccordion faqs={post.faqs} />
           </section>
 
