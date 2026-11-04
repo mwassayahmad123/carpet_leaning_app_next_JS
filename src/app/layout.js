@@ -7,8 +7,8 @@ import Footer from '../components/Footer';
 // display: 'optional' — a web font is only used if it is ready by first paint (fonts are preloaded),
 // otherwise the size-adjusted fallback stays for that page view. This prevents the font-swap
 // layout shift that PageSpeed flagged on mobile (CLS 0.38 from the hero text re-flowing).
-const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'optional', preload: true });
-const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-display', display: 'optional', preload: true });
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'optional' });
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-display', display: 'optional' });
 
 const GA_ID = 'G-Y77RLZ5JB1';
 
