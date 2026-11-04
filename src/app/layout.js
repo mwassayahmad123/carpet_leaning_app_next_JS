@@ -1,10 +1,11 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Inter, Playfair_Display } from 'next/font/google';
 import Script from 'next/script';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-display', display: 'swap' });
 
 const GA_ID = 'G-Y77RLZ5JB1';
 
@@ -119,7 +120,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <head>
         {/* Google tag (gtag.js): the tiny dataLayer setup runs immediately so the pageview is queued;
             the 177 KB gtag.js library is loaded after the page has finished loading (see <Script> below)
@@ -137,7 +138,7 @@ gtag('config', '${GA_ID}');`,
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className="font-sans" suppressHydrationWarning>
         <Navbar />
         <main>{children}</main>
         <Footer />

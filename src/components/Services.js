@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { SERVICES, serviceHref } from '../data/services';
 import LazyVideo from './LazyVideo';
-import { ArrowIcon } from './Icons';
+import { ArrowIcon, ServiceIcon } from './Icons';
 import SectionHeading from './SectionHeading';
 import LinkedText from './LinkedText';
 
@@ -19,7 +19,7 @@ const CARD_ANCHORS = {
 // Homepage services overview: one card per service, each linking to its own page.
 const Services = () => {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 sm:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Our services"
@@ -34,7 +34,7 @@ const Services = () => {
 
         {/* Video Section */}
         <div className="mb-16">
-          <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl">
+          <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-2xl ring-1 ring-navy-100 ring-offset-4 ring-offset-white outline outline-1 outline-gold-300/60 outline-offset-[10px]">
             <LazyVideo
               src={SERVICE_VIDEO_SRC}
               poster="/videos/poster.webp"
@@ -48,12 +48,19 @@ const Services = () => {
           {SERVICES.map((service) => (
             <div
               key={service.slug}
-              className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 group flex flex-col"
+              className="relative bg-white p-8 rounded-2xl border border-navy-100 shadow-sm hover:shadow-xl hover:border-gold-300 transition-all duration-300 group flex flex-col"
             >
-              <div className="text-6xl mb-4 transform group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
-                {service.icon}
+              <span
+                className="absolute inset-x-8 top-0 h-0.5 bg-gradient-to-r from-gold-400 to-gold-200 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
+                aria-hidden="true"
+              />
+              <div
+                className="flex items-center justify-center w-14 h-14 rounded-2xl bg-navy-900 text-gold-300 mb-6 group-hover:bg-gold-400 group-hover:text-navy-950 transition-colors duration-300"
+                aria-hidden="true"
+              >
+                <ServiceIcon slug={service.slug} className="w-7 h-7" />
               </div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-3">{service.name}</h3>
+              <h3 className="font-display text-2xl font-bold text-navy-900 mb-3">{service.name}</h3>
               <p className="text-gray-600 leading-relaxed flex-1">
                 <LinkedText
                   text={service.summary}
@@ -62,7 +69,7 @@ const Services = () => {
               </p>
               <Link
                 href={serviceHref(service.slug)}
-                className="mt-6 pt-4 border-t border-gray-200 text-blue-600 font-semibold hover:text-purple-600 transition-colors flex items-center"
+                className="mt-6 pt-5 border-t border-navy-100 text-navy-900 font-semibold hover:text-gold-700 transition-colors flex items-center"
               >
                 View {service.name.toLowerCase()}
                 <ArrowIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />

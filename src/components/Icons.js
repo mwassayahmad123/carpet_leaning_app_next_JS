@@ -40,3 +40,31 @@ export const ArrowIcon = ({ className = 'w-5 h-5' }) => (
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
   </svg>
 );
+
+export const StarIcon = ({ className = 'w-5 h-5' }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+  </svg>
+);
+
+// Line icons for each service (replace the old emoji icons).
+const SERVICE_ICON_PATHS = {
+  'carpet-cleaning': ['M3 6h14a3 3 0 013 3v0a3 3 0 01-3 3H3z', 'M3 12v6h14', 'M17 12v6', 'M7 9h6'],
+  'upholstery-sofa-cleaning': [
+    'M5 11V8a3 3 0 013-3h8a3 3 0 013 3v3',
+    'M3 13a2 2 0 014 0v2h10v-2a2 2 0 014 0v5H3z',
+    'M6 18v2M18 18v2',
+  ],
+  'rug-cleaning': ['M6 4h12v16H6z', 'M9 8h6M9 12h6M9 16h6', 'M6 4V2M10 4V2M14 4V2M18 4V2M6 22v-2M10 22v-2M14 22v-2M18 22v-2'],
+  'stain-removal': ['M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z', 'M9.5 14.5a2.5 2.5 0 002.5 2.5'],
+  'mattress-cleaning': ['M3 18V8', 'M3 13h18v5', 'M21 18v-3', 'M7 13V10a2 2 0 012-2h1a2 2 0 012 2v3', 'M12 13v-2h6a3 3 0 013 3'],
+  'curtain-cleaning': ['M3 4h18', 'M5 4c0 6 2 10 5 16', 'M19 4c0 6-2 10-5 16', 'M5 20h5M14 20h5'],
+};
+
+export const ServiceIcon = ({ slug, className = 'w-7 h-7' }) => (
+  <svg className={className} fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+    {(SERVICE_ICON_PATHS[slug] || SERVICE_ICON_PATHS['carpet-cleaning']).map((d) => (
+      <path key={d} d={d} />
+    ))}
+  </svg>
+);

@@ -11,15 +11,16 @@ const trustPoints = [
 ];
 
 export const TrustBar = () => (
-  <section aria-label="Why customers trust us" className="bg-white border-b border-gray-100">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <ul className="grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+  <section aria-label="Why customers trust us" className="bg-cream">
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Card overlaps the bottom of the navy hero */}
+      <ul className="relative -mt-8 sm:-mt-12 grid grid-cols-2 lg:grid-cols-4 bg-white rounded-2xl shadow-xl border border-navy-100 divide-navy-100 text-center overflow-hidden [&>li]:border-navy-100 [&>li:nth-child(odd)]:border-r [&>li:nth-child(-n+2)]:border-b lg:[&>li]:border-b-0 lg:[&>li:not(:last-child)]:border-r">
         {trustPoints.map((point) => (
-          <li key={point.label}>
-            <p className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <li key={point.label} className="px-4 py-6 sm:py-8">
+            <p className="font-display text-3xl sm:text-4xl font-bold text-navy-900">
               {point.value}
             </p>
-            <p className="text-gray-600 mt-1">{point.label}</p>
+            <p className="text-sm sm:text-base text-gray-600 mt-1">{point.label}</p>
           </li>
         ))}
       </ul>
@@ -55,7 +56,7 @@ const differentiators = [
 ];
 
 export const WhyChoose = () => (
-  <section id="why-choose-us" className="py-20 bg-white">
+  <section id="why-choose-us" className="py-20 sm:py-24 bg-cream">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Why choose us"
@@ -76,7 +77,7 @@ const steps = [
 ];
 
 export const HowItWorks = () => (
-  <section id="how-it-works" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+  <section id="how-it-works" className="py-20 sm:py-24 bg-white">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="How it works"

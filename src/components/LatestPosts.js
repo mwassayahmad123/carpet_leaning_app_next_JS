@@ -9,7 +9,7 @@ const LatestPosts = ({ count = 3 }) => {
   if (POSTS.length === 0) return null;
 
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section id="blog" className="py-20 sm:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="From our blog"
@@ -20,7 +20,7 @@ const LatestPosts = ({ count = 3 }) => {
         <div className="text-center mt-10">
           <Link
             href="/blog/"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:scale-105 transition-transform"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white bg-navy-900 hover:bg-navy-700 transition-colors"
           >
             View all articles
             <ArrowIcon />

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { StarIcon } from './Icons';
 
 const Reviews = () => {
   const reviews = [
@@ -81,13 +82,22 @@ const Reviews = () => {
   };
 
   return (
-    <section id="reviews" className="py-20 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="reviews" className="relative py-20 sm:py-24 bg-navy-950 overflow-hidden">
+      <div
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(217,174,67,0.14),transparent_60%)]"
+        aria-hidden="true"
+      />
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <div className="flex justify-center gap-1 text-gold-400 mb-5" aria-hidden="true">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <StarIcon key={i} className="w-5 h-5" />
+            ))}
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             Customer Reviews
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-navy-100 max-w-3xl mx-auto">
             See what our satisfied customers have to say
           </p>
         </div>
@@ -129,13 +139,16 @@ const Reviews = () => {
                     transformStyle: 'preserve-3d',
                   }}
                 >
-                  <div className="bg-white rounded-3xl shadow-2xl p-8 h-full flex flex-col items-center text-center border-2 border-gray-100 hover:border-blue-500 transition-colors duration-300">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{review.name}</h3>
+                  <div className="bg-white rounded-3xl shadow-2xl p-8 h-full flex flex-col items-center justify-center text-center border-t-4 border-gold-400">
+                    <svg className="w-10 h-10 text-gold-300 mb-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+                    </svg>
+                    <h3 className="font-display text-2xl font-bold text-navy-900 mb-3">{review.name}</h3>
                     <div className="flex space-x-1 mb-4">
                       {[...Array(review.rating)].map((_, i) => (
                         <svg
                           key={i}
-                          className="w-6 h-6 text-yellow-400"
+                          className="w-6 h-6 text-gold-400"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                         >
@@ -155,11 +168,11 @@ const Reviews = () => {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-20 bg-white rounded-full p-4 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-12 z-20 bg-gold-400 rounded-full p-4 shadow-lg hover:bg-gold-300 transition-colors duration-300 group"
             aria-label="Previous review"
           >
             <svg
-              className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors"
+              className="w-6 h-6 text-navy-950"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -170,11 +183,11 @@ const Reviews = () => {
 
           <button
             onClick={goToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-20 bg-white rounded-full p-4 shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 group"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-12 z-20 bg-gold-400 rounded-full p-4 shadow-lg hover:bg-gold-300 transition-colors duration-300 group"
             aria-label="Next review"
           >
             <svg
-              className="w-6 h-6 text-gray-700 group-hover:text-blue-600 transition-colors"
+              className="w-6 h-6 text-navy-950"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -198,7 +211,7 @@ const Reviews = () => {
               >
                 <span
                   className={`block h-3 rounded-full transition-all duration-300 ${
-                    index === currentIndex ? 'bg-blue-600 w-8' : 'w-3 bg-gray-300 group-hover:bg-gray-400'
+                    index === currentIndex ? 'bg-gold-400 w-8' : 'w-3 bg-white/30 group-hover:bg-white/60'
                   }`}
                 />
               </button>

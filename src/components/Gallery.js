@@ -81,13 +81,13 @@ const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section id="gallery" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section id="gallery" className="py-20 sm:py-24 bg-cream">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-navy-900 mb-4">
             Our Gallery
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Real photos from recent carpet and upholstery cleaning jobs in London
           </p>
         </div>
@@ -96,7 +96,7 @@ const Gallery = () => {
           {images.map((image, index) => (
             <div
               key={image.id}
-              className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105"
+              className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl ring-1 ring-navy-100 hover:ring-2 hover:ring-gold-400 transition-all duration-300 cursor-pointer"
               onClick={() => setSelectedImage(image)}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -111,7 +111,7 @@ const Gallery = () => {
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                   <h3 className="text-xl font-semibold mb-2">{image.title}</h3>
                 </div>
@@ -124,7 +124,7 @@ const Gallery = () => {
       {/* Image Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in"
+          className="fixed inset-0 z-50 bg-navy-950/95 flex items-center justify-center p-4 animate-fade-in"
           onClick={() => setSelectedImage(null)}
         >
           <div className="relative max-w-5xl max-h-[90vh]">
@@ -135,7 +135,7 @@ const Gallery = () => {
             />
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors"
+              className="absolute top-4 right-4 text-white bg-gold-400 text-navy-950 rounded-full p-2 hover:bg-gold-300 transition-colors"
               aria-label="Close"
             >
               <svg
@@ -152,7 +152,7 @@ const Gallery = () => {
                 />
               </svg>
             </button>
-            <div className="absolute bottom-4 left-4 right-4 text-white bg-black/50 rounded-lg p-4">
+            <div className="absolute bottom-4 left-4 right-4 text-white bg-navy-950/80 border-l-4 border-gold-400 rounded-lg p-4">
               <h3 className="text-xl font-semibold">{selectedImage.title}</h3>
             </div>
           </div>

@@ -16,8 +16,8 @@ const emptyForm = (service = '') => ({
 });
 
 const inputClass =
-  'w-full px-4 py-3 rounded-xl border border-gray-300 bg-white focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 outline-none';
-const labelClass = 'block text-sm font-semibold text-gray-700 mb-2';
+  'w-full px-4 py-3 rounded-xl border border-navy-200 bg-white text-navy-950 placeholder:text-gray-400 focus:ring-2 focus:ring-gold-400 focus:border-gold-400 transition-all duration-200 outline-none';
+const labelClass = 'block text-sm font-semibold text-navy-900 mb-2';
 
 // Booking form — sends the enquiry to the business via WhatsApp.
 const BookingForm = ({ defaultService = '', title = 'Book Your Cleaning' }) => {
@@ -53,8 +53,8 @@ const BookingForm = ({ defaultService = '', title = 'Book Your Cleaning' }) => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-xl p-6 sm:p-10 border border-gray-100">
-      <h2 className="text-2xl font-bold text-gray-900 mb-2">{title}</h2>
+    <div className="bg-white rounded-3xl shadow-xl p-6 sm:p-10 border border-navy-100 border-t-4 border-t-gold-400">
+      <h2 className="text-2xl sm:text-3xl font-bold text-navy-900 mb-2">{title}</h2>
       <p className="text-gray-600 mb-6">Fill in the form and it will open WhatsApp with your details ready to send.</p>
 
       <form onSubmit={handleSubmit} className="space-y-5" suppressHydrationWarning>
@@ -96,13 +96,13 @@ const BookingForm = ({ defaultService = '', title = 'Book Your Cleaning' }) => {
         </div>
 
         <label className="flex items-start gap-3 text-sm text-gray-600">
-          <input type="checkbox" name="consent" required checked={formData.consent} onChange={handleChange} className="mt-1 h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" suppressHydrationWarning />
+          <input type="checkbox" name="consent" required checked={formData.consent} onChange={handleChange} className="mt-1 h-4 w-4 rounded border-navy-300 accent-navy-900 focus:ring-gold-400" suppressHydrationWarning />
           <span>I agree to Five Star Carpet Cleaning using these details to contact me about my enquiry. *</span>
         </label>
 
         <button
           type="submit"
-          className="w-full px-8 py-4 rounded-xl font-semibold text-lg text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-[0_4px_20px_rgba(99,102,241,0.4)] hover:shadow-[0_6px_30px_rgba(99,102,241,0.65)] hover:scale-[1.02] active:scale-95 transition-all duration-200"
+          className="w-full px-8 py-4 rounded-full font-semibold text-lg text-navy-950 bg-gold-400 hover:bg-gold-300 shadow-lg shadow-gold-500/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-900 focus-visible:ring-offset-2 transition-colors duration-200"
         >
           Send Booking Request via WhatsApp
         </button>

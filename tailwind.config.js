@@ -24,6 +24,38 @@ module.exports = {
       },
     },
     extend: {
+      // Brand palette taken from the Five Star logo: deep navy + gold, on warm cream.
+      colors: {
+        navy: {
+          50: '#F2F5FA',
+          100: '#E3E9F3',
+          200: '#C3CFE3',
+          300: '#93A6C8',
+          400: '#5F7AA6',
+          500: '#3A5683',
+          600: '#1E3A66',
+          700: '#16305A',
+          800: '#102445',
+          900: '#0B1A33',
+          950: '#07122A',
+        },
+        gold: {
+          50: '#FBF6E9',
+          100: '#F6EBCB',
+          200: '#EED897',
+          300: '#E4C264',
+          400: '#D9AE43',
+          500: '#C9982E',
+          600: '#A97A22',
+          700: '#86601D', // use for gold text on light backgrounds (AA contrast)
+          800: '#6B4C18',
+        },
+        cream: '#FAF7F0',
+      },
+      fontFamily: {
+        sans: ['var(--font-sans)', 'system-ui', '-apple-system', 'Segoe UI', 'Roboto', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'Times New Roman', 'serif'],
+      },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',
         'slide-up': 'slideUp 0.6s ease-out',

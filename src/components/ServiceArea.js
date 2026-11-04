@@ -5,8 +5,8 @@ import SectionHeading from './SectionHeading';
 const defaultIntro = `We are based in ${SITE.baseArea} and travel to homes and businesses across London and Greater London. Not sure if we cover your postcode? Just ask.`;
 
 // `extra` is an optional follow-up paragraph shown under the intro.
-const ServiceArea = ({ background = 'bg-gray-50', intro = defaultIntro, extra }) => (
-  <section id="service-area" className={`py-20 ${background}`}>
+const ServiceArea = ({ background = 'bg-cream', intro = defaultIntro, extra }) => (
+  <section id="service-area" className={`py-20 sm:py-24 ${background}`}>
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading eyebrow="Service area" title="Carpet Cleaning Across London" intro={intro} />
       {extra && <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto text-center -mt-6 mb-12">{extra}</p>}
@@ -14,9 +14,9 @@ const ServiceArea = ({ background = 'bg-gray-50', intro = defaultIntro, extra })
         {SITE.serviceAreas.map((area) => (
           <li
             key={area}
-            className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-5 py-2.5 text-gray-800 font-medium shadow-sm"
+            className="flex items-center gap-2 bg-white border border-navy-100 rounded-full px-5 py-2.5 text-navy-900 font-medium shadow-sm hover:border-gold-400 transition-colors"
           >
-            <PinIcon className="w-4 h-4 text-blue-600" />
+            <PinIcon className="w-4 h-4 text-gold-600" />
             {area}
           </li>
         ))}

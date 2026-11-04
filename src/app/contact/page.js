@@ -37,8 +37,8 @@ export default function ContactPage() {
             </div>
             <div className="lg:col-span-2 space-y-6">
               <ContactDetails title="Contact Details" />
-              <div className="bg-gray-50 rounded-3xl p-6 sm:p-8 border border-gray-100">
-                <h2 className="text-xl font-bold text-gray-900 mb-3">Opening hours & response time</h2>
+              <div className="bg-cream rounded-3xl p-6 sm:p-8 border border-navy-100 border-l-4 border-l-gold-400">
+                <h2 className="text-xl font-bold text-navy-900 mb-3">Opening hours & response time</h2>
                 <p className="text-gray-600 leading-relaxed mb-2">{SITE.openingHours}</p>
                 {/* TODO: confirm a realistic response time with the business. */}
                 <p className="text-gray-600 leading-relaxed">

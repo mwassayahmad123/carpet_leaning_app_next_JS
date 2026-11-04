@@ -5,7 +5,7 @@ import SectionHeading from './SectionHeading';
 
 // Homepage closing section: booking form + phone/WhatsApp/email.
 const Contact = () => (
-  <section id="contact" className="py-20 bg-white">
+  <section id="contact" className="py-20 sm:py-24 bg-white">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <SectionHeading
         eyebrow="Book now"

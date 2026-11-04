@@ -7,7 +7,7 @@ import ProcessSteps from '../../../components/ProcessSteps';
 import PhotoGrid from '../../../components/PhotoGrid';
 import FaqAccordion from '../../../components/FaqAccordion';
 import CallToAction from '../../../components/CallToAction';
-import { ArrowIcon } from '../../../components/Icons';
+import { ArrowIcon, ServiceIcon } from '../../../components/Icons';
 import LinkedText from '../../../components/LinkedText';
 import { SERVICES, getService, serviceHref } from '../../../data/services';
 import { SITE } from '../../../data/site';
@@ -91,7 +91,7 @@ export default async function ServicePage({ params }) {
       />
 
       {/* Benefits */}
-      <section className="py-20 bg-white">
+      <section className="py-20 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Benefits"
@@ -103,7 +103,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* Residential & Commercial — `residentialText` is a string or an array of paragraphs. */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 sm:py-24 bg-cream">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Who it's for" title={service.residentialTitle} />
           <div className="max-w-3xl mx-auto -mt-6 space-y-4 text-center text-lg sm:text-xl text-gray-600 leading-relaxed">
@@ -117,7 +117,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-20 bg-white">
+      <section className="py-20 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Why us"
@@ -129,7 +129,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* Process */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 sm:py-24 bg-cream">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What to expect"
@@ -141,7 +141,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* Before & After / Our Work */}
-      <section className="py-20 bg-white">
+      <section className="py-20 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Our work" title="Photos From Recent Jobs" intro="Real photos taken by our team on jobs in London." />
           <PhotoGrid photos={service.images} />
@@ -149,7 +149,7 @@ export default async function ServicePage({ params }) {
       </section>
 
       {/* FAQs */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 sm:py-24 bg-cream">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <SectionHeading eyebrow="FAQs" title={service.faqsTitle || `${service.name} FAQs`} />
           <FaqAccordion faqs={service.faqs} />
@@ -159,19 +159,21 @@ export default async function ServicePage({ params }) {
       {/* Other services — internal links */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">Other Cleaning Services</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-navy-900 mb-8 text-center">Other Cleaning Services</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {otherServices.map((s) => (
               <li key={s.slug}>
                 <Link
                   href={serviceHref(s.slug)}
-                  className="flex items-center justify-between gap-2 h-full bg-gray-50 hover:bg-blue-50 border border-gray-100 rounded-xl px-5 py-4 font-semibold text-gray-800 hover:text-blue-700 transition-colors"
+                  className="group flex items-center justify-between gap-3 h-full bg-white border border-navy-100 rounded-xl px-4 py-4 font-semibold text-navy-900 hover:border-gold-400 hover:shadow-md transition-all"
                 >
-                  <span>
-                    <span aria-hidden="true" className="mr-2">{s.icon}</span>
+                  <span className="flex items-center gap-3">
+                    <span className="flex items-center justify-center w-9 h-9 flex-shrink-0 rounded-lg bg-navy-900 text-gold-300" aria-hidden="true">
+                      <ServiceIcon slug={s.slug} className="w-5 h-5" />
+                    </span>
                     {s.name}
                   </span>
-                  <ArrowIcon className="w-4 h-4 flex-shrink-0" />
+                  <ArrowIcon className="w-4 h-4 flex-shrink-0 text-gold-600 group-hover:translate-x-0.5 transition-transform" />
                 </Link>
               </li>
             ))}

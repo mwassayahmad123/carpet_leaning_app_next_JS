@@ -37,10 +37,10 @@ export const faqs = [
 ];
 
 const FAQ = () => (
-  <section id="faq" className="py-20 bg-gray-50 border-t border-gray-100">
+  <section id="faq" className="py-20 sm:py-24 bg-cream">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
       <div className="text-center mb-16">
-        <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+        <h2 className="text-4xl sm:text-5xl font-bold text-navy-900 mb-6">
           Frequently Asked Questions
         </h2>
       </div>

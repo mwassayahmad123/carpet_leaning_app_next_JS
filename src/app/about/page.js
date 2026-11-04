@@ -93,7 +93,7 @@ export default function AboutPage() {
       />
 
       {/* Who We Are */}
-      <section className="py-20 bg-white">
+      <section className="py-20 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             <div>
@@ -113,15 +113,18 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              <Image src={PHOTOS.extractionWand.src} alt={PHOTOS.extractionWand.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <div className="relative max-w-md mx-auto w-full lg:max-w-none">
+              <div className="absolute -bottom-4 -left-4 w-2/3 h-2/3 rounded-3xl bg-gold-300/60" aria-hidden="true" />
+              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+                <Image src={PHOTOS.extractionWand.src} alt={PHOTOS.extractionWand.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* How We Clean */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      <section className="py-20 sm:py-24 bg-cream">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="Our approach"
@@ -133,7 +136,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Customers Choose Us */}
-      <section className="py-20 bg-white">
+      <section className="py-20 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
             eyebrow="What makes us different"
@@ -145,7 +148,7 @@ export default function AboutPage() {
       </section>
 
       {/* Homes, Rental Properties and Businesses */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 sm:py-24 bg-cream">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Who we help" title="Carpet Cleaning for Homes, Rental Properties and Businesses" />
           <div className="max-w-3xl mx-auto space-y-4 text-lg text-gray-600 leading-relaxed">
@@ -173,7 +176,7 @@ export default function AboutPage() {
       />
 
       {/* Why You Can Trust Us */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 sm:py-24 bg-cream">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Trust" title="Why You Can Trust Five Star Carpet Cleaning" />
           <div className="max-w-3xl mx-auto space-y-4 text-lg text-gray-600 leading-relaxed">
