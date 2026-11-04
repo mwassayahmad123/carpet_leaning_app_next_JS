@@ -1,6 +1,7 @@
 import FeatureGrid from './FeatureGrid';
 import ProcessSteps from './ProcessSteps';
 import SectionHeading from './SectionHeading';
+import SideBySide from './SideBySide';
 
 // TODO: keep these to claims the business can back up (insurance, years trading, etc.).
 const trustPoints = [
@@ -58,12 +59,13 @@ const differentiators = [
 export const WhyChoose = () => (
   <section id="why-choose-us" className="py-20 sm:py-24 bg-cream">
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <SectionHeading
+      <SideBySide
         eyebrow="Why choose us"
         title="Why Choose Five Star Carpet Cleaning?"
         intro="Choosing a cleaner is about more than the equipment they bring. You also want clear communication, careful work and advice you can trust. Whether you need residential or commercial carpet cleaning, we aim to make the whole process straightforward from booking to the final check."
-      />
-      <FeatureGrid items={differentiators} />
+      >
+        <FeatureGrid items={differentiators} variant="list" columns="md:grid-cols-2" />
+      </SideBySide>
     </div>
   </section>
 );

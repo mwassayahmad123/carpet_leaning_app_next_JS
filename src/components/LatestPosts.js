@@ -12,11 +12,12 @@ const LatestPosts = ({ count = 3 }) => {
     <section id="blog" className="py-20 sm:py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
+          align="split"
           eyebrow="From our blog"
           title="Carpet Cleaning Tips & Guides"
           intro="Practical advice from our team on stains, carpet care and keeping your home fresh between cleans."
         />
-        <BlogCards posts={POSTS.slice(0, count)} headingLevel="h3" />
+        <BlogCards posts={POSTS.slice(0, count)} headingLevel="h3" layout="featured" />
         <div className="text-center mt-10">
           <Link
             href="/blog/"

@@ -5,6 +5,7 @@ import SectionHeading from '../../components/SectionHeading';
 import FeatureGrid from '../../components/FeatureGrid';
 import ProcessSteps from '../../components/ProcessSteps';
 import ServiceArea from '../../components/ServiceArea';
+import SideBySide from '../../components/SideBySide';
 import CallToAction from '../../components/CallToAction';
 import { inlineLinkClass } from '../../components/LinkedText';
 import { PHOTOS, serviceHref } from '../../data/services';
@@ -67,7 +68,7 @@ const reasons = [
     title: 'Honest advice',
     text: (
       <>
-        Some <A href={serviceHref('stain-removal')}>stains can be removed</A>, while others may only become lighter
+        Some <A href={serviceHref('stain-removal')} tone="dark">stains can be removed</A>, while others may only become lighter
         because of their age, type, or effect on the fibres. We explain what may be possible before cleaning, so you can
         make an informed decision without unrealistic promises.
       </>
@@ -135,23 +136,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Customers Choose Us */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Why Customers Choose Us — navy band */}
+      <section className="relative overflow-hidden py-20 sm:py-24 bg-navy-950">
+        <div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(217,174,67,0.14),transparent_55%)]"
+          aria-hidden="true"
+        />
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
+            align="split"
+            tone="dark"
             eyebrow="What makes us different"
             title="Why Customers Choose Us"
             intro="Choosing a professional carpet cleaning company should feel simple and reassuring. We focus on careful work, clear communication, and practical advice, so you know what to expect before we begin. From a single room to a larger cleaning job, we take the time to understand your needs and treat your property with respect."
           />
-          <FeatureGrid items={reasons} columns="lg:grid-cols-4" />
+          <FeatureGrid items={reasons} columns="lg:grid-cols-4" tone="dark" />
         </div>
       </section>
 
       {/* Homes, Rental Properties and Businesses */}
       <section className="py-20 sm:py-24 bg-cream">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Who we help" title="Carpet Cleaning for Homes, Rental Properties and Businesses" />
-          <div className="max-w-3xl mx-auto space-y-4 text-lg text-gray-600 leading-relaxed">
+          <SideBySide eyebrow="Who we help" title="Carpet Cleaning for Homes, Rental Properties and Businesses">
+          <div className="bg-white rounded-3xl border border-navy-100 border-l-4 border-l-gold-400 shadow-sm p-6 sm:p-10 space-y-5 text-lg text-gray-600 leading-relaxed">
             <p>
               Five Star Carpet Cleaning provides residential and{' '}
               <A href={serviceHref('carpet-cleaning')}>commercial carpet cleaning</A> for customers with different needs
@@ -166,6 +173,7 @@ export default function AboutPage() {
               items that need attention and the condition they are in.
             </p>
           </div>
+          </SideBySide>
         </div>
       </section>
 
@@ -179,8 +187,11 @@ export default function AboutPage() {
       <section className="py-20 sm:py-24 bg-cream">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Trust" title="Why You Can Trust Five Star Carpet Cleaning" />
-          <div className="max-w-3xl mx-auto space-y-4 text-lg text-gray-600 leading-relaxed">
-            <p>
+          <div className="relative max-w-4xl mx-auto bg-white rounded-3xl shadow-xl border border-navy-100 px-6 py-10 sm:px-14 sm:py-14 space-y-5 text-lg text-gray-600 leading-relaxed">
+            <svg className="absolute -top-6 left-6 sm:left-14 w-12 h-12 text-gold-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+            </svg>
+            <p className="font-display text-xl sm:text-2xl text-navy-900 leading-relaxed">
               Trust comes from clear communication, careful work, and honest expectations. We take time to assess each
               carpet or fabric, explain the proposed cleaning method, and discuss any concerns before we start. We aim to
               provide a reliable service and treat every property with care.

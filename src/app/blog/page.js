@@ -37,7 +37,7 @@ export default function BlogIndexPage() {
 
       <section className="bg-cream pb-20 sm:pb-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl -mt-12 sm:-mt-16 relative">
-          <BlogCards posts={POSTS} priorityFirst />
+          <BlogCards posts={POSTS} priorityFirst layout="featured" />
         </div>
       </section>
     </>

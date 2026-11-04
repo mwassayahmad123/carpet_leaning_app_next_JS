@@ -9,6 +9,7 @@ import FaqAccordion from '../../../components/FaqAccordion';
 import CallToAction from '../../../components/CallToAction';
 import { ArrowIcon, ServiceIcon } from '../../../components/Icons';
 import LinkedText from '../../../components/LinkedText';
+import SideBySide from '../../../components/SideBySide';
 import { SERVICES, getService, serviceHref } from '../../../data/services';
 import { SITE } from '../../../data/site';
 
@@ -93,38 +94,46 @@ export default async function ServicePage({ params }) {
       {/* Benefits */}
       <section className="py-20 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
+          <SideBySide
             eyebrow="Benefits"
             title={service.benefitsTitle || `Why Choose Professional ${service.name}?`}
             intro={<LinkedText text={service.benefitsIntro} link={service.benefitsIntroLink} />}
-          />
-          <FeatureGrid items={service.benefits} columns={service.benefits.length > 4 ? 'lg:grid-cols-3' : 'lg:grid-cols-4'} />
+          >
+            <FeatureGrid items={service.benefits} variant="list" columns="md:grid-cols-2" />
+          </SideBySide>
         </div>
       </section>
 
       {/* Residential & Commercial — `residentialText` is a string or an array of paragraphs. */}
       <section className="py-20 sm:py-24 bg-cream">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Who it's for" title={service.residentialTitle} />
-          <div className="max-w-3xl mx-auto -mt-6 space-y-4 text-center text-lg sm:text-xl text-gray-600 leading-relaxed">
-            {[].concat(service.residentialText).map((paragraph) => (
-              <p key={paragraph.slice(0, 40)}>
-                <LinkedText text={paragraph} link={service.residentialLink} />
-              </p>
-            ))}
-          </div>
+          <SideBySide eyebrow="Who it's for" title={service.residentialTitle}>
+            <div className="bg-white rounded-3xl border border-navy-100 border-l-4 border-l-gold-400 shadow-sm p-6 sm:p-10 space-y-5 text-lg text-gray-600 leading-relaxed">
+              {[].concat(service.residentialText).map((paragraph) => (
+                <p key={paragraph.slice(0, 40)}>
+                  <LinkedText text={paragraph} link={service.residentialLink} />
+                </p>
+              ))}
+            </div>
+          </SideBySide>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 sm:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Why Choose Us — navy band for contrast */}
+      <section className="relative overflow-hidden py-20 sm:py-24 bg-navy-950">
+        <div
+          className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(217,174,67,0.14),transparent_55%)]"
+          aria-hidden="true"
+        />
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeading
+            align="split"
+            tone="dark"
             eyebrow="Why us"
             title={service.whyUsTitle || `Why Choose Five Star for ${service.name}`}
-            intro={service.whyUsIntro && <LinkedText text={service.whyUsIntro} link={service.whyUsIntroLink} />}
+            intro={service.whyUsIntro && <LinkedText text={service.whyUsIntro} link={service.whyUsIntroLink} tone="dark" />}
           />
-          <FeatureGrid items={service.whyUs} columns="lg:grid-cols-4" />
+          <FeatureGrid items={service.whyUs} columns="lg:grid-cols-4" tone="dark" />
         </div>
       </section>
 
@@ -136,23 +145,24 @@ export default async function ServicePage({ params }) {
             title={service.processTitle || 'Our Process, Step by Step'}
             intro={service.processIntro}
           />
-          <ProcessSteps steps={service.process} columns={service.processColumns} />
+          <ProcessSteps steps={service.process} columns={service.processColumns} surface="cream" />
         </div>
       </section>
 
       {/* Before & After / Our Work */}
       <section className="py-20 sm:py-24 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading eyebrow="Our work" title="Photos From Recent Jobs" intro="Real photos taken by our team on jobs in London." />
+          <SectionHeading align="split" eyebrow="Our work" title="Photos From Recent Jobs" intro="Real photos taken by our team on jobs in London." />
           <PhotoGrid photos={service.images} />
         </div>
       </section>
 
       {/* FAQs */}
       <section className="py-20 sm:py-24 bg-cream">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-          <SectionHeading eyebrow="FAQs" title={service.faqsTitle || `${service.name} FAQs`} />
-          <FaqAccordion faqs={service.faqs} />
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <SideBySide eyebrow="FAQs" title={service.faqsTitle || `${service.name} FAQs`}>
+            <FaqAccordion faqs={service.faqs} />
+          </SideBySide>
         </div>
       </section>
 

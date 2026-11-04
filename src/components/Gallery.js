@@ -14,6 +14,14 @@ import img10 from "./img/10.webp";
 import img11 from "./img/11.webp"; 
 import img12 from "./img/12.webp"; 
 
+// Mosaic tile spans by image position (12 images fill a 2-column grid on mobile and 4 columns on desktop exactly).
+const MOSAIC = {
+  0: 'col-span-2 row-span-2',
+  5: 'row-span-2',
+  6: 'col-span-2',
+  9: 'col-span-2 row-span-2',
+};
+
 const Gallery = () => {
   const images = [
     {
@@ -83,24 +91,25 @@ const Gallery = () => {
   return (
     <section id="gallery" className="py-20 sm:py-24 bg-cream">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-navy-900 mb-4">
+        <div className="mb-12 lg:mb-16 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-end">
+          <h2 className="text-4xl sm:text-5xl font-bold text-navy-900">
             Our Gallery
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 lg:pb-2 lg:border-l-2 lg:border-gold-300 lg:pl-8">
             Real photos from recent carpet and upholstery cleaning jobs in London
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Mosaic: a few tiles span extra rows/columns; tile sizes are fixed by the grid rows, so nothing shifts while images load. */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 grid-flow-dense auto-rows-[150px] sm:auto-rows-[200px] lg:auto-rows-[220px] gap-3 sm:gap-4">
           {images.map((image, index) => (
             <div
               key={image.id}
-              className="group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl ring-1 ring-navy-100 hover:ring-2 hover:ring-gold-400 transition-all duration-300 cursor-pointer"
+              className={`group relative overflow-hidden rounded-2xl shadow-md hover:shadow-2xl ring-1 ring-navy-100 hover:ring-2 hover:ring-gold-400 transition-all duration-300 cursor-pointer ${MOSAIC[index] || ''}`}
               onClick={() => setSelectedImage(image)}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="aspect-square overflow-hidden">
+              <div className="h-full overflow-hidden">
                 <img
                   src={image.src}
                   alt={image.title}
@@ -112,8 +121,8 @@ const Gallery = () => {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-semibold mb-2">{image.title}</h3>
+                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-base sm:text-xl font-semibold mb-1">{image.title}</h3>
                 </div>
               </div>
             </div>

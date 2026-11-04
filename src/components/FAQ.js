@@ -1,5 +1,6 @@
 import React from 'react';
 import FaqAccordion from './FaqAccordion';
+import SideBySide from './SideBySide';
 
 // Broad homepage questions. Service-specific FAQs live on each service page.
 export const faqs = [
@@ -38,13 +39,10 @@ export const faqs = [
 
 const FAQ = () => (
   <section id="faq" className="py-20 sm:py-24 bg-cream">
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-      <div className="text-center mb-16">
-        <h2 className="text-4xl sm:text-5xl font-bold text-navy-900 mb-6">
-          Frequently Asked Questions
-        </h2>
-      </div>
-      <FaqAccordion faqs={faqs} />
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <SideBySide title="Frequently Asked Questions">
+        <FaqAccordion faqs={faqs} />
+      </SideBySide>
     </div>
   </section>
 );
