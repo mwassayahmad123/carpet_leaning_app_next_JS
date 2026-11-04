@@ -34,6 +34,10 @@ const DESCRIPTION =
 const serviceAreaIntro =
   'Based in East London (E11), we travel to homes and businesses across London and Greater London. If you’re searching for “carpet cleaning near me”, we can help you check whether your postcode falls within our service area. Send us your location and the items you need cleaned, and we’ll confirm availability before you book.';
 
+// Re-generate the homepage every 6 hours so new Google reviews appear automatically
+// (must match REVIEWS_REVALIDATE in src/lib/googleReviews.js).
+export const revalidate = 21600;
+
 export const metadata = {
   title: { absolute: TITLE },
   description: DESCRIPTION,

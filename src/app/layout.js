@@ -107,11 +107,6 @@ const jsonLd = {
     closes: '20:00',
   },
   priceRange: '$$',
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5',
-    reviewCount: '150',
-  },
   description:
     'Professional carpet cleaning London. Five-star eco-friendly deep steam cleaning for carpets, rugs & upholstery.',
   areaServed: {
