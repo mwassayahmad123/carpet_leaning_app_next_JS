@@ -8,7 +8,7 @@ export const SITE = {
   whatsappNumber: '447871062227',
   whatsappHref: 'https://wa.me/447871062227',
   email: 'fivestarservicesltduk@gmail.com',
-  baseArea: 'East London (E11)',
+  baseArea: 'East London',
   // TODO: confirm these hours with the business before going live.
   openingHours: 'Monday – Sunday, 8:00am – 8:00pm',
   // TODO: replace with the exact boroughs / postcodes the business covers.

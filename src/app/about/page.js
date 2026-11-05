@@ -179,7 +179,7 @@ export default function AboutPage() {
 
       <ServiceArea
         background="bg-white"
-        intro="Based in East London (E11), we travel to homes and business premises across London and Greater London. If you are searching for a “professional carpet cleaning company near me”, get in touch with your postcode and the service you need. We can confirm whether your location is covered and discuss the next steps."
+        intro="Based in East London, we travel to homes and business premises across London and Greater London. If you are searching for a “professional carpet cleaning company near me”, get in touch with your postcode and the service you need. We can confirm whether your location is covered and discuss the next steps."
         extra="Our team provides carpet and upholstery cleaning for a range of customers and materials. If you are comparing carpet and upholstery cleaning companies, we encourage you to ask about the cleaning method, fabric care, and what is included in the quote before making a decision."
       />
 

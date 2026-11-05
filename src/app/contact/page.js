@@ -54,7 +54,7 @@ export default function ContactPage() {
       <ServiceArea
         intro={
           <>
-            We’re based in East London (E11) and provide{' '}
+            We’re based in East London and provide{' '}
             <Link href={serviceHref('carpet-cleaning')} className={inlineLinkClass.light}>carpet cleaning services</Link>{' '}
             for homes and businesses across London and Greater London. Whether you need your carpets or sofa cleaned,
             we’re happy to help. Not sure if we cover your area? Send us your postcode, and we’ll confirm whether we can
