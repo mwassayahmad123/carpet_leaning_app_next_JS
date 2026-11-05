@@ -384,36 +384,52 @@ export const SERVICES = [
       'Need stain removal in London? Five Star Carpet Cleaning treats stubborn carpet stains with suitable cleaning methods. Contact us today for a friendly quote.',
     h1: 'Professional Stain Removal London',
     heroIntro:
-      'Spills, food marks, and stubborn stains can make carpets look worn and untidy. We provide professional stain removal in London, helping homes and businesses tackle unwanted marks with suitable cleaning methods. We assess each stain and carpet type before choosing the right treatment.',
+      "Spills, food marks and stubborn stains can make carpets look worn and untidy. If you need professional stain removal in London, Five Star Carpet Cleaning can help assess unwanted marks and choose a suitable cleaning method for your carpet. Different stains need different treatments, so we check the affected area, the type of stain, and the carpet material before starting. Whether you are dealing with a fresh drink spill, food marks, mud, or an older stain, our aim is to improve the carpet's appearance while taking care to avoid unnecessary damage.",
     summary:
       'Pet accidents can leave marks and lingering smells in carpets, rugs and sofas. We use suitable treatments designed to break down pet urine residues and tackle odours at their source, rather than simply covering them with fragrance. Results depend on the material, the stain, and how deeply it has soaked in.',
     heroImage: PHOTOS.diningCarpet,
     benefitsTitle: 'Why Choose Professional Carpet Stain Removal?',
-    benefitsIntro:
-      'Some stains sit near the surface, while others work deeper into the carpet fibres. Household sprays may not remove the full mark and can sometimes leave residue behind. Professional carpet stain cleaning uses suitable products and equipment to treat the affected area carefully.',
+    benefitsIntro: [
+      'Some stains remain close to the surface, while others work deeper into carpet fibres. A household spray may not remove the full mark and can sometimes leave cleaning residue behind. Scrubbing too hard or using an unsuitable product may also make the problem worse.',
+      'Professional carpet stain cleaning starts with understanding the stain and the carpet. This helps us choose a suitable treatment rather than applying the same cleaning method to every mark.',
+    ],
     benefitsIntroLink: { text: 'carpet stain cleaning', href: '/blog/how-to-clean-carpet-at-home/' },
     benefits: [
       {
         title: 'Treats Different Types of Stains',
-        text: 'From coffee and tea spills to food marks, mud, and everyday dirt, we assess the stain before deciding how to clean it. The right treatment depends on what caused the mark, how long it has been there, and the carpet material.',
+        text: [
+          'Carpets can collect marks from many everyday sources. Coffee and tea spills, food stains, mud, and general dirt can all affect the appearance of your flooring.',
+          'The right treatment depends on what caused the stain, how long it has been there, and the type of carpet. Fresh spills may respond differently from old, dried marks. We assess the affected area before deciding how to approach the cleaning.',
+        ],
+        link: { text: 'old, dried marks', href: '/blog/how-to-remove-old-stains-from-carpet/' },
       },
       {
         title: 'Targets Stubborn Marks',
-        text: 'Old or deeply set stains can be harder to remove with household cleaning products. Our professional carpet stain removal service in London uses suitable pre-treatment and cleaning methods to help lift as much of the mark as possible.',
+        text: [
+          'Old or deeply set carpet stains can be harder to treat than fresh spills. Household products may not be suitable for every stain, and repeated scrubbing can spread the mark or affect the carpet fibres.',
+          'Our professional carpet stain removal service in London uses suitable pre-treatment and cleaning methods to help loosen and lift stains. The result depends on the stain and carpet condition, so we explain what may be achievable before treatment begins.',
+        ],
       },
       {
         title: 'Protects Your Carpet',
-        text: 'Using the wrong product or scrubbing too hard can damage carpet fibres or affect their colour. We inspect the material and choose a suitable method to help clean the affected area without unnecessary damage.',
+        text: [
+          'Different carpet materials have different cleaning needs. Using the wrong product, applying too much moisture or scrubbing too hard can affect the fibres or carpet colour.',
+          'We check the affected area and consider the carpet material before selecting a treatment. Where needed, we test a suitable product in a hidden area to check for possible colour changes.',
+        ],
       },
       {
         title: 'Honest Advice About Results',
-        text: 'Not every stain can be removed completely. We explain what may be possible after assessing the stain, so you can make an informed decision before treatment begins.',
+        text: [
+          "Not every carpet stain can be removed completely. Some marks permanently change the carpet's colour, while others may have already damaged the fibres.",
+          'We assess the stain and explain the likely result before treatment. This gives you a clearer idea of what to expect and helps you make an informed decision.',
+        ],
       },
     ],
     residentialTitle: 'Residential & Commercial Stain Removal',
     residentialText: [
       'Our stain removal service in London is available for homes, rental properties and business premises. Whether you are dealing with a drink spill in your living room or marks in a busy office, we assess the affected carpet and recommend a suitable cleaning approach.',
-      'For homeowners and tenants, targeted carpet cleaning and stain removal can help refresh rooms without treating every carpeted area unnecessarily. Landlords and property managers may also benefit from stain treatment when preparing a property for new occupants.',
+      'For homeowners and tenants, targeted carpet cleaning and stain removal can help refresh rooms without treating every carpeted area unnecessarily. A fresh spill or an old mark may need a different approach, depending on its cause and the carpet material.',
+      'Landlords and property managers may also need stain treatment when preparing a property for new occupants. Assessing visible marks before arranging cleaning can help establish what treatment may be suitable.',
       'We can also discuss commercial carpet stain removal in London for suitable business spaces. The recommended method will depend on the carpet, the type of stain, and the condition of the affected area.',
     ],
     whyUsTitle: 'Why Choose Five Star for Stain Removal?',
@@ -423,11 +439,17 @@ export const SERVICES = [
     whyUs: [
       {
         title: 'Professional Equipment',
-        text: 'We use professional hot water extraction equipment and appropriate cleaning tools to help remove dirt, cleaning residue, and loosened stains. The equipment and method are selected according to the carpet and the type of treatment required.',
+        text: [
+          'We use professional hot water extraction equipment and appropriate cleaning tools to help remove dirt, cleaning residue, and loosened stains. The equipment and method are selected according to the carpet and the type of treatment required.',
+          'Hot water extraction is not automatically suitable for every carpet or stain. We consider the material and cleaning requirements before choosing the method.',
+        ],
       },
       {
         title: 'Carpet-Safe Cleaning Methods',
-        text: 'Every carpet is different. We inspect the affected area and check the material before choosing a cleaning method. Where needed, we test a suitable product in a hidden spot to check for colour changes.',
+        text: [
+          'Every carpet is different. We inspect the affected area and check the material before choosing a cleaning method. Where needed, we test a suitable product in a hidden spot to check for colour changes.',
+          'This careful approach helps us avoid using unsuitable treatments and allows us to explain any concerns before work begins.',
+        ],
       },
       {
         title: 'Clear, Upfront Pricing',
@@ -438,11 +460,15 @@ export const SERVICES = [
       },
       {
         title: 'Careful Product Selection',
-        text: 'We choose cleaning solutions according to the carpet and the stain being treated. If you have concerns about products in a home with children or pets, let us know before the appointment so we can explain the available options and any care instructions.',
+        text: [
+          'We choose cleaning solutions according to the carpet and the stain being treated. Not every cleaning product is suitable for every carpet, so product selection matters.',
+          'If you have concerns about products in a home with children or pets, let us know before the appointment. We can explain the available options and any care instructions relevant to the treatment.',
+        ],
       },
     ],
+    processTitle: 'Our Carpet Stain Removal Process',
     processIntro:
-      'We keep the process straightforward, from your first enquiry to the final check. We aim to understand the problem, choose a suitable treatment, and explain the likely result before work begins.',
+      'We keep the process straightforward, from your first enquiry to the final check. Each stage helps us understand the stain, select a suitable treatment, and explain what you can expect.',
     process: commonProcess('stained areas'),
     images: [PHOTOS.diningCarpet, PHOTOS.greyCarpetMidClean, PHOTOS.greyBedroom],
     faqsTitle: 'FAQs About Stain Removal Service in London',
@@ -456,6 +482,7 @@ export const SERVICES = [
         question: 'Are there stains that cannot be removed?',
         answer:
           "Yes. Some stains may permanently change the carpet's colour or damage its fibres. Certain dyes, old stains, and marks treated with unsuitable household products can be especially difficult to remove. Professional treatment may improve their appearance, but complete removal cannot be guaranteed.",
+        link: { text: 'Professional treatment', href: '/blog/how-often-should-carpets-be-professionally-cleaned/' },
       },
       {
         question: 'How much does carpet stain removal cost in London?',
@@ -465,25 +492,36 @@ export const SERVICES = [
       {
         question: 'Can you remove old and stubborn carpet stains?',
         answer:
-          'Some old stains can be reduced or removed, but results vary. We assess the carpet and the stain before choosing a treatment. Avoid repeatedly scrubbing the area or applying several cleaning products, as this can make the problem worse.',
-        link: { text: 'old stains can be reduced or removed', href: '/blog/how-to-remove-stains-from-carpet/' },
+          'Some old carpet stains can be reduced or removed, but results vary. We assess the carpet and the stain before choosing a treatment. Avoid repeatedly scrubbing the area or applying several cleaning products, as this can make the problem worse.',
+        link: { text: 'old carpet stains can be reduced or removed', href: '/blog/how-to-remove-stains-from-carpet/' },
       },
       {
         question: 'Do you provide carpet stain removal near London?',
         answer:
-          'Five Star Carpet Cleaning serves homes and businesses across London. If you are searching for “carpet stain removal service near me”, contact us with your postcode so we can confirm whether your property is within our service area.',
+          'Five Star Carpet Cleaning serves homes and businesses across London. If you are searching for a carpet stain removal service near you, contact us with your postcode so we can confirm whether your property is within our service area.',
       },
       {
         question: 'Should I use a stain remover before a professional arrives?',
         answer:
-          'It is usually best to blot up fresh spills with a clean cloth and avoid rubbing. Before applying a stain remover, check that it is suitable for your carpet. Some products can leave residue or affect carpet colour, so tell us about anything you have already used when you contact us.',
+          'It is usually best to blot fresh spills with a clean cloth and avoid rubbing. Before applying a stain remover, check that it is suitable for your carpet. Some products can leave residue or affect carpet colour, so tell us about anything you have already used when you contact us.',
+      },
+      {
+        question: 'How long does carpet stain removal take?',
+        answer:
+          'The time needed depends on the size of the affected area, the type of stain, the carpet material, and the treatment required. We can discuss the expected work after assessing the stain and the carpet.',
+      },
+      {
+        question: 'Will my carpet be completely dry after stain removal?',
+        answer:
+          'Drying time depends on the cleaning method, the amount of moisture used, the carpet, and the room conditions. We can explain any relevant drying instructions after the treatment. Follow the advice given and allow the carpet to dry as directed.',
       },
     ],
     closing: {
       title: 'Get Help with Carpet Stains in London',
       text: [
         'A stubborn carpet stain does not always mean you need to replace your carpet. The right treatment may improve its appearance and help you get more use from it.',
-        'Five Star Carpet Cleaning provides professional carpet stain cleaning across London, with suitable methods selected for the stain and carpet material. If you need help with a spill, an old mark, or several stained areas, contact our team to discuss the problem and request a quote.',
+        'Five Star Carpet Cleaning provides professional carpet stain cleaning across London, with suitable methods selected for the stain and carpet material.',
+        'If you need help with a fresh spill, an old mark, or several stained areas, contact our team. Tell us what caused the stain, how long it has been there, and which area of your carpet is affected. We can discuss the problem, explain the available options, and help you request a quote.',
       ],
       link: { text: 'carpet stain cleaning across London', href: '/' },
     },

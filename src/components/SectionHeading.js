@@ -13,6 +13,18 @@ const Eyebrow = ({ children, dark, centered }) => (
   </p>
 );
 
+// `intro` may be a single node or an array of paragraphs.
+const Intro = ({ intro, className }) => {
+  if (!Array.isArray(intro)) return <p className={className}>{intro}</p>;
+  return (
+    <div className={`${className} space-y-4`}>
+      {intro.map((paragraph, i) => (
+        <p key={i}>{paragraph}</p>
+      ))}
+    </div>
+  );
+};
+
 const SectionHeading = ({ eyebrow, title, intro, align = 'center', tone = 'light' }) => {
   const dark = tone === 'dark';
   const titleClass = `text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight ${dark ? 'text-white' : 'text-navy-900'}`;
@@ -25,7 +37,7 @@ const SectionHeading = ({ eyebrow, title, intro, align = 'center', tone = 'light
           {eyebrow && <Eyebrow dark={dark}>{eyebrow}</Eyebrow>}
           <h2 className={titleClass}>{title}</h2>
         </div>
-        {intro && <p className={`${introClass} lg:pb-2 lg:border-l-2 lg:border-gold-300 lg:pl-8`}>{intro}</p>}
+        {intro && <Intro intro={intro} className={`${introClass} lg:pb-2 lg:border-l-2 lg:border-gold-300 lg:pl-8`} />}
       </div>
     );
   }
@@ -38,7 +50,7 @@ const SectionHeading = ({ eyebrow, title, intro, align = 'center', tone = 'light
         </Eyebrow>
       )}
       <h2 className={`${titleClass} mb-5`}>{title}</h2>
-      {intro && <p className={introClass}>{intro}</p>}
+      {intro && <Intro intro={intro} className={introClass} />}
     </div>
   );
 };

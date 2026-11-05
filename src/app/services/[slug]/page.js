@@ -70,6 +70,12 @@ const jsonLdFor = (service) => {
   ];
 };
 
+// A section intro may be one paragraph or an array of paragraphs; `link` is applied in whichever paragraph contains it.
+const linkedParagraphs = (text, link, tone = 'light') => {
+  if (!Array.isArray(text)) return <LinkedText text={text} link={link} tone={tone} />;
+  return text.map((paragraph, i) => <LinkedText key={i} text={paragraph} link={link} tone={tone} />);
+};
+
 export default async function ServicePage({ params }) {
   const { slug } = await params;
   const service = getService(slug);
@@ -97,7 +103,7 @@ export default async function ServicePage({ params }) {
           <SideBySide
             eyebrow="Benefits"
             title={service.benefitsTitle || `Why Choose Professional ${service.name}?`}
-            intro={<LinkedText text={service.benefitsIntro} link={service.benefitsIntroLink} />}
+            intro={linkedParagraphs(service.benefitsIntro, service.benefitsIntroLink)}
           >
             <FeatureGrid items={service.benefits} variant="list" columns="md:grid-cols-2" />
           </SideBySide>
@@ -131,7 +137,7 @@ export default async function ServicePage({ params }) {
             tone="dark"
             eyebrow="Why us"
             title={service.whyUsTitle || `Why Choose Five Star for ${service.name}`}
-            intro={service.whyUsIntro && <LinkedText text={service.whyUsIntro} link={service.whyUsIntroLink} tone="dark" />}
+            intro={service.whyUsIntro && linkedParagraphs(service.whyUsIntro, service.whyUsIntroLink, 'dark')}
           />
           <FeatureGrid items={service.whyUs} columns="lg:grid-cols-4" tone="dark" />
         </div>
@@ -143,7 +149,7 @@ export default async function ServicePage({ params }) {
           <SectionHeading
             eyebrow="What to expect"
             title={service.processTitle || 'Our Process, Step by Step'}
-            intro={service.processIntro}
+            intro={service.processIntro && linkedParagraphs(service.processIntro)}
           />
           <ProcessSteps steps={service.process} columns={service.processColumns} surface="cream" />
         </div>
