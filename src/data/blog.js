@@ -12,9 +12,10 @@ import * as carpetCare from '../content/blog/carpet-care-guide';
 import * as vacuumGuide from '../content/blog/how-often-should-you-vacuum-carpet';
 import * as professionalCleaning from '../content/blog/how-often-should-carpets-be-professionally-cleaned';
 import * as careForCarpet from '../content/blog/how-to-care-for-carpet';
+import * as protectCarpet from '../content/blog/how-to-protect-carpet';
 
 // Add each new article module here (sorted by date below).
-const MODULES = [careForCarpet, professionalCleaning,carpetCare, vacuumGuide, inkStains, oldStains, coffeeStains, bloodStains, oilStains, mudStains, redWine, removePetStains, cleanCarpetAtHome, removeStains];
+const MODULES = [protectCarpet, careForCarpet,professionalCleaning,carpetCare, vacuumGuide, inkStains, oldStains, coffeeStains, bloodStains, oilStains, mudStains, redWine, removePetStains, cleanCarpetAtHome, removeStains];
 
 export const POSTS = MODULES.map((m) => ({ ...m.post, Body: m.Body, Conclusion: m.Conclusion })).sort((a, b) =>
   b.datePublished.localeCompare(a.datePublished)
